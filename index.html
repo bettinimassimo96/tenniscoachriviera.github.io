@@ -825,6 +825,7 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  .testi-grid { grid-template-columns: 1fr !important; }
   .hotel-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .hero-content, .cred-bar { padding-left: 32px; padding-right: 32px; }
   .about-section, .villa-section, .tourist-section, .services-section, .quals-section, .cta-section { padding: 80px 32px; }
@@ -1173,6 +1174,47 @@ footer {
   </div>
 </section>
 
+
+<!-- ══ TESTIMONIALS ══ -->
+<section style="padding: 120px 60px; background: var(--navy-mid); border-top: 1px solid rgba(184,151,58,0.1);" aria-label="Témoignages clients">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="reveal">
+      <p class="section-eyebrow">Témoignages</p>
+      <h2 class="section-title">Ce que disent<br><em>mes clients</em></h2>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px;" class="testi-grid">
+
+      <div class="reveal" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
+        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
+        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">Massimo a transformé la façon dont mes enfants voient le tennis. En deux semaines, ils ont fait plus de progrès qu'en une année entière de cours collectifs.</p>
+        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
+          <div style="font-size:13px; font-weight:500; color:var(--white);">Sophie L.</div>
+          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Résidente · Cap Ferrat</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
+        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
+        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">We were on holiday in Antibes for two weeks and booked Massimo every morning. Professional, punctual, and genuinely talented. Our whole family loved it.</p>
+        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
+          <div style="font-size:13px; font-weight:500; color:var(--white);">James & Claire T.</div>
+          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Guests · Antibes</div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
+        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
+        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">Massimo è venuto direttamente sulla nostra villa a Mougins ogni mattina. Discrezione totale, livello altissimo. Lo consiglio senza riserve a chiunque cerchi un coach privato sulla Riviera.</p>
+        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
+          <div style="font-size:13px; font-weight:500; color:var(--white);">Marco R.</div>
+          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Ospite · Mougins</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ══ CTA FINAL ══ -->
 <section class="cta-section" id="contact" aria-label="Réserver une leçon de tennis privée">
   <div class="cta-inner">
@@ -1182,6 +1224,7 @@ footer {
       Disponible 7j/7, matin et après-midi · Réponse garantie sous 24h<br>
       Première séance de découverte offerte sur demande
     </p>
+    <p class="reveal reveal-delay-2" style="font-size:11px; font-weight:400; letter-spacing:2px; color:rgba(122,143,168,0.55); text-transform:uppercase; margin-bottom:40px; margin-top:-32px;">Tarifs sur demande · Devis personnalisé</p>
     <div class="cta-buttons reveal reveal-delay-3">
       <a href="https://wa.me/330636047722" class="btn-gold">📱 WhatsApp — Réserver maintenant</a>
       <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline">✉️ Envoyer un email</a>
