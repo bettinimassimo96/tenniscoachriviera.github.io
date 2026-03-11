@@ -1,817 +1,93 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- SEO Primary -->
-<title>Massimo Bettini · Tennis Coach Privé · Côte d'Azur · Résidents &amp; Touristes · Nice · Monaco · Cannes</title>
-<meta name="description" content="Coach de tennis privé certifié FITP, 9 ans d'expérience. Cours à domicile pour enfants, adultes et seniors — Nice, Antibes, Cannes, Monaco, Cap Ferrat. Français, English, Italiano.">
-<meta name="keywords" content="coach tennis privé Nice, tennis coach Côte d'Azur, cours tennis domicile Nice, private tennis coach French Riviera, tennis lessons Monaco, coach tennis Antibes, tennis coach Cap Ferrat, Massimo Bettini tennis, tennis privé résidence, cours tennis enfants adultes seniors">
-<meta name="author" content="Massimo Bettini">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://tenniscoachriviera.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://tenniscoachriviera.com/">
-<meta property="og:title" content="Massimo Bettini · Coach de Tennis Privé · Côte d'Azur">
-<meta property="og:description" content="Cours de tennis privés à domicile pour toute la famille. Nice, Antibes, Cannes, Monaco. Français · English · Italiano. 9 ans d'expérience, certifié FITP.">
-<meta property="og:site_name" content="Massimo Tennis Riviera">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Massimo Bettini · Coach de Tennis Privé · Côte d'Azur">
-<meta name="twitter:description" content="Cours de tennis privés à domicile pour toute la famille sur la Côte d'Azur. 9 ans d'expérience.">
-
-<!-- Structured Data JSON-LD -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Massimo Tennis Riviera",
-  "description": "Coach de tennis privé certifié FITP, 9 ans d'expérience. Cours à domicile pour enfants, adultes et seniors sur la Côte d'Azur.",
-  "url": "https://tenniscoachriviera.com/",
-  "telephone": "+33XXXXXXXXX",
-  "founder": {
-    "@type": "Person",
-    "name": "Massimo Bettini",
-    "jobTitle": "Coach de Tennis Privé",
-    "knowsLanguage": ["fr", "en", "it"]
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Nice"},
-    {"@type": "City", "name": "Antibes"},
-    {"@type": "City", "name": "Cannes"},
-    {"@type": "City", "name": "Monaco"},
-    {"@type": "City", "name": "Cagnes-sur-Mer"},
-    {"@type": "City", "name": "Saint-Jean-Cap-Ferrat"},
-    {"@type": "City", "name": "Beaulieu-sur-Mer"},
-    {"@type": "City", "name": "Menton"}
-  ],
-  "serviceType": ["Cours de tennis privés", "Tennis lessons", "Lezioni di tennis"],
-  "priceRange": "€€€"
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  /* Font fallbacks in case Google Fonts fails to load */
-  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
-</style>
-<style>
-  :root {
-    --gold: #C9A84C;
-    --gold-light: #E8D5A3;
-    --navy: #0A1628;
-    --navy-mid: #152240;
-    --cream: #F8F4EE;
-    --white: #FFFFFF;
-    --text-light: #8A9BB5;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    background: var(--navy);
-    color: var(--cream);
-    overflow-x: hidden;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 60px 24px;
-    background:
-      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 60%),
-      linear-gradient(180deg, #0A1628 0%, #152240 60%, #0A1628 100%);
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 60px),
-      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 60px);
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(201,168,76,0.4);
-    padding: 8px 20px;
-    margin-bottom: 40px;
-    animation: fadeUp 1s ease both;
-  }
-
-  .hero-name {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: clamp(52px, 9vw, 110px);
-    font-weight: 300;
-    letter-spacing: -1px;
-    line-height: 0.95;
-    color: var(--white);
-    animation: fadeUp 1s ease 0.15s both;
-  }
-
-  .hero-name em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-divider {
-    width: 60px;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 32px auto;
-    animation: fadeUp 1s ease 0.3s both;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: clamp(18px, 3vw, 28px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--gold-light);
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-    animation: fadeUp 1s ease 0.4s both;
-  }
-
-  .hero-sub {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    animation: fadeUp 1s ease 0.5s both;
-  }
-
-  .hero-langs {
-    display: flex;
-    gap: 24px;
-    justify-content: center;
-    margin-top: 48px;
-    animation: fadeUp 1s ease 0.6s both;
-  }
-
-  .lang-flag {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-  }
-
-  .lang-flag span { font-size: 22px; }
-
-  .hero-cta {
-    margin-top: 56px;
-    animation: fadeUp 1s ease 0.75s both;
-  }
-
-  .btn-primary {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--navy);
-    background: var(--gold);
-    padding: 16px 40px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.15);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-  }
-
-  .btn-primary:hover::after { transform: translateX(0); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,168,76,0.3); }
-
-  .scroll-hint {
-    position: absolute;
-    bottom: 36px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    font-size: 9px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(138,155,181,0.6);
-    animation: fadeUp 1s ease 1s both;
-    z-index: 10;
-  }
-
-  .scroll-line {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(180deg, var(--gold), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-
-  /* ── ABOUT ── */
-  .section {
-    padding: 100px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 20px;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: clamp(36px, 5vw, 60px);
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--white);
-    margin-bottom: 32px;
-  }
-
-  .section-title em { font-style: italic; color: var(--gold); }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .about-text {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: rgba(248,244,238,0.75);
-  }
-
-  .about-text p + p { margin-top: 20px; }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px;
-  }
-
-  .stat-box {
-    background: rgba(201,168,76,0.06);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 32px 24px;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .stat-box:hover {
-    background: rgba(201,168,76,0.1);
-    border-color: rgba(201,168,76,0.35);
-  }
-
-  .stat-number {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: 52px;
-    font-weight: 300;
-    color: var(--gold);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-    line-height: 1.4;
-  }
-
-  /* ── SERVICES ── */
-  .services-section {
-    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy) 100%);
-    padding: 100px 24px;
-  }
-
-  .services-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    margin-top: 60px;
-  }
-
-  .service-card {
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(201,168,76,0.12);
-    padding: 44px 32px;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
-  }
-
-  .service-card:hover { background: rgba(201,168,76,0.05); transform: translateY(-4px); }
-  .service-card:hover::before { transform: scaleX(1); }
-
-  .service-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .service-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .service-desc {
-    font-size: 13px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: rgba(248,244,238,0.55);
-  }
-
-  /* ── CREDENTIALS ── */
-  .creds-section {
-    padding: 100px 24px;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .creds-row {
-    display: flex;
-    gap: 2px;
-    margin-top: 60px;
-    flex-wrap: wrap;
-  }
-
-  .cred-item {
-    flex: 1;
-    min-width: 200px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid rgba(201,168,76,0.12);
-    padding: 32px 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .cred-icon { font-size: 22px; }
-
-  .cred-title {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--gold-light);
-  }
-
-  .cred-text {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.7;
-    color: var(--text-light);
-  }
-
-  /* ── CONTACT ── */
-  .contact-section {
-    background: var(--navy-mid);
-    border-top: 1px solid rgba(201,168,76,0.15);
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    padding: 100px 24px;
-    text-align: center;
-  }
-
-  .contact-inner { max-width: 700px; margin: 0 auto; }
-
-  .contact-intro {
-    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    font-size: clamp(28px, 4vw, 48px);
-    font-weight: 300;
-    font-style: italic;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
-  .contact-sub {
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: var(--text-light);
-    margin-bottom: 56px;
-    line-height: 1.8;
-  }
-
-  .contact-options {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 48px;
-  }
-
-  .contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 16px 32px;
-    border: 1px solid rgba(201,168,76,0.4);
-    color: var(--gold-light);
-    transition: all 0.3s ease;
-  }
-
-  .contact-btn:hover {
-    background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
-
-  .contact-btn.primary {
-    background: var(--gold);
-    color: var(--navy);
-    border-color: var(--gold);
-  }
-
-  .contact-btn.primary:hover { background: var(--gold-light); }
-
-  .contact-zone {
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(138,155,181,0.5);
-  }
-
-  /* ── LANGUAGES SECTION ── */
-  .langs-strip {
-    background: rgba(201,168,76,0.05);
-    border-top: 1px solid rgba(201,168,76,0.1);
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-    padding: 28px 24px;
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-  }
-
-  .lang-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-light);
-  }
-
-  .lang-item span { font-size: 20px; }
-
-  .lang-level {
-    font-size: 9px;
-    color: var(--gold);
-    letter-spacing: 1px;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 40px 24px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 300;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(138,155,181,0.3);
-  }
-
-  footer strong { color: rgba(201,168,76,0.5); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.3; transform: scaleY(1); }
-    50%       { opacity: 1;   transform: scaleY(1.2); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* Fallback: show all content if JS fails */
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .services-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: 1fr 1fr; }
-    .creds-row { flex-direction: column; }
-    .langs-strip { gap: 32px; }
-  }
-</style>
-</head>
-<body>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">Tennis Coach Privé · Côte d'Azur</div>
-  <h1 class="hero-name">Massimo<br><em>Bet</em></h1>
-  <div class="hero-divider"></div>
-  <p class="hero-title">Cours privés à domicile pour toute la famille</p>
-  <p class="hero-sub">Nice · Antibes · Cannes · Monaco · Cap Ferrat</p>
-  <div class="hero-langs">
-    <div class="lang-flag"><span>🇫🇷</span>Français</div>
-    <div class="lang-flag"><span>🇬🇧</span>English</div>
-    <div class="lang-flag"><span>🇮🇹</span>Italiano</div>
-  </div>
-  <div class="hero-cta">
-    <a href="#contact" class="btn-primary">Réserver une séance</a>
-  </div>
-  <div class="scroll-hint">
-    <div class="scroll-line"></div>
-    Découvrir
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section style="padding: 100px 24px;">
-  <div class="section" style="padding: 0;">
-    <div class="reveal">
-      <p class="section-label">À propos</p>
-      <h2 class="section-title">Coach certifié,<br><em>9 ans d'expérience</em></h2>
-    </div>
-    <div class="about-grid reveal">
-      <div class="about-text">
-        <p>Je suis Massimo Bettini, coach de tennis certifié FITP (2ᵉ niveau, diplôme reconnu en France), basé à Nice. Pendant près de 10 ans, j'ai enseigné au Tennis Palladio 98 de Vicence — l'un des clubs les plus reconnus d'Italie — auprès d'enfants, adolescents, adultes et seniors.</p>
-        <p>J'ai également participé à l'organisation opérationnelle de plusieurs éditions de tournois ATP, ce qui m'a permis de développer une exigence et une rigueur professionnelle rares.</p>
-        <p>Multilingue et habitué aux environnements internationaux, je me déplace directement chez vous, sur votre court privé, pour des leçons adaptées à chaque joueur et à chaque famille.</p>
-      </div>
-      <div class="stats-grid">
-        <div class="stat-box">
-          <div class="stat-number">9</div>
-          <div class="stat-label">Ans d'expérience</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">3</div>
-          <div class="stat-label">Langues parlées</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">ATP</div>
-          <div class="stat-label">Expérience tournois</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-number">🏠</div>
-          <div class="stat-label">À domicile partout sur la Côte</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<div class="services-section">
-  <div class="services-inner">
-    <div class="reveal">
-      <p class="section-label">Services</p>
-      <h2 class="section-title">Ce que je propose</h2>
-    </div>
-    <div class="services-grid reveal">
-      <div class="service-card">
-        <span class="service-icon">👧</span>
-        <div class="service-title">Enfants & Adolescents</div>
-        <p class="service-desc">Initiation et progression technique dans un cadre bienveillant et structuré. Approche pédagogique adaptée à chaque âge et niveau.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🎾</span>
-        <div class="service-title">Adultes & Débutants</div>
-        <p class="service-desc">Cours individuels pour découvrir ou reprendre le tennis. Programme personnalisé selon vos objectifs, votre rythme et vos disponibilités.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">👴</span>
-        <div class="service-title">Seniors</div>
-        <p class="service-desc">Leçons adaptées pour rester actif et progresser à tout âge. Accent sur la technique, la mobilité et le plaisir du jeu.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🏡</span>
-        <div class="service-title">Cours à domicile</div>
-        <p class="service-desc">Je me déplace directement sur votre court privé, où et quand vous le souhaitez. Flexibilité totale d'horaires.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">👨‍👩‍👧</span>
-        <div class="service-title">Sessions en famille</div>
-        <p class="service-desc">Une seule personne de confiance pour toute la famille — enfants, parents, grands-parents. Idéal pour les résidences privées.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">📋</span>
-        <div class="service-title">Programme personnalisé</div>
-        <p class="service-desc">Élaboration d'un programme d'entraînement sur mesure, avec suivi de la progression et ajustement continu des objectifs.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CREDENTIALS -->
-<div class="creds-section">
-  <div class="reveal">
-    <p class="section-label">Qualifications</p>
-    <h2 class="section-title">Expertise &<br><em>Certifications</em></h2>
-  </div>
-  <div class="creds-row reveal">
-    <div class="cred-item">
-      <div class="cred-icon">🏅</div>
-      <div class="cred-title">FITP 2ᵉ niveau</div>
-      <div class="cred-text">Diplôme de la Fédération Italienne de Tennis et Padel, reconnu en France. Formation complète en technique, tactique et pédagogie.</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">🏆</div>
-      <div class="cred-title">Expérience ATP</div>
-      <div class="cred-text">Coordination opérationnelle de tournois professionnels ATP au Tennis Palladio 98 de Vicence (éditions 2023, 2024, 2025).</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">📍</div>
-      <div class="cred-title">Basé à Nice</div>
-      <div class="cred-text">Disponible sur toute la Côte d'Azur : Nice, Antibes, Cannes, Cagnes-sur-Mer, Monaco, Cap Ferrat et environs.</div>
-    </div>
-    <div class="cred-item">
-      <div class="cred-icon">⭐</div>
-      <div class="cred-title">Pédagogie & Suivi</div>
-      <div class="cred-text">Approche positive et structurée, axée sur la progression technique, la motivation et l'ambiance d'entraînement.</div>
-    </div>
-  </div>
-</div>
-
-<!-- LANGUAGES STRIP -->
-<div class="langs-strip reveal">
-  <div class="lang-item">
-    <span>🇫🇷</span>
-    <div>
-      <div>Français</div>
-      <div class="lang-level">B2 · Perfectionnement</div>
-    </div>
-  </div>
-  <div class="lang-item">
-    <span>🇬🇧</span>
-    <div>
-      <div>English</div>
-      <div class="lang-level">C1 · Fluent</div>
-    </div>
-  </div>
-  <div class="lang-item">
-    <span>🇮🇹</span>
-    <div>
-      <div>Italiano</div>
-      <div class="lang-level">C2 · Madrelingua</div>
-    </div>
-  </div>
-</div>
-
-
-<!-- RESIDENTS & TOURISTS -->
-<section style="padding: 80px 24px;">
-  <div style="max-width: 1100px; margin: 0 auto;">
-
-    <div class="reveal" style="text-align:center; margin-bottom: 60px;">
-      <p class="section-label">Pour qui ?</p>
-      <h2 class="section-title">Résidents &amp; <em>Visiteurs</em></h2>
-    </div>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px;" class="reveal">
-
-      <!-- RESIDENTS -->
-      <div style="background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); padding: 48px 40px;">
-        <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px;">Résidents</div>
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Progressez<br><em style="color: #C9A84C;">toute l'année</em></h3>
-        <p style="font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(248,244,238,0.7); margin-bottom: 32px;">Vous vivez sur la Côte d'Azur et souhaitez pratiquer le tennis régulièrement ? Je propose des leçons continues avec suivi personnalisé, adaptées à votre emploi du temps et à vos objectifs à long terme.</p>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">📅 &nbsp;Leçons hebdomadaires fixes</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">📈 &nbsp;Suivi de progression personnalisé</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">👨‍👩‍👧 &nbsp;Cours individuels ou en famille</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0;">💳 &nbsp;Packs mensuels à tarif préférentiel</li>
-        </ul>
-      </div>
-
-      <!-- TOURISTS -->
-      <div style="background: rgba(21,34,64,0.6); border: 1px solid rgba(201,168,76,0.12); padding: 48px 40px;">
-        <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px;">Visiteurs · Tourists</div>
-        <h3 style="font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Enjoy tennis<br><em style="color: #C9A84C;">on the Riviera</em></h3>
-        <p style="font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(248,244,238,0.7); margin-bottom: 32px;">En vacances ou en séjour sur la Riviera ? Profitez d'une ou plusieurs leçons privées sur votre court, à votre rythme. Disponible à la journée ou à la semaine, en français, anglais ou italien.</p>
-        <ul style="list-style: none; padding: 0; margin: 0;">
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">🎾 &nbsp;Single lessons or weekly packages</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">🏡 &nbsp;At your villa or hotel court</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">👨‍👩‍👧 &nbsp;Family sessions available</li>
-          <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0;">🇫🇷 🇬🇧 🇮🇹 &nbsp;Français · English · Italiano</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact-section" id="contact">
-  <div class="contact-inner reveal">
-    <p class="section-label">Contact</p>
-    <p class="contact-intro">Réservez votre première séance</p>
-    <p class="contact-sub">
-      Disponible matin et après-midi · 7 jours sur 7<br>
-      Réponse garantie sous 24h · Première séance de découverte offerte sur demande
-    </p>
-    <div class="contact-options">
-      <a href="https://wa.me/VOTRE_NUMERO" class="contact-btn primary">
-        📱 WhatsApp
-      </a>
-      <a href="/cdn-cgi/l/email-protection#7c2a33282e392339313d3530" class="contact-btn">
-        ✉️ Email
-      </a>
-    </div>
-    <p class="contact-zone">Nice · Antibes · Cannes · Monaco · Cap Ferrat · Beaulieu · Eze · Menton</p>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <strong>Massimo Tennis Riviera</strong> · Massimo Bettini · Coach de tennis privé · Côte d'Azur<br>
-  <span style="margin-top:8px;display:block;">FITP Certified · French Recognition in Progress</span>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer
+TENNIS COACH PRIVÉ · CÔTE D'AZUR
+Massimo Bettini
+
+Cours privés à domicile pour toute la famille
+NICE · ANTIBES · CANNES · MONACO · CAP FERRAT
+🇫🇷
+FRANÇAIS
+🇬🇧
+ENGLISH
+🇮🇹
+ITALIANO
+RÉSERVER UNE SÉANCE 
+
+DÉCOUVRIR
+À PROPOS
+Coach certifié, 9 ans d'expérience
+Je suis Massimo Bettini, coach de tennis certifié FITP (2ᵉ niveau, diplôme reconnu en France), basé à Nice. Pendant près de 10 ans, j'ai enseigné au Tennis Palladio 98 de Vicence — l'un des clubs les plus reconnus d'Italie — auprès d'enfants, adolescents, adultes et seniors.
+J'ai également participé à l'organisation opérationnelle de plusieurs éditions de tournois ATP, ce qui m'a permis de développer une exigence et une rigueur professionnelle rares.
+Multilingue et habitué aux environnements internationaux, je me déplace directement chez vous, sur votre court privé, pour des leçons adaptées à chaque joueur et à chaque famille.
+9
+ANS D'EXPÉRIENCE
+3
+LANGUES PARLÉES
+ATP
+EXPÉRIENCE TOURNOIS
+🏠
+À DOMICILE PARTOUT SUR LA CÔTE
+SERVICES
+Ce que je propose
+👧
+Enfants & Adolescents
+Initiation et progression technique dans un cadre bienveillant et structuré. Approche pédagogique adaptée à chaque âge et niveau.
+🎾
+Adultes & Débutants
+Cours individuels pour découvrir ou reprendre le tennis. Programme personnalisé selon vos objectifs, votre rythme et vos disponibilités.
+👴
+Seniors
+Leçons adaptées pour rester actif et progresser à tout âge. Accent sur la technique, la mobilité et le plaisir du jeu.
+🏡
+Cours à domicile
+Je me déplace directement sur votre court privé, où et quand vous le souhaitez. Flexibilité totale d'horaires.
+👨‍👩‍👧
+Sessions en famille
+Une seule personne de confiance pour toute la famille — enfants, parents, grands-parents. Idéal pour les résidences privées.
+📋
+Programme personnalisé
+Élaboration d'un programme d'entraînement sur mesure, avec suivi de la progression et ajustement continu des objectifs.
+QUALIFICATIONS
+Expertise & Certifications
+🏅
+FITP 2ᵉ niveau
+Diplôme de la Fédération Italienne de Tennis et Padel, reconnu en France. Formation complète en technique, tactique et pédagogie.
+🏆
+Expérience ATP
+Coordination opérationnelle de tournois professionnels ATP au Tennis Palladio 98 de Vicence (éditions 2023, 2024, 2025).
+📍
+Basé à Nice
+Disponible sur toute la Côte d'Azur : Nice, Antibes, Cannes, Cagnes-sur-Mer, Monaco, Cap Ferrat et environs.
+⭐
+Pédagogie & Suivi
+Approche positive et structurée, axée sur la progression technique, la motivation et l'ambiance d'entraînement.
+🇫🇷
+FRANÇAIS
+B2 · PERFECTIONNEMENT
+🇬🇧
+ENGLISH
+C1 · FLUENT
+🇮🇹
+ITALIANO
+C2 · MADRELINGUA
+POUR QUI ?
+Résidents & Visiteurs
+RÉSIDENTS
+Progressez toute l'année
+Vous vivez sur la Côte d'Azur et souhaitez pratiquer le tennis régulièrement ? Je propose des leçons continues avec suivi personnalisé, adaptées à votre emploi du temps et à vos objectifs à long terme.
+		📅  Leçons hebdomadaires fixes
+		📈  Suivi de progression personnalisé
+		👨‍👩‍👧  Cours individuels ou en famille
+		💳  Packs mensuels à tarif préférentiel
+VISITEURS · TOURISTS
+Enjoy tennis on the Riviera
+En vacances ou en séjour sur la Riviera ? Profitez d'une ou plusieurs leçons privées sur votre court, à votre rythme. Disponible à la journée ou à la semaine, en français, anglais ou italien.
+		🎾  Single lessons or weekly packages
+		🏡  At your villa or hotel court
+		👨‍👩‍👧  Family sessions available
+		🇫🇷 🇬🇧 🇮🇹  Français · English · Italiano
+CONTACT
+Réservez votre première séance
+Disponible matin et après-midi · 7 jours sur 7 Réponse garantie sous 24h · Première séance de découverte offerte sur demande 
+📱 WHATSAPP ✉️ EMAIL
+NICE · ANTIBES · CANNES · MONACO · CAP FERRAT · BEAULIEU · EZE · MENTON
+MASSIMO TENNIS RIVIERA · MASSIMO BETTINI · COACH DE TENNIS PRIVÉ · CÔTE D'AZUR
+FITP CERTIFIED · FRENCH RECOGNITION IN PROGRESS
