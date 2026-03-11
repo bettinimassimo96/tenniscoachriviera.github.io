@@ -53,7 +53,13 @@
   "priceRange": "€€€"
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Font fallbacks in case Google Fonts fails to load */
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+</style>
 <style>
   :root {
     --gold: #C9A84C;
@@ -70,7 +76,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     background: var(--navy);
     color: var(--cream);
     overflow-x: hidden;
@@ -79,6 +85,7 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,7 +110,7 @@
   }
 
   .hero-badge {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 4px;
@@ -116,7 +123,7 @@
   }
 
   .hero-name {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(52px, 9vw, 110px);
     font-weight: 300;
     letter-spacing: -1px;
@@ -139,7 +146,7 @@
   }
 
   .hero-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(18px, 3vw, 28px);
     font-weight: 300;
     font-style: italic;
@@ -223,8 +230,9 @@
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: rgba(138,155,181,0.5);
+    color: rgba(138,155,181,0.6);
     animation: fadeUp 1s ease 1s both;
+    z-index: 10;
   }
 
   .scroll-line {
@@ -251,7 +259,7 @@
   }
 
   .section-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(36px, 5vw, 60px);
     font-weight: 300;
     line-height: 1.1;
@@ -297,7 +305,7 @@
   }
 
   .stat-number {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 52px;
     font-weight: 300;
     color: var(--gold);
@@ -361,7 +369,7 @@
   }
 
   .service-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 22px;
     font-weight: 400;
     color: var(--white);
@@ -403,7 +411,7 @@
   .cred-icon { font-size: 22px; }
 
   .cred-title {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: 18px;
     font-weight: 400;
     color: var(--gold-light);
@@ -428,7 +436,7 @@
   .contact-inner { max-width: 700px; margin: 0 auto; }
 
   .contact-intro {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     font-size: clamp(28px, 4vw, 48px);
     font-weight: 300;
     font-style: italic;
@@ -555,6 +563,14 @@
   .reveal.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /* Fallback: show all content if JS fails */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 
   /* ── RESPONSIVE ── */
@@ -737,7 +753,7 @@
       <!-- RESIDENTS -->
       <div style="background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.2); padding: 48px 40px;">
         <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px;">Résidents</div>
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Progressez<br><em style="color: #C9A84C;">toute l'année</em></h3>
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Progressez<br><em style="color: #C9A84C;">toute l'année</em></h3>
         <p style="font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(248,244,238,0.7); margin-bottom: 32px;">Vous vivez sur la Côte d'Azur et souhaitez pratiquer le tennis régulièrement ? Je propose des leçons continues avec suivi personnalisé, adaptées à votre emploi du temps et à vos objectifs à long terme.</p>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">📅 &nbsp;Leçons hebdomadaires fixes</li>
@@ -750,7 +766,7 @@
       <!-- TOURISTS -->
       <div style="background: rgba(21,34,64,0.6); border: 1px solid rgba(201,168,76,0.12); padding: 48px 40px;">
         <div style="font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #C9A84C; margin-bottom: 20px;">Visiteurs · Tourists</div>
-        <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Enjoy tennis<br><em style="color: #C9A84C;">on the Riviera</em></h3>
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-size: 28px; font-weight: 300; color: #fff; margin-bottom: 20px; line-height: 1.2;">Enjoy tennis<br><em style="color: #C9A84C;">on the Riviera</em></h3>
         <p style="font-size: 14px; font-weight: 300; line-height: 1.9; color: rgba(248,244,238,0.7); margin-bottom: 32px;">En vacances ou en séjour sur la Riviera ? Profitez d'une ou plusieurs leçons privées sur votre court, à votre rythme. Disponible à la journée ou à la semaine, en français, anglais ou italien.</p>
         <ul style="list-style: none; padding: 0; margin: 0;">
           <li style="font-size: 13px; color: rgba(248,244,238,0.6); padding: 8px 0; border-bottom: 1px solid rgba(201,168,76,0.1);">🎾 &nbsp;Single lessons or weekly packages</li>
