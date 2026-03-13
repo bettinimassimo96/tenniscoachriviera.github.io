@@ -1272,18 +1272,4 @@ window.addEventListener('load', function() {
       });
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     
-    els.forEach(function(el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
-        el.classList.add('visible');
-      } else {
-        obs.observe(el);
-      }
-    });
-  } else {
-    els.forEach(function(el) { el.classList.add('visible'); });
-  }
-});
-</script>
-</body>
-</html>
+  
