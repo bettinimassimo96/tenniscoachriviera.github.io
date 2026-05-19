@@ -867,8 +867,6 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .testi-grid { grid-template-columns: 1fr !important; }
-  .hotel-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
   .hero-content, .cred-bar { padding-left: 32px; padding-right: 32px; }
   .about-section, .villa-section, .tourist-section, .services-section, .quals-section, .cta-section { padding: 80px 32px; }
   .about-grid, .villa-grid, .quals-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -1063,13 +1061,13 @@ footer {
       </div>
       <div class="service-card reveal reveal-delay-1">
         <div class="service-number">05</div>
-        <div class="service-title">Pack résidents</div>
-        <p class="service-desc">Abonnement mensuel pour les résidents de la Côte d'Azur. 4, 8 ou 12 leçons par mois avec suivi personnalisé et tarif préférentiel.</p>
+        <div class="service-title">Pack 10 leçons</div>
+        <p class="service-desc">Réservez un bloc de 10 heures et bénéficiez d'un tarif réduit. Idéal pour les résidents qui souhaitent progresser sur la durée, à leur rythme.</p>
       </div>
       <div class="service-card reveal reveal-delay-2">
         <div class="service-number">06</div>
-        <div class="service-title">Pack vacances</div>
-        <p class="service-desc">Formule à la semaine pour touristes et vacanciers. Intensif ou détendu selon vos envies, disponible à tout moment de la saison.</p>
+        <div class="service-title">Cours à deux ou trois</div>
+        <p class="service-desc">Partagez la leçon à deux ou trois joueurs de niveau similaire — tarif par personne réduit, ambiance conviviale. Idéal en couple ou entre amis.</p>
       </div>
     </div>
   </div>
@@ -1121,136 +1119,8 @@ footer {
 </section>
 
 
-<!-- ══ HOTELS & CONCIERGES ══ -->
-<section style="padding: 120px 60px; background: linear-gradient(180deg, var(--navy-mid) 0%, var(--navy) 100%); border-top: 1px solid rgba(184,151,58,0.1);" id="hotels" aria-label="Service pour hôtels 5 étoiles et concierges Côte d'Azur">
-  <div style="max-width: 1200px; margin: 0 auto;">
-
-    <div class="reveal">
-      <p class="section-eyebrow">Hôtels &amp; Concierges</p>
-      <h2 class="section-title" style="max-width:620px;">Un service tennis<br><em>digne de vos clients</em></h2>
-    </div>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:60px;" class="hotel-grid">
-
-      <!-- Left: text -->
-      <div class="reveal">
-        <p style="font-size:15px; font-weight:300; line-height:1.9; color:rgba(232,224,212,0.7); margin-bottom:28px;">Je travaille en collaboration avec les concierges des grands hôtels de la Côte d'Azur pour offrir à leurs clients une expérience de tennis privée et personnalisée — sur le court de l'établissement ou en villa.</p>
-        <p style="font-size:15px; font-weight:300; line-height:1.9; color:rgba(232,224,212,0.7); margin-bottom:40px;">Habitué aux environnements internationaux et à une clientèle exigeante, j'apporte ponctualité, discrétion et un niveau de service adapté aux standards des établissements 5 étoiles.</p>
-
-        <!-- Trust points -->
-        <div style="display:flex; flex-direction:column; gap:0;">
-          <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid rgba(184,151,58,0.1); align-items:flex-start;">
-            <span style="font-size:20px; flex-shrink:0;"><i class="fa-solid fa-handshake" style="color:var(--gold);"></i></span>
-            <div>
-              <div style="font-family:'Playfair Display',serif; font-size:16px; color:var(--white); margin-bottom:6px;">Coordination directe avec le concierge</div>
-              <p style="font-size:13px; font-weight:300; line-height:1.7; color:var(--text-muted);">Disponible pour établir un accord de partenariat avec votre équipe. Réservations simples et rapides, confirmation sous 2 heures.</p>
-            </div>
-          </div>
-          <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid rgba(184,151,58,0.1); align-items:flex-start;">
-            <span style="font-size:20px; flex-shrink:0;"><i class="fa-solid fa-star" style="color:var(--gold);"></i></span>
-            <div>
-              <div style="font-family:'Playfair Display',serif; font-size:16px; color:var(--white); margin-bottom:6px;">Standard hôtellerie de luxe</div>
-              <p style="font-size:13px; font-weight:300; line-height:1.7; color:var(--text-muted);">Ponctualité, tenue professionnelle, discrétion absolue. Une présence qui valorise l'image de votre établissement.</p>
-            </div>
-          </div>
-          <div style="display:flex; gap:20px; padding:20px 0; border-bottom:1px solid rgba(184,151,58,0.1); align-items:flex-start;">
-            <span style="font-size:20px; flex-shrink:0;"><i class="fa-solid fa-earth-europe" style="color:var(--gold);"></i></span>
-            <div>
-              <div style="font-family:'Playfair Display',serif; font-size:16px; color:var(--white); margin-bottom:6px;">Service multilingue pour vos clients internationaux</div>
-              <p style="font-size:13px; font-weight:300; line-height:1.7; color:var(--text-muted);">Cours dispensés en français, anglais ou italien. Vos clients sont entre de bonnes mains quelle que soit leur nationalité.</p>
-            </div>
-          </div>
-          <div style="display:flex; gap:20px; padding:20px 0; align-items:flex-start;">
-            <span style="font-size:20px; flex-shrink:0;"><i class="fa-solid fa-baseball" style="color:var(--gold);"></i></span>
-            <div>
-              <div style="font-family:'Playfair Display',serif; font-size:16px; color:var(--white); margin-bottom:6px;">Sur le court de l'établissement ou en villa</div>
-              <p style="font-size:13px; font-weight:300; line-height:1.7; color:var(--text-muted);">Je m'adapte à votre infrastructure. Court de l'hôtel, résidence privée de votre client ou villa louée — aucun problème.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right: CTA card -->
-      <div class="reveal reveal-delay-1">
-        <div style="background:rgba(184,151,58,0.06); border:1px solid rgba(184,151,58,0.25); padding:52px 44px;">
-          <p style="font-size:9px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:20px;">Pour les concierges</p>
-          <h3 style="font-family:'Playfair Display',serif; font-size:26px; font-weight:400; color:var(--white); margin-bottom:20px; line-height:1.3;">Offrez le tennis privé<br><em style="color:var(--gold-light);">à vos clients</em></h3>
-          <p style="font-size:14px; font-weight:300; line-height:1.8; color:rgba(232,224,212,0.65); margin-bottom:36px;">Je suis disponible pour vous rencontrer, vous présenter mon parcours et établir une collaboration sur mesure avec votre établissement.</p>
-
-          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:36px;">
-            <div style="font-size:12px; font-weight:400; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--gold);">✓</span> Leçons individuelles ou en famille
-            </div>
-            <div style="font-size:12px; font-weight:400; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--gold);">✓</span> Disponible à la demande · 7j/7
-            </div>
-            <div style="font-size:12px; font-weight:400; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--gold);">✓</span> Facturation simple et professionnelle
-            </div>
-            <div style="font-size:12px; font-weight:400; color:var(--text-muted); display:flex; align-items:center; gap:10px;">
-              <span style="color:var(--gold);">✓</span> Références disponibles sur demande
-            </div>
-          </div>
-
-          <a href="https://wa.me/330636047722" class="btn-gold" style="width:100%; justify-content:center; display:flex;">
-            Contacter Massimo
-          </a>
-          <div style="text-align:center; margin-top:16px;">
-            <a href="mailto:massimo@tenniscoachriviera.com" style="font-size:11px; color:var(--text-muted); text-decoration:none; letter-spacing:1px;">massimo@tenniscoachriviera.com</a>
-          </div>
-        </div>
-
-        <!-- Zone hotels -->
-        <div style="margin-top:24px; padding:24px; border:1px solid rgba(184,151,58,0.1);">
-          <p style="font-size:9px; font-weight:500; letter-spacing:3px; text-transform:uppercase; color:var(--text-muted); margin-bottom:14px;">Zone d'intervention</p>
-          <p style="font-size:12px; font-weight:300; line-height:1.9; color:var(--text-muted);">Nice · Monaco · Antibes · Cannes · Cap Ferrat · Beaulieu · Èze · Menton · Valbonne · Mougins</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
-<!-- ══ TESTIMONIALS ══ -->
-<section style="padding: 120px 60px; background: var(--navy-mid); border-top: 1px solid rgba(184,151,58,0.1);" aria-label="Témoignages clients">
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <div class="reveal">
-      <p class="section-eyebrow">Témoignages</p>
-      <h2 class="section-title">Ce que disent<br><em>mes clients</em></h2>
-    </div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:60px;" class="testi-grid">
-
-      <div class="reveal" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
-        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
-        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">Massimo a transformé la façon dont mes enfants voient le tennis. En deux semaines, ils ont fait plus de progrès qu'en une année entière de cours collectifs.</p>
-        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
-          <div style="font-size:13px; font-weight:500; color:var(--white);">Sophie L.</div>
-          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Résidente · Cap Ferrat</div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-1" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
-        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
-        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">We were on holiday in Antibes for two weeks and booked Massimo every morning. Professional, punctual, and genuinely talented. Our whole family loved it.</p>
-        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
-          <div style="font-size:13px; font-weight:500; color:var(--white);">James & Claire T.</div>
-          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Guests · Antibes</div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-2" style="background:rgba(255,255,255,0.02); border:1px solid rgba(184,151,58,0.1); padding:44px 36px;">
-        <div style="font-size:24px; color:var(--gold); margin-bottom:24px; letter-spacing:4px;">❝</div>
-        <p style="font-family:'Playfair Display',serif; font-size:16px; font-weight:400; font-style:italic; line-height:1.8; color:rgba(232,224,212,0.85); margin-bottom:32px;">Massimo è venuto direttamente sulla nostra villa a Mougins ogni mattina. Discrezione totale, livello altissimo. Lo consiglio senza riserve a chiunque cerchi un coach privato sulla Riviera.</p>
-        <div style="border-top:1px solid rgba(184,151,58,0.15); padding-top:20px;">
-          <div style="font-size:13px; font-weight:500; color:var(--white);">Marco R.</div>
-          <div style="font-size:11px; color:var(--text-muted); letter-spacing:1px; margin-top:4px;">Ospite · Mougins</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- ══ CTA FINAL ══ -->
 <section class="cta-section" id="contact" aria-label="Réserver une leçon de tennis privée">
