@@ -22,13 +22,13 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-<!-- ✅ HREFLANG multilingue (predisposto per /en/ e /it/ future) -->
+<!-- ✅ HREFLANG multilingue -->
 <link rel="alternate" hreflang="fr" href="https://tenniscoachriviera.com/">
 <link rel="alternate" hreflang="en" href="https://tenniscoachriviera.com/en/">
 <link rel="alternate" hreflang="it" href="https://tenniscoachriviera.com/it/">
 <link rel="alternate" hreflang="x-default" href="https://tenniscoachriviera.com/">
 
-<!-- ✅ OPEN GRAPH: title ottimizzato + "10 ans" corretto -->
+<!-- ✅ OPEN GRAPH -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tenniscoachriviera.com/">
 <meta property="og:title" content="Coach Tennis Privé Nice, Antibes, Monaco | Massimo Bettini">
@@ -44,7 +44,7 @@
 <meta name="twitter:title" content="Coach Tennis Privé Nice, Antibes, Monaco | Massimo Bettini">
 <meta name="twitter:description" content="Cours particuliers de tennis à domicile sur la Côte d'Azur. Certifié FITP, 10 ans d'expérience. Disponible 7j/7.">
 
-<!-- ✅ SCHEMA.ORG: aggiunto @id, immagine corretta, Person separato -->
+<!-- ✅ SCHEMA.ORG — PATCH 1: Biot aggiunto in areaServed -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -97,6 +97,7 @@
     {"@type": "City", "name": "Èze"},
     {"@type": "City", "name": "Menton"},
     {"@type": "City", "name": "Valbonne"},
+    {"@type": "City", "name": "Biot"},
     {"@type": "City", "name": "Mougins"}
   ],
   "serviceType": [
@@ -121,7 +122,6 @@
   }
 }
 </script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -142,730 +142,104 @@
   --text-muted: #7A8FA8;
   --white: #FFFFFF;
 }
-
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--navy);
-  color: var(--text);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── NOISE TEXTURE OVERLAY ── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0.4;
-}
-
-/* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0 0 80px;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: url('hero.jpg') center 40% / cover no-repeat;
-  transform: scale(1.05);
-  animation: heroZoom 12s ease-out forwards;
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1.05); }
-  to   { transform: scale(1.0); }
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to top, rgba(12,26,46,0.98) 0%, rgba(12,26,46,0.7) 40%, rgba(12,26,46,0.3) 70%, rgba(12,26,46,0.15) 100%),
-    linear-gradient(to right, rgba(12,26,46,0.4) 0%, transparent 60%);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 60px;
-  width: 100%;
-}
-
-.hero-eyebrow {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.3s forwards;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(56px, 8vw, 120px);
-  font-weight: 400;
-  line-height: 0.9;
-  color: var(--white);
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.5s forwards;
-  margin-bottom: 8px;
-}
-
-.hero-name-last {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(56px, 8vw, 120px);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 0.9;
-  color: var(--gold-light);
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.65s forwards;
-  margin-bottom: 40px;
-}
-
-.hero-tagline {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(16px, 2vw, 22px);
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(232,224,212,0.8);
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 0.8s forwards;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp 0.9s ease 1s forwards;
-}
-
-.btn-gold {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--navy);
-  background: var(--gold);
-  padding: 18px 44px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-gold::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.2);
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-}
-
+body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
+.hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 0 80px; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: url('hero.jpg') center 40% / cover no-repeat; transform: scale(1.05); animation: heroZoom 12s ease-out forwards; }
+@keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.0); } }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(12,26,46,0.98) 0%, rgba(12,26,46,0.7) 40%, rgba(12,26,46,0.3) 70%, rgba(12,26,46,0.15) 100%), linear-gradient(to right, rgba(12,26,46,0.4) 0%, transparent 60%); }
+.hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 60px; width: 100%; }
+.hero-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease 0.3s forwards; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(56px, 8vw, 120px); font-weight: 400; line-height: 0.9; color: var(--white); opacity: 0; animation: fadeUp 0.9s ease 0.5s forwards; margin-bottom: 8px; }
+.hero-tagline { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2vw, 22px); font-weight: 400; font-style: italic; color: rgba(232,224,212,0.8); margin-bottom: 48px; opacity: 0; animation: fadeUp 0.9s ease 0.8s forwards; }
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.9s ease 1s forwards; }
+.btn-gold { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 18px 44px; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; }
+.btn-gold::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.2); transform: translateX(-100%); transition: transform 0.3s ease; }
 .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(184,151,58,0.35); }
 .btn-gold:hover::after { transform: translateX(0); }
-
-.btn-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold-pale);
-  border: 1px solid rgba(184,151,58,0.5);
-  padding: 18px 44px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
+.btn-outline { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-pale); border: 1px solid rgba(184,151,58,0.5); padding: 18px 44px; text-decoration: none; transition: all 0.3s ease; }
 .btn-outline:hover { background: rgba(184,151,58,0.1); border-color: var(--gold); }
-
-.hero-scroll {
-  position: absolute;
-  bottom: 32px;
-  right: 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-size: 8px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  z-index: 2;
-  opacity: 0;
-  animation: fadeIn 1s ease 1.5s forwards;
-}
-
-.hero-scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(180deg, var(--gold), transparent);
-  animation: scrollPulse 2.5s ease-in-out infinite;
-}
-
-/* ── CREDENTIAL BAR ── */
-.cred-bar {
-  background: var(--navy-light);
-  border-top: 1px solid rgba(184,151,58,0.2);
-  border-bottom: 1px solid rgba(184,151,58,0.2);
-  padding: 24px 60px;
-}
-
-.cred-bar-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.cred-pill {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
-.cred-pill-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--gold);
-  line-height: 1;
-}
-
-.cred-divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(184,151,58,0.2);
-}
-
-/* ── ABOUT ── */
-.about-section {
-  padding: 120px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-}
-
-.about-photo-wrap {
-  position: relative;
-}
-
-.about-photo {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center 55%;
-  display: block;
-}
-
-.about-photo-accent {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 60%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(184,151,58,0.3);
-  z-index: -1;
-}
-
-.about-photo-badge {
-  position: absolute;
-  bottom: 24px;
-  left: -24px;
-  background: var(--gold);
-  color: var(--navy);
-  padding: 16px 20px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  line-height: 1.6;
-}
-
-.section-eyebrow {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.section-eyebrow::before {
-  content: '';
-  display: block;
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 400;
-  line-height: 1.15;
-  color: var(--white);
-  margin-bottom: 32px;
-}
-
-.section-title em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.about-text {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.9;
-  color: rgba(232,224,212,0.7);
-  margin-bottom: 20px;
-}
-
-.about-langs {
-  display: flex;
-  gap: 20px;
-  margin-top: 40px;
-  padding-top: 32px;
-  border-top: 1px solid rgba(184,151,58,0.15);
-  flex-wrap: wrap;
-}
-
-.lang-tag {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.lang-tag span { font-size: 18px; }
-
-/* ── VILLA CLIENTS ── */
-.villa-section {
-  padding: 120px 60px;
-  background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.villa-section::before {
-  content: '';
-  position: absolute;
-  top: -200px;
-  right: -200px;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,151,58,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.villa-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.villa-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-.villa-photo {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  object-position: center;
-}
-
-.villa-features {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.villa-feature {
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(184,151,58,0.1);
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: all 0.3s ease;
-}
-
+.hero-scroll { position: absolute; bottom: 32px; right: 60px; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); z-index: 2; opacity: 0; animation: fadeIn 1s ease 1.5s forwards; }
+.hero-scroll-line { width: 1px; height: 48px; background: linear-gradient(180deg, var(--gold), transparent); animation: scrollPulse 2.5s ease-in-out infinite; }
+.cred-bar { background: var(--navy-light); border-top: 1px solid rgba(184,151,58,0.2); border-bottom: 1px solid rgba(184,151,58,0.2); padding: 24px 60px; }
+.cred-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 32px; flex-wrap: wrap; }
+.cred-pill { display: flex; align-items: center; gap: 12px; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+.cred-pill-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--gold); line-height: 1; }
+.cred-divider { width: 1px; height: 32px; background: rgba(184,151,58,0.2); }
+.about-section { padding: 120px 60px; max-width: 1200px; margin: 0 auto; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.about-photo-wrap { position: relative; }
+.about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 55%; display: block; }
+.about-photo-accent { position: absolute; bottom: -20px; right: -20px; width: 60%; aspect-ratio: 1; border: 1px solid rgba(184,151,58,0.3); z-index: -1; }
+.about-photo-badge { position: absolute; bottom: 24px; left: -24px; background: var(--gold); color: var(--navy); padding: 16px 20px; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; line-height: 1.6; }
+.section-eyebrow { font-size: 9px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.section-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 4vw, 52px); font-weight: 400; line-height: 1.15; color: var(--white); margin-bottom: 32px; }
+.section-title em { font-style: italic; color: var(--gold-light); }
+.about-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(232,224,212,0.7); margin-bottom: 20px; }
+.about-langs { display: flex; gap: 20px; margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(184,151,58,0.15); flex-wrap: wrap; }
+.lang-tag { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+.villa-section { padding: 120px 60px; background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%); position: relative; overflow: hidden; }
+.villa-section::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(184,151,58,0.06) 0%, transparent 70%); pointer-events: none; }
+.villa-inner { max-width: 1200px; margin: 0 auto; }
+.villa-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px; }
+.villa-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center; }
+.villa-features { display: flex; flex-direction: column; gap: 0; }
+.villa-feature { padding: 24px 0; border-bottom: 1px solid rgba(184,151,58,0.1); display: flex; gap: 20px; align-items: flex-start; transition: all 0.3s ease; }
 .villa-feature:hover { padding-left: 8px; }
 .villa-feature:first-child { padding-top: 0; }
-
-.villa-feature-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.villa-feature-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px;
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-
-.villa-feature-text {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-/* ── TOURISTS ── */
-.tourist-section {
-  padding: 120px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.tourist-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 60px;
-}
-
-.tourist-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(184,151,58,0.1);
-  padding: 44px 36px;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-
-.tourist-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
+.villa-feature-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+.villa-feature-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+.villa-feature-text { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--text-muted); }
+.tourist-section { padding: 120px 60px; max-width: 1200px; margin: 0 auto; }
+.tourist-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+.tourist-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(184,151,58,0.1); padding: 44px 36px; position: relative; overflow: hidden; transition: all 0.4s ease; }
+.tourist-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); transform: scaleX(0); transition: transform 0.4s ease; }
 .tourist-card:hover { background: rgba(184,151,58,0.04); transform: translateY(-4px); }
 .tourist-card:hover::after { transform: scaleX(1); }
-
 .tourist-card-flag { font-size: 32px; margin-bottom: 20px; display: block; }
-
-.tourist-card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 16px;
-}
-
-.tourist-card-text {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 24px;
-}
-
-.tourist-card-detail {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-/* ── SERVICES ── */
-.services-section {
-  padding: 120px 60px;
-  background: var(--navy-mid);
-  border-top: 1px solid rgba(184,151,58,0.1);
-}
-
+.tourist-card-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--white); margin-bottom: 16px; }
+.tourist-card-text { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--text-muted); margin-bottom: 24px; }
+.tourist-card-detail { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+.services-section { padding: 120px 60px; background: var(--navy-mid); border-top: 1px solid rgba(184,151,58,0.1); }
 .services-inner { max-width: 1200px; margin: 0 auto; }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  margin-top: 60px;
-}
-
-.service-card {
-  background: rgba(12,26,46,0.8);
-  padding: 48px 36px;
-  border: 1px solid rgba(184,151,58,0.08);
-  transition: all 0.4s ease;
-  position: relative;
-}
-
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 60px; }
+.service-card { background: rgba(12,26,46,0.8); padding: 48px 36px; border: 1px solid rgba(184,151,58,0.08); transition: all 0.4s ease; position: relative; }
 .service-card:hover { background: rgba(184,151,58,0.04); border-color: rgba(184,151,58,0.25); }
-
-.service-number {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: 400;
-  color: rgba(184,151,58,0.15);
-  line-height: 1;
-  margin-bottom: 20px;
-}
-
-.service-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--white);
-  margin-bottom: 14px;
-}
-
-.service-desc {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-muted);
-}
-
-/* ── CREDENTIALS DETAIL ── */
-.quals-section {
-  padding: 120px 60px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.quals-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  margin-top: 60px;
-}
-
-.quals-photo {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  object-position: center 40%;
-}
-
+.service-number { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: rgba(184,151,58,0.15); line-height: 1; margin-bottom: 20px; }
+.service-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--white); margin-bottom: 14px; }
+.service-desc { font-size: 13px; font-weight: 300; line-height: 1.8; color: var(--text-muted); }
+.quals-section { padding: 120px 60px; max-width: 1200px; margin: 0 auto; }
+.quals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 60px; }
+.quals-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; object-position: center 40%; }
 .quals-list { display: flex; flex-direction: column; gap: 0; }
-
-.qual-item {
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(184,151,58,0.1);
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  gap: 20px;
-  align-items: start;
-}
-
+.qual-item { padding: 28px 0; border-bottom: 1px solid rgba(184,151,58,0.1); display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start; }
 .qual-icon { font-size: 24px; }
-
-.qual-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--gold-light);
-  margin-bottom: 8px;
-}
-
-.qual-text {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-
-/* ── CTA FINAL ── */
-.cta-section {
-  padding: 140px 60px;
-  text-align: center;
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,151,58,0.07) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.cta-pre {
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-
-.cta-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 20px;
-}
-
-.cta-title em {
-  font-style: italic;
-  color: var(--gold-light);
-}
-
-.cta-sub {
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--text-muted);
-  margin-bottom: 56px;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 48px;
-}
-
-.cta-zone {
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: rgba(122,143,168,0.5);
-}
-
-/* ── FOOTER ── */
-footer {
-  padding: 40px 60px;
-  border-top: 1px solid rgba(184,151,58,0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 14px;
-  color: rgba(184,151,58,0.6);
-}
-
-.footer-text {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(122,143,168,0.4);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50%       { opacity: 1; transform: scaleY(1.15); }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.qual-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--gold-light); margin-bottom: 8px; }
+.qual-text { font-size: 13px; font-weight: 300; line-height: 1.7; color: var(--text-muted); }
+.cta-section { padding: 140px 60px; text-align: center; background: linear-gradient(180deg, var(--navy) 0%, var(--navy-mid) 100%); position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; border-radius: 50%; background: radial-gradient(circle, rgba(184,151,58,0.07) 0%, transparent 70%); pointer-events: none; }
+.cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+.cta-pre { font-size: 9px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+.cta-title { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 400; line-height: 1.1; color: var(--white); margin-bottom: 20px; }
+.cta-title em { font-style: italic; color: var(--gold-light); }
+.cta-sub { font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--text-muted); margin-bottom: 56px; }
+.cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.cta-zone { font-size: 10px; font-weight: 400; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(122,143,168,0.5); }
+footer { padding: 40px 60px; border-top: 1px solid rgba(184,151,58,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-brand { font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(184,151,58,0.6); }
+.footer-text { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(122,143,168,0.4); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scrollPulse { 0%, 100% { opacity: 0.3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.15); } }
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
-
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-content, .cred-bar { padding-left: 32px; padding-right: 32px; }
   .about-section, .villa-section, .tourist-section, .services-section, .quals-section, .cta-section { padding: 80px 32px; }
@@ -903,25 +277,13 @@ footer {
 <!-- ══ CREDENTIAL BAR ══ -->
 <div class="cred-bar" role="complementary" aria-label="Qualifications">
   <div class="cred-bar-inner">
-    <div class="cred-pill">
-      <span class="cred-pill-num">10</span>
-      <span>Ans d'expérience</span>
-    </div>
+    <div class="cred-pill"><span class="cred-pill-num">10</span><span>Ans d'expérience</span></div>
     <div class="cred-divider"></div>
-    <div class="cred-pill">
-      <span class="cred-pill-num">FITP</span>
-      <span>Certifié 2ème niveau</span>
-    </div>
+    <div class="cred-pill"><span class="cred-pill-num">FITP</span><span>Certifié 2ème niveau</span></div>
     <div class="cred-divider"></div>
-    <div class="cred-pill">
-      <span class="cred-pill-num">ATP</span>
-      <span>Challenger · Organisation 2023-25</span>
-    </div>
+    <div class="cred-pill"><span class="cred-pill-num">ATP</span><span>Challenger · Organisation 2023-25</span></div>
     <div class="cred-divider"></div>
-    <div class="cred-pill">
-      <span class="cred-pill-num">3</span>
-      <span>Langues parlées</span>
-    </div>
+    <div class="cred-pill"><span class="cred-pill-num">3</span><span>Langues parlées</span></div>
   </div>
 </div>
 
@@ -930,9 +292,7 @@ footer {
   <div class="about-grid">
     <div class="reveal">
       <div class="about-photo-wrap">
-        <img src="about.jpg" 
-             alt="Massimo Bettini coach de tennis privé en action lors d'un tournoi ATP" 
-             class="about-photo">
+        <img src="about.jpg" alt="Massimo Bettini coach de tennis privé en action lors d'un tournoi ATP" class="about-photo">
         <div class="about-photo-accent"></div>
         <div class="about-photo-badge">ATP Challenger<br>Vicenza 2024</div>
       </div>
@@ -960,43 +320,27 @@ footer {
     </div>
     <div class="villa-grid">
       <div class="reveal">
-        <img src="villa.jpg" 
-             alt="Court de tennis privé villa Côte d'Azur — cours avec Massimo Bettini" 
-             class="villa-photo">
+        <img src="villa.jpg" alt="Court de tennis privé villa Côte d'Azur — cours avec Massimo Bettini" class="villa-photo">
       </div>
       <div class="villa-features reveal reveal-delay-1">
         <p style="font-size:15px; font-weight:300; line-height:1.9; color:rgba(232,224,212,0.65); margin-bottom:32px;">Vous possédez ou louez une villa avec court de tennis sur la Côte d'Azur ? Je me déplace directement chez vous pour des leçons privées sur mesure — pour vous, votre famille ou vos invités.</p>
         <div class="villa-feature">
           <span class="villa-feature-icon"><i class="fa-solid fa-house"></i></span>
-          <div>
-            <div class="villa-feature-title">À domicile, sur votre court</div>
-            <p class="villa-feature-text">Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous.</p>
-          </div>
+          <div><div class="villa-feature-title">À domicile, sur votre court</div><p class="villa-feature-text">Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous.</p></div>
         </div>
         <div class="villa-feature">
           <span class="villa-feature-icon"><i class="fa-solid fa-people-group"></i></span>
-          <div>
-            <div class="villa-feature-title">Sessions famille complète</div>
-            <p class="villa-feature-text">Un seul coach de confiance pour enfants, parents et grands-parents. Programme adapté à chaque membre de la famille.</p>
-          </div>
+          <div><div class="villa-feature-title">Sessions famille complète</div><p class="villa-feature-text">Un seul coach de confiance pour enfants, parents et grands-parents. Programme adapté à chaque membre de la famille.</p></div>
         </div>
         <div class="villa-feature">
           <span class="villa-feature-icon"><i class="fa-solid fa-calendar-check"></i></span>
-          <div>
-            <div class="villa-feature-title">Flexibilité totale d'horaires</div>
-            <p class="villa-feature-text">Disponible matin, après-midi et week-end selon votre emploi du temps. Planning personnalisé à la semaine ou au mois.</p>
-          </div>
+          <div><div class="villa-feature-title">Flexibilité totale d'horaires</div><p class="villa-feature-text">Disponible matin, après-midi et week-end selon votre emploi du temps. Planning personnalisé à la semaine ou au mois.</p></div>
         </div>
         <div class="villa-feature">
           <span class="villa-feature-icon"><i class="fa-solid fa-earth-europe"></i></span>
-          <div>
-            <div class="villa-feature-title">Service multilingue</div>
-            <p class="villa-feature-text">Cours dispensés en français, anglais ou italien selon votre préférence. Idéal pour les résidents internationaux.</p>
-          </div>
+          <div><div class="villa-feature-title">Service multilingue</div><p class="villa-feature-text">Cours dispensés en français, anglais ou italien selon votre préférence. Idéal pour les résidents internationaux.</p></div>
         </div>
-        <div style="margin-top:40px;">
-          <a href="https://wa.me/330636047722" class="btn-gold">Demander un devis</a>
-        </div>
+        <div style="margin-top:40px;"><a href="https://wa.me/330636047722" class="btn-gold">Demander un devis</a></div>
       </div>
     </div>
   </div>
@@ -1039,36 +383,12 @@ footer {
       <h2 class="section-title">Ce que propose<br><em>votre coach</em></h2>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-number">01</div>
-        <div class="service-title">Enfants &amp; Adolescents</div>
-        <p class="service-desc">Initiation et progression technique dans un cadre bienveillant. Approche pédagogique adaptée à chaque âge, du débutant au joueur confirmé.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-number">02</div>
-        <div class="service-title">Adultes &amp; Débutants</div>
-        <p class="service-desc">Cours individuels pour découvrir ou reprendre le tennis. Programme personnalisé selon vos objectifs, votre rythme et votre niveau.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-number">03</div>
-        <div class="service-title">Seniors</div>
-        <p class="service-desc">Leçons adaptées pour rester actif à tout âge. Accent sur la technique, la mobilité et le plaisir du jeu sans contrainte physique.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-number">04</div>
-        <div class="service-title">Sessions en famille</div>
-        <p class="service-desc">Un seul coach pour toute la famille. Programme multi-niveaux pour enfants, parents et grands-parents lors d'une même session.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-number">05</div>
-        <div class="service-title">Pack 10 leçons</div>
-        <p class="service-desc">Réservez un bloc de 10 heures et bénéficiez d'un tarif réduit. Idéal pour les résidents qui souhaitent progresser sur la durée, à leur rythme.</p>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-number">06</div>
-        <div class="service-title">Cours à deux ou trois</div>
-        <p class="service-desc">Partagez la leçon à deux ou trois joueurs de niveau similaire — tarif par personne réduit, ambiance conviviale. Idéal en couple ou entre amis.</p>
-      </div>
+      <div class="service-card reveal"><div class="service-number">01</div><div class="service-title">Enfants &amp; Adolescents</div><p class="service-desc">Initiation et progression technique dans un cadre bienveillant. Approche pédagogique adaptée à chaque âge, du débutant au joueur confirmé.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-number">02</div><div class="service-title">Adultes &amp; Débutants</div><p class="service-desc">Cours individuels pour découvrir ou reprendre le tennis. Programme personnalisé selon vos objectifs, votre rythme et votre niveau.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-number">03</div><div class="service-title">Seniors</div><p class="service-desc">Leçons adaptées pour rester actif à tout âge. Accent sur la technique, la mobilité et le plaisir du jeu sans contrainte physique.</p></div>
+      <div class="service-card reveal"><div class="service-number">04</div><div class="service-title">Sessions en famille</div><p class="service-desc">Un seul coach pour toute la famille. Programme multi-niveaux pour enfants, parents et grands-parents lors d'une même session.</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-number">05</div><div class="service-title">Pack 10 leçons</div><p class="service-desc">Réservez un bloc de 10 heures et bénéficiez d'un tarif réduit. Idéal pour les résidents qui souhaitent progresser sur la durée, à leur rythme.</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-number">06</div><div class="service-title">Cours à deux ou trois</div><p class="service-desc">Partagez la leçon à deux ou trois joueurs de niveau similaire — tarif par personne réduit, ambiance conviviale. Idéal en couple ou entre amis.</p></div>
     </div>
   </div>
 </section>
@@ -1081,78 +401,46 @@ footer {
   </div>
   <div class="quals-grid">
     <div class="quals-list reveal">
-      <div class="qual-item">
-        <span class="qual-icon"><i class="fa-solid fa-medal"></i></span>
-        <div>
-          <div class="qual-title">FITP 2ème niveau</div>
-          <p class="qual-text">Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive.</p>
-        </div>
-      </div>
-      <div class="qual-item">
-        <span class="qual-icon"><i class="fa-solid fa-trophy"></i></span>
-        <div>
-          <div class="qual-title">Expérience ATP Challenger</div>
-          <p class="qual-text">Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023, 2024 et 2025.</p>
-        </div>
-      </div>
-      <div class="qual-item">
-        <span class="qual-icon"><i class="fa-solid fa-court-sport"></i></span>
-        <div>
-          <div class="qual-title">Tennis Palladio 98, Vicence</div>
-          <p class="qual-text">10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux.</p>
-        </div>
-      </div>
-      <div class="qual-item">
-        <span class="qual-icon"><i class="fa-solid fa-location-dot"></i></span>
-        <div>
-          <div class="qual-title">Basé à Nice · Côte d'Azur</div>
-          <p class="qual-text">Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs.</p>
-        </div>
-      </div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-medal"></i></span><div><div class="qual-title">FITP 2ème niveau</div><p class="qual-text">Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive.</p></div></div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-trophy"></i></span><div><div class="qual-title">Expérience ATP Challenger</div><p class="qual-text">Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023, 2024 et 2025.</p></div></div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-court-sport"></i></span><div><div class="qual-title">Tennis Palladio 98, Vicence</div><p class="qual-text">10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux.</p></div></div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-location-dot"></i></span><div><div class="qual-title">Basé à Nice · Côte d'Azur</div><p class="qual-text">Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs.</p></div></div>
     </div>
     <div class="reveal reveal-delay-1">
-      <img src="action.jpg" 
-           alt="Massimo Bettini coach de tennis en action lors d'un entraînement professionnel" 
-           class="quals-photo">
+      <img src="action.jpg" alt="Massimo Bettini coach de tennis en action lors d'un entraînement professionnel" class="quals-photo">
     </div>
   </div>
 </section>
-
-
-
-
 
 <!-- ══ CTA FINAL ══ -->
 <section class="cta-section" id="contact" aria-label="Réserver une leçon de tennis privée">
   <div class="cta-inner">
     <p class="cta-pre reveal">Première séance</p>
     <h2 class="cta-title reveal reveal-delay-1">Prêt à jouer<br><em>sur la Riviera ?</em></h2>
-    <p class="cta-sub reveal reveal-delay-2">
-      Disponible 7j/7, matin et après-midi · Réponse garantie sous 24h<br>
-      Première séance de découverte offerte sur demande
-    </p>
+    <p class="cta-sub reveal reveal-delay-2">Disponible 7j/7, matin et après-midi · Réponse garantie sous 24h<br>Première séance de découverte offerte sur demande</p>
     <p class="reveal reveal-delay-2" style="font-size:11px; font-weight:400; letter-spacing:2px; color:rgba(122,143,168,0.55); text-transform:uppercase; margin-bottom:40px; margin-top:-32px;">Tarifs sur demande · Devis personnalisé</p>
     <div class="cta-buttons reveal reveal-delay-3">
       <a href="https://wa.me/330636047722" class="btn-gold"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> WhatsApp — Réserver maintenant</a>
       <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline"><i class="fa-solid fa-envelope" style="font-size:13px;"></i> Envoyer un email</a>
     </div>
-    <p class="cta-zone reveal">Nice · Monaco · Antibes · Cannes · Cap Ferrat · Mougins · Valbonne · Beaulieu · Menton</p>
+    <!-- PATCH 3: Valbonne · Biot · Mougins in primo piano -->
+    <p class="cta-zone reveal">Valbonne · Biot · Mougins · Nice · Antibes · Cannes · Monaco · Cap Ferrat · Menton</p>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
-<!-- City links for SEO -->
+<!-- ══ FOOTER — PATCH 2: Valbonne, Biot, Mougins prima + Biot aggiunto ══ -->
 <div style="background: var(--navy-mid); border-top: 1px solid rgba(184,151,58,0.08); padding: 40px 60px;">
   <div style="max-width:1200px; margin:0 auto;">
     <p style="font-size:9px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:rgba(184,151,58,0.4); margin-bottom:20px;">Zones d'intervention</p>
     <div style="display:flex; flex-wrap:wrap; gap:8px;">
+      <a href="/valbonne.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Valbonne</a>
+      <a href="/biot.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Biot</a>
+      <a href="/mougins.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Mougins</a>
       <a href="/nice.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Nice</a>
-      <a href="/monaco.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Monaco</a>
       <a href="/antibes.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Antibes</a>
       <a href="/cannes.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Cannes</a>
       <a href="/cap-ferrat.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Cap Ferrat</a>
-      <a href="/mougins.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Mougins</a>
-      <a href="/valbonne.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Valbonne</a>
+      <a href="/monaco.html" style="font-size:11px; color:rgba(122,143,168,0.6); text-decoration:none; padding:6px 14px; border:1px solid rgba(184,151,58,0.1); transition:all 0.2s;" onmouseover="this.style.color='#B8973A'; this.style.borderColor='rgba(184,151,58,0.4)'" onmouseout="this.style.color='rgba(122,143,168,0.6)'; this.style.borderColor='rgba(184,151,58,0.1)'">Monaco</a>
     </div>
   </div>
 </div>
@@ -1166,13 +454,10 @@ footer {
 <script>
 window.addEventListener('load', function() {
   var els = document.querySelectorAll('.reveal');
-
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); }
       });
     }, { threshold: 0.12 });
     els.forEach(function(el) { obs.observe(el); });
