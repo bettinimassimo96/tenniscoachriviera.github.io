@@ -280,6 +280,45 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
 </head>
 <body>
 <!-- ══ NAVBAR ══ -->
+<style>
+:root{--gold:#B8973A;--navy:#0C1A2E;--navy-mid:#142238;--text-muted:#7A8FA8;--border:rgba(184,151,58,0.15);}
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,26,46,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:64px;font-family:'DM Sans',sans-serif;}
+.site-nav-brand{text-decoration:none;display:flex;flex-direction:column;gap:1px;flex-shrink:0;}
+.brand-main{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--gold);letter-spacing:0.5px;line-height:1;}
+.brand-sub{font-size:9px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-muted);}
+.site-nav-links{display:flex;align-items:center;gap:4px;}
+.nav-link{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;padding:8px 12px;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color 0.2s;white-space:nowrap;}
+.nav-link:hover{color:var(--gold);}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);text-decoration:none;padding:9px 20px;margin-left:8px;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.88;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{display:flex;align-items:center;gap:5px;}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--navy-mid);border:1px solid rgba(184,151,58,0.2);min-width:200px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s;z-index:300;padding-top:8px;}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:11px 16px;font-size:12px;font-weight:300;color:var(--text-muted);text-decoration:none;border-bottom:1px solid rgba(184,151,58,0.08);font-family:'DM Sans',sans-serif;transition:background 0.15s,color 0.15s;}
+.nav-dropdown-item:last-child{border-bottom:none;}
+.nav-dropdown-item:hover{background:rgba(184,151,58,0.06);color:#D4B86A;}
+.nav-dropdown-lang{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(184,151,58,0.12);padding:2px 6px;flex-shrink:0;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all 0.3s;}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(max-width:900px){
+  .site-nav{padding:0 24px;}
+  .nav-burger{display:flex;}
+  .site-nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(12,26,46,0.99);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:8px 0;}
+  .site-nav-links.open{display:flex;}
+  .nav-link{padding:13px 24px;font-size:11px;}
+  .nav-cta{margin:0;padding:13px 24px;background:none;color:var(--gold);border-top:1px solid rgba(184,151,58,0.1);}
+  .nav-dropdown-menu{position:static;transform:none!important;opacity:1;visibility:visible;pointer-events:auto;border:none;background:rgba(0,0,0,0.2);display:none;padding-top:0;}
+  .nav-dropdown-menu::before{display:none;}
+  .nav-dropdown.open .nav-dropdown-menu{display:block;}
+  .nav-dropdown-btn{width:100%;justify-content:space-between;padding:13px 24px;}
+  .nav-dropdown-item{padding:11px 32px;}
+}
+</style>
 <header class="site-nav" id="site-nav">
   <a href="https://tenniscoachriviera.com/" class="site-nav-brand">
     <span class="brand-main">Tennis Coach Riviera</span>
@@ -288,7 +327,19 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
   <nav class="site-nav-links" id="nav-links">
     <a href="https://tenniscoachriviera.com/#about" class="nav-link">Coach</a>
     <a href="https://tenniscoachriviera.com/#services" class="nav-link">Services</a>
-    <a href="https://tenniscoachriviera.com/#valbonne" class="nav-link">Valbonne</a>
+    <div class="nav-dropdown">
+      <button class="nav-link nav-dropdown-btn" aria-expanded="false">Villes <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
+      <div class="nav-dropdown-menu">
+        <a href="https://tenniscoachriviera.com/nice.html" class="nav-dropdown-item">Nice</a>
+        <a href="https://tenniscoachriviera.com/antibes.html" class="nav-dropdown-item">Antibes</a>
+        <a href="https://tenniscoachriviera.com/cannes.html" class="nav-dropdown-item">Cannes</a>
+        <a href="https://tenniscoachriviera.com/monaco.html" class="nav-dropdown-item">Monaco</a>
+        <a href="https://tenniscoachriviera.com/valbonne.html" class="nav-dropdown-item">Valbonne</a>
+        <a href="https://tenniscoachriviera.com/mougins.html" class="nav-dropdown-item">Mougins</a>
+        <a href="https://tenniscoachriviera.com/biot.html" class="nav-dropdown-item">Biot</a>
+        <a href="https://tenniscoachriviera.com/cap-ferrat.html" class="nav-dropdown-item">Cap Ferrat</a>
+      </div>
+    </div>
     <div class="nav-dropdown">
       <button class="nav-link nav-dropdown-btn" aria-expanded="false">Blog <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
       <div class="nav-dropdown-menu">
@@ -299,183 +350,21 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
     <a href="https://tenniscoachriviera.com/#contact" class="nav-link">Contact</a>
     <a href="https://wa.me/330636047722" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="window.location.href=window.location.href">FR</button>
-      <button class="lang-btn" onclick="alert('English version coming soon')">EN</button>
-      <button class="lang-btn" onclick="window.location.href='/blog/blog-lezioni-tennis-nizza.html'">IT</button>
-    </div>
   </nav>
   <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
-
-
-
-
-<div class="article-hero">
-  <div class="hero-inner">
-    <p class="article-eyebrow">Guide · Cours privés · Côte d'Azur</p>
-    <h1>Coach de tennis privé<br>sur la Côte d'Azur :<br><em>ce que personne ne vous dit</em></h1>
-    <p class="article-lead">Club classique ou coach à domicile ? Avant de choisir, voici les vraies différences — du point de vue de quelqu'un qui a enseigné dans les deux contextes pendant 10 ans.</p>
-    <div class="article-meta">
-      <span><i class="fa-solid fa-user" style="color:var(--gold);"></i> Massimo Bettini</span>
-      <span><i class="fa-solid fa-calendar" style="color:var(--gold);"></i> Juillet 2025</span>
-      <span><i class="fa-solid fa-clock" style="color:var(--gold);"></i> 6 min de lecture</span>
-    </div>
-  </div>
-</div>
-
-<div class="article-body">
-
-  <div class="toc reveal">
-    <div class="toc-label">Sommaire</div>
-    <ol>
-      <li><a href="#probleme">Le problème avec les cours en club sur la Riviera</a></li>
-      <li><a href="#differences">Ce qui change vraiment avec un coach privé</a></li>
-      <li><a href="#comparatif">Ce que le cours à domicile apporte de différent</a></li>
-      <li><a href="#profil">Pour quel profil le cours privé est-il fait ?</a></li>
-      <li><a href="#choisir">Comment choisir son coach — les questions à poser</a></li>
-      <li><a href="#faq">Questions fréquentes</a></li>
-    </ol>
-  </div>
-
-  <h2 id="probleme" class="reveal">Le problème avec les cours en club <em>sur la Riviera</em></h2>
-
-  <p class="reveal">La Côte d'Azur compte des dizaines de clubs de tennis. Certains sont excellents. Mais ils ont tous un point commun : ils ne sont pas conçus pour vous, spécifiquement.</p>
-
-  <p class="reveal">Un cours collectif regroupe généralement 4 à 8 joueurs de "niveaux similaires" — ce qui en pratique signifie des profils très différents. Le coach passe de l'un à l'autre, corrige ce qui est urgent, et le créneau se termine. Vous avez joué, vous avez bougé, mais avez-vous progressé ? Souvent, pas vraiment.</p>
-
-  <p class="reveal">À cela s'ajoute, sur la Riviera, un problème de logistique réel. Pour quelqu'un dont le temps est précieux — résident international, famille en villa, professionnel en déplacement — se déplacer au club est une friction qui finit par décourager la régularité. Et sans régularité, il n'y a pas de progression.</p>
-
-  <div class="pullquote reveal">
-    <p>"La progression au tennis ne vient pas du nombre de balles frappées, mais de la qualité de l'attention reçue pendant qu'on les frappe."</p>
-  </div>
-
-  <h2 id="differences" class="reveal">Ce qui change vraiment <em>avec un coach privé</em></h2>
-
-  <h3 class="reveal">1. La progression est structurée, pas aléatoire</h3>
-  <p class="reveal">Dès la première séance, un bon coach privé établit un bilan précis : votre niveau réel, vos habitudes de jeu, vos points faibles prioritaires, vos objectifs. Il construit ensuite un plan sur plusieurs semaines. Chaque séance s'appuie sur la précédente. Vous ne répétez pas les mêmes exercices génériques à l'infini.</p>
-
-  <h3 class="reveal">2. Vous ne perdez pas de temps</h3>
-  <p class="reveal">Sur un court privé à votre villa ou résidence, la séance commence à l'heure exacte. Pas d'attente, pas de déplacement, pas de vestiaires partagés. Sur une heure de coaching, vous avez une heure de coaching — pas 40 minutes effectives après les à-côtés inévitables d'un club.</p>
-
-  <h3 class="reveal">3. L'environnement est le vôtre</h3>
-  <p class="reveal">Jouer sur son propre court, ou sur un court que l'on connaît bien, change profondément la qualité d'apprentissage. Moins de stress, plus de concentration. Une progression souvent plus rapide dès les premières séances.</p>
-
-  <h3 class="reveal">4. La famille entière peut en bénéficier</h3>
-  <p class="reveal">Un coach privé à domicile peut travailler avec les enfants, les parents et les grands-parents lors d'une même session. Chacun progresse à son niveau, avec le même professionnel qui connaît les habitudes de chacun. Un avantage considérable pour les familles résidant sur la Côte d'Azur.</p>
-
-  <h2 id="comparatif" class="reveal">Ce que le cours à domicile <em>apporte de différent</em></h2>
-
-  <p class="reveal">Le cours collectif en club et le coaching privé à domicile ne répondent pas aux mêmes besoins. L'un n'est pas meilleur que l'autre — ils sont complémentaires. Beaucoup de joueurs pratiquent les deux : le club pour la régularité et le jeu en groupe, le coaching privé pour progresser techniquement et travailler des points précis.</p>
-
-  <p class="reveal">Ce que le coaching à domicile apporte spécifiquement :</p>
-
-  <div class="highlight reveal">
-    <h3>Les avantages propres au coaching privé à domicile</h3>
-    <ul>
-      <li><strong style="color:var(--gold-light);">Attention 100% individuelle</strong> — chaque correction, chaque exercice, chaque feedback vous est entièrement dédié pendant toute la séance</li>
-      <li><strong style="color:var(--gold-light);">Programme sur mesure</strong> — pas de progression générique : un plan construit sur votre niveau, vos points faibles, vos objectifs</li>
-      <li><strong style="color:var(--gold-light);">Flexibilité totale</strong> — disponible 7j/7, matin et après-midi, selon votre emploi du temps et non l'inverse</li>
-      <li><strong style="color:var(--gold-light);">Zéro logistique</strong> — le coach vient directement sur votre court, villa, hôtel ou résidence privée</li>
-      <li><strong style="color:var(--gold-light);">Sessions en famille</strong> — enfants, parents, grands-parents dans le même créneau, avec un programme adapté à chacun</li>
-      <li><strong style="color:var(--gold-light);">Cours en 3 langues</strong> — français, anglais et italien, selon votre préférence</li>
-    </ul>
-  </div>
-
-  <h2 id="profil" class="reveal">Pour quel profil <em>le cours privé est-il fait ?</em></h2>
-
-  <div class="highlight reveal">
-    <h3>Profils qui progressent le plus vite en coaching privé</h3>
-    <ul>
-      <li>Résidents de villas avec court sur la Côte d'Azur, qui souhaitent enfin utiliser leur court correctement</li>
-      <li>Familles internationales (expats, résidents secondaires) cherchant un coach trilingue de confiance</li>
-      <li>Touristes en séjour d'une à plusieurs semaines, qui veulent profiter de leur villa ou hôtel</li>
-      <li>Adultes reprenant le tennis après une longue pause, sans vouloir recommencer "comme débutants" dans un cours collectif</li>
-      <li>Personnes dont le planning professionnel ne permet pas des créneaux fixes en club</li>
-      <li>Seniors qui veulent rester actifs sans la pression compétitive d'un groupe</li>
-    </ul>
-  </div>
-
-  <h2 id="choisir" class="reveal">Comment choisir son coach — <em>les questions à poser</em></h2>
-
-  <h3 class="reveal">Quelle est votre formation officielle ?</h3>
-  <p class="reveal">Un diplôme fédéral reconnu (FFT en France, FITP en Italie) garantit une formation complète en technique, tactique et pédagogie. Demandez toujours le niveau de certification avant de réserver.</p>
-
-  <h3 class="reveal">Avez-vous travaillé avec des joueurs de mon profil ?</h3>
-  <p class="reveal">Un coach habitué aux jeunes compétiteurs n'a pas nécessairement la pédagogie adaptée pour un adulte reprenant le tennis à 50 ans. L'expérience avec des profils variés est un vrai avantage.</p>
-
-  <h3 class="reveal">Comment structurez-vous votre enseignement ?</h3>
-  <p class="reveal">Un bon coach doit pouvoir vous décrire sa méthode en quelques phrases : bilan initial, objectifs à court terme, structuration des séances. Si la réponse est vague, c'est un signal d'alerte.</p>
-
-  <h3 class="reveal">Proposez-vous une première séance d'essai ?</h3>
-  <p class="reveal">La relation entre un élève et son coach est avant tout humaine. Une première séance permet de vérifier la compatibilité — pédagogique, de rythme, de communication — avant tout engagement.</p>
-
-  <div class="author-box reveal">
-    <div class="author-avatar">M</div>
-    <div>
-      <div class="author-name">Massimo Bettini — Coach certifié FITP 2ème niveau</div>
-      <div class="author-desc">10 ans d'enseignement au Tennis Palladio 98 (Vicence) · Coordinateur ATP Challenger 2023–25 · Basé à Nice, intervenant sur toute la Côte d'Azur</div>
-    </div>
-  </div>
-
-  <h2 id="faq" class="reveal">Questions <em>fréquentes</em></h2>
-
-  <div class="faq reveal">
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Faut-il avoir son propre court pour bénéficier d'un cours privé ?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Non. Si vous ne disposez pas d'un court privé, il est possible d'organiser les séances sur des courts de clubs ou de résidences disponibles à la location à l'heure sur la Côte d'Azur. Contactez-moi pour discuter des options selon votre localisation.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">À quelle fréquence faut-il prendre des cours pour vraiment progresser ?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Une séance par semaine est un minimum pour observer une progression régulière. Deux séances hebdomadaires permettent une évolution nettement plus rapide. Pour les vacanciers, un format intensif (3–4 séances sur une semaine) est souvent très efficace.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Intervenez-vous dans toute la Côte d'Azur ?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Oui — Nice, Antibes, Cannes, Monaco, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins, Biot et environs. Contactez-moi pour vérifier la disponibilité dans votre secteur exact.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Les cours sont-ils disponibles en anglais et en italien ?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Oui. Les cours sont disponibles en français (B2), anglais (C1) et italien (C2). Idéal pour les résidents internationaux et les touristes en séjour sur la Riviera.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">Est-il possible de réserver pour une seule séance, sans engagement ?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Absolument. Vous pouvez réserver une séance unique, sans engagement sur la durée — idéal pour tester avant de s'engager sur un pack.</div>
-    </div>
-  </div>
-
-  <div class="cta-block reveal">
-    <div class="cta-block-inner">
-      <p class="cta-pre">Première séance</p>
-      <h3>Prêt à jouer<br><em>sur votre court ?</em></h3>
-      <p>Disponible 7j/7 · Réponse sous 24h · Nice, Antibes, Cannes, Monaco et environs</p>
-      <a href="https://wa.me/330636047722" class="btn-gold"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> Réserver via WhatsApp</a>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <div class="footer-brand">Massimo Bettini · Tennis Coach Privé</div>
-  <div class="footer-text">© 2025 · <a href="https://tenniscoachriviera.com/" style="color:inherit;text-decoration:none;">tenniscoachriviera.com</a></div>
-  <div class="footer-text"><a href="https://tenniscoachriviera.com/mentions-legales.html" style="color:inherit;text-decoration:none;opacity:0.7;">Mentions Légales</a></div>
-</footer>
-
 <script>
-function toggleFaq(el){
-  const a=el.nextElementSibling,i=el.querySelector('.faq-icon'),open=a.classList.contains('open');
-  document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));
-  document.querySelectorAll('.faq-icon').forEach(x=>x.classList.remove('open'));
-  if(!open){a.classList.add('open');i.classList.add('open');}
-}
-window.addEventListener('load',function(){
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-    els.forEach(function(el){obs.observe(el);});
-  } else {els.forEach(function(el){el.classList.add('visible');});}
-});
+(function(){
+  var burger=document.getElementById('nav-burger'),links=document.getElementById('nav-links');
+  if(burger&&links){burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);});}
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var btn=dd.querySelector('.nav-dropdown-btn');
+    if(btn){btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');document.querySelectorAll('.nav-dropdown').forEach(function(o){if(o!==dd)o.classList.remove('open');});});}
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.nav-dropdown').forEach(function(dd){dd.classList.remove('open');});});
+})();
 </script>
 <script>
 (function(){
