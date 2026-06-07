@@ -27,227 +27,44 @@
 }
 </script>
 <style>
-:root{--gold:#B8973A;--gold-light:#D4B86A;--gold-pale:#F0E4C0;--navy:#0C1A2E;--navy-mid:#142238;--navy-light:#1C3050;--text:#E8E0D4;--text-muted:#7A8FA8;--white:#FFFFFF;--border:rgba(184,151,58,0.15);}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.4;}
-nav{position:sticky;top:0;z-index:200;background:rgba(12,26,46,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:20px 60px;display:flex;align-items:center;justify-content:space-between;}
-.nav-brand{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);text-decoration:none;letter-spacing:1px;}
-.nav-back{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.2s;}
-.nav-back:hover{color:var(--gold);}
-/* Italian flag stripe */
-.it-stripe{height:3px;background:linear-gradient(to right,#009246 33.3%,#fff 33.3% 66.6%,#ce2b37 66.6%);}
-.article-hero{padding:100px 60px 80px;background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 100%);position:relative;overflow:hidden;}
-.article-hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,58,0.07) 0%,transparent 70%);pointer-events:none;}
-.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.3;}
-.hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
-.article-eyebrow{font-size:9px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
-.article-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
-.article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,58px);font-weight:400;line-height:1.1;color:var(--white);margin-bottom:24px;}
-.article-hero h1 em{font-style:italic;color:var(--gold-light);}
-.article-lead{font-size:16px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.65);max-width:640px;margin-bottom:36px;}
-.article-meta{display:flex;align-items:center;gap:20px;font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);flex-wrap:wrap;}
-.article-meta span{display:flex;align-items:center;gap:6px;}
-.article-body{max-width:820px;margin:0 auto;padding:80px 60px;}
-.toc{background:rgba(255,255,255,0.03);border:1px solid var(--border);border-left:2px solid var(--gold);padding:32px 36px;margin-bottom:64px;}
-.toc-label{font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
-.toc ol{list-style:none;counter-reset:toc;display:flex;flex-direction:column;gap:10px;}
-.toc li{counter-increment:toc;display:flex;align-items:baseline;gap:10px;font-size:13px;}
-.toc li::before{content:counter(toc)".";color:var(--gold);font-weight:500;min-width:18px;font-family:'Playfair Display',serif;}
-.toc a{color:var(--text-muted);text-decoration:none;border-bottom:1px solid transparent;transition:all 0.2s;}
-.toc a:hover{color:var(--gold-light);border-color:rgba(184,151,58,0.3);}
-h2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,38px);font-weight:400;color:var(--white);line-height:1.2;margin:72px 0 24px;padding-top:16px;}
-h2 em{font-style:italic;color:var(--gold-light);}
-h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--gold-light);margin:40px 0 14px;}
-p{font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:20px;}
-.pullquote{border-left:2px solid var(--gold);padding:20px 28px;margin:40px 0;background:rgba(184,151,58,0.05);}
-.pullquote p{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:rgba(232,224,212,0.9);margin:0;line-height:1.6;}
-/* Zone grid */
-.zone-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:2px;margin:40px 0;}
-.zone-item{background:rgba(255,255,255,0.02);border:1px solid var(--border);padding:24px 20px;text-align:center;transition:background 0.2s;}
-.zone-item:hover{background:rgba(184,151,58,0.05);}
-.zone-icon{font-size:20px;margin-bottom:10px;display:block;}
-.zone-name{font-family:'Playfair Display',serif;font-size:14px;color:var(--white);margin-bottom:4px;}
-.zone-dist{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);}
-/* Errors */
-.errors{margin:40px 0;display:flex;flex-direction:column;gap:2px;}
-.error-item{display:flex;gap:20px;padding:24px 28px;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-left:2px solid rgba(180,80,80,0.5);}
-.error-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
-.error-h{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:rgba(232,180,160,0.9);margin-bottom:8px;}
-.error-p{font-size:13px;font-weight:300;color:var(--text-muted);margin:0;line-height:1.7;}
-/* Expectations */
-.expectations{margin:40px 0;}
-.expectation{display:flex;gap:24px;padding:22px 0;border-bottom:1px solid var(--border);}
-.expectation:last-child{border-bottom:none;}
-.exp-label{min-width:100px;font-size:9px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);padding-top:3px;flex-shrink:0;}
-.exp-text{font-size:13px;font-weight:300;color:var(--text-muted);line-height:1.8;}
-/* Highlight */
-.highlight{background:linear-gradient(135deg,var(--navy-light) 0%,rgba(28,48,80,0.8) 100%);border:1px solid var(--border);padding:40px;margin:40px 0;}
-.highlight h3{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold-light);margin-bottom:24px;margin-top:0;}
-.highlight ul{list-style:none;display:flex;flex-direction:column;gap:14px;}
-.highlight li{font-size:14px;font-weight:300;display:flex;align-items:flex-start;gap:12px;color:rgba(232,224,212,0.8);line-height:1.6;}
-.highlight li::before{content:'→';color:var(--gold);flex-shrink:0;margin-top:1px;}
-/* Infobox */
-.infobox{background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:28px 32px;margin:40px 0;}
-.infobox-title{font-size:10px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-.infobox p{font-size:14px;font-weight:300;color:var(--text-muted);margin:0;line-height:1.7;}
-/* Author */
-.author-box{display:flex;align-items:center;gap:20px;padding:28px 32px;background:rgba(255,255,255,0.03);border:1px solid var(--border);margin:64px 0 40px;}
-.author-avatar{width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;color:var(--navy);flex-shrink:0;}
-.author-name{font-size:14px;font-weight:500;color:var(--white);margin-bottom:4px;}
-.author-desc{font-size:12px;font-weight:300;color:var(--text-muted);line-height:1.5;}
-/* CTA */
-.cta-block{background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);border:1px solid var(--border);padding:56px 48px;text-align:center;margin-top:64px;position:relative;overflow:hidden;}
-.cta-block::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,58,0.07) 0%,transparent 70%);pointer-events:none;}
-.cta-block-inner{position:relative;z-index:1;}
-.cta-pre{font-size:9px;font-weight:500;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
-.cta-block h3{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:400;color:var(--white);margin-bottom:12px;line-height:1.2;}
-.cta-block h3 em{font-style:italic;color:var(--gold-light);}
-.cta-block p{font-size:13px;font-weight:300;color:var(--text-muted);margin-bottom:36px;line-height:1.7;}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);padding:18px 44px;text-decoration:none;transition:all 0.3s ease;position:relative;overflow:hidden;}
-.btn-gold::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,0.2);transform:translateX(-100%);transition:transform 0.3s ease;}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(184,151,58,0.35);}
-.btn-gold:hover::after{transform:translateX(0);}
-footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-brand{font-family:'Playfair Display',serif;font-size:13px;color:rgba(184,151,58,0.6);}
-.footer-text{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(122,143,168,0.4);}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.9s ease,transform 0.9s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-delay-1{transition-delay:0.1s;}.reveal-delay-2{transition-delay:0.2s;}
-@media(max-width:900px){nav,.article-hero,.article-body,footer{padding-left:24px;padding-right:24px;}.article-hero{padding-top:72px;padding-bottom:56px;}.article-body{padding-top:56px;padding-bottom:56px;}.cta-block{padding:40px 24px;}.zone-grid{grid-template-columns:repeat(3,1fr);}.expectation{flex-direction:column;gap:8px;}.exp-label{min-width:unset;}}
-/* ══ SITE NAVBAR ══ */
-.site-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: rgba(12,26,46,0.97);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(184,151,58,0.15);
-  padding: 0 60px;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 64px;
+:root{--gold:#B8973A;--navy:#0C1A2E;--navy-mid:#142238;--text-muted:#7A8FA8;--border:rgba(184,151,58,0.15);}
+.site-nav{position:sticky;top:0;z-index:200;background:rgba(12,26,46,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 60px;display:flex;align-items:center;justify-content:space-between;height:64px;font-family:'DM Sans',sans-serif;}
+.site-nav-brand{text-decoration:none;display:flex;flex-direction:column;gap:1px;flex-shrink:0;}
+.brand-main{font-family:'Playfair Display',serif;font-size:15px;font-weight:400;color:var(--gold);letter-spacing:0.5px;line-height:1;}
+.brand-sub{font-size:9px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--text-muted);}
+.site-nav-links{display:flex;align-items:center;gap:4px;}
+.nav-link{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;padding:8px 12px;border:none;background:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:color 0.2s;white-space:nowrap;}
+.nav-link:hover{color:var(--gold);}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);background:var(--gold);text-decoration:none;padding:9px 20px;margin-left:8px;transition:opacity 0.2s;}
+.nav-cta:hover{opacity:0.88;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-btn{display:flex;align-items:center;gap:5px;}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--navy-mid);border:1px solid rgba(184,151,58,0.2);min-width:200px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s;z-index:300;padding-top:8px;}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-8px;left:0;right:0;height:8px;}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;}
+.nav-dropdown-item{display:flex;align-items:center;gap:10px;padding:11px 16px;font-size:12px;font-weight:300;color:var(--text-muted);text-decoration:none;border-bottom:1px solid rgba(184,151,58,0.08);font-family:'DM Sans',sans-serif;transition:background 0.15s,color 0.15s;}
+.nav-dropdown-item:last-child{border-bottom:none;}
+.nav-dropdown-item:hover{background:rgba(184,151,58,0.06);color:#D4B86A;}
+.nav-dropdown-lang{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(184,151,58,0.12);padding:2px 6px;flex-shrink:0;}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.nav-burger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all 0.3s;}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav-burger.open span:nth-child(2){opacity:0;}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+@media(max-width:900px){
+  .site-nav{padding:0 24px;}
+  .nav-burger{display:flex;}
+  .site-nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(12,26,46,0.99);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:8px 0;}
+  .site-nav-links.open{display:flex;}
+  .nav-link{padding:13px 24px;font-size:11px;}
+  .nav-cta{margin:0;padding:13px 24px;background:none;color:var(--gold);border-top:1px solid rgba(184,151,58,0.1);}
+  .nav-dropdown-menu{position:static;transform:none!important;opacity:1;visibility:visible;pointer-events:auto;border:none;background:rgba(0,0,0,0.2);display:none;padding-top:0;}
+  .nav-dropdown-menu::before{display:none;}
+  .nav-dropdown.open .nav-dropdown-menu{display:block;}
+  .nav-dropdown-btn{width:100%;justify-content:space-between;padding:13px 24px;}
+  .nav-dropdown-item{padding:11px 32px;}
 }
-.site-nav-brand {
-  text-decoration: none;
-  display: flex; flex-direction: column; gap: 1px;
-  flex-shrink: 0;
-}
-.brand-main {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px; font-weight: 400; color: var(--gold);
-  letter-spacing: 0.5px; line-height: 1;
-}
-.brand-sub {
-  font-size: 9px; font-weight: 400; letter-spacing: 2.5px;
-  text-transform: uppercase; color: var(--text-muted);
-}
-.site-nav-links {
-  display: flex; align-items: center; gap: 4px;
-}
-.nav-link {
-  font-size: 10px; font-weight: 500; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--text-muted);
-  text-decoration: none; padding: 8px 14px;
-  border: none; background: none; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  transition: color 0.2s;
-  white-space: nowrap;
-}
-.nav-link:hover, .nav-link.active { color: var(--gold); }
-.nav-cta {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--navy);
-  background: var(--gold); text-decoration: none;
-  padding: 9px 20px; margin-left: 8px;
-  transition: opacity 0.2s, transform 0.15s;
-  white-space: nowrap;
-}
-.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
-
-/* DROPDOWN */
-.nav-dropdown { position: relative; }
-.nav-dropdown-btn { display: flex; align-items: center; gap: 5px; }
-.nav-dropdown-menu {
-  position: absolute; top: calc(100% + 8px); left: 50%;
-  transform: translateX(-50%);
-  background: var(--navy-mid);
-  border: 1px solid rgba(184,151,58,0.2);
-  min-width: 220px;
-  opacity: 0; visibility: hidden; pointer-events: none;
-  transform: translateX(-50%) translateY(-6px);
-  transition: opacity 0.2s, transform 0.2s;
-  z-index: 300;
-}
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown.open .nav-dropdown-menu {
-  opacity: 1; visibility: visible; pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-.nav-dropdown-item {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 16px;
-  font-size: 12px; font-weight: 300;
-  color: var(--text-muted); text-decoration: none;
-  border-bottom: 1px solid rgba(184,151,58,0.08);
-  transition: background 0.15s, color 0.15s;
-}
-.nav-dropdown-item:last-child { border-bottom: none; }
-.nav-dropdown-item:hover { background: rgba(184,151,58,0.06); color: var(--gold-light); }
-.nav-dropdown-lang {
-  font-size: 8px; font-weight: 600; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--gold);
-  background: rgba(184,151,58,0.12);
-  padding: 2px 6px; flex-shrink: 0;
-}
-
-/* BURGER */
-.nav-burger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 8px;
-}
-.nav-burger span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--gold); transition: all 0.3s;
-}
-.nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-burger.open span:nth-child(2) { opacity: 0; }
-.nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .site-nav { padding: 0 24px; }
-  .nav-burger { display: flex; }
-  .site-nav-links {
-    display: none; position: absolute; top: 64px; left: 0; right: 0;
-    background: rgba(12,26,46,0.99);
-    border-bottom: 1px solid rgba(184,151,58,0.15);
-    flex-direction: column; align-items: stretch; gap: 0; padding: 12px 0;
-  }
-  .site-nav-links.open { display: flex; }
-  .nav-link, .nav-cta { padding: 14px 24px; margin: 0; font-size: 11px; }
-  .nav-cta { background: none; color: var(--gold); border-top: 1px solid rgba(184,151,58,0.1); margin-top: 4px; }
-  .nav-dropdown-menu {
-    position: static; transform: none !important;
-    opacity: 1; visibility: visible; pointer-events: auto;
-    border: none; border-top: 1px solid rgba(184,151,58,0.08);
-    background: rgba(0,0,0,0.2);
-    display: none;
-  }
-  .nav-dropdown.open .nav-dropdown-menu { display: block; }
-  .nav-dropdown-btn { width: 100%; justify-content: space-between; padding: 14px 24px; }
-  .nav-dropdown-item { padding: 12px 32px; }
-}
-
-
-/* ── LANG SWITCHER ── */
-.lang-switcher{display:flex;align-items:center;gap:2px;margin-left:12px;border-left:1px solid var(--border);padding-left:12px;}
-.lang-btn{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:5px 7px;font-family:'DM Sans',sans-serif;transition:color 0.2s;border-radius:2px;}
-.lang-btn:hover{color:var(--gold);}
-.lang-btn.active{color:var(--gold);background:rgba(184,151,58,0.12);}
-@media(max-width:900px){.lang-switcher{border-left:none;padding:14px 24px;justify-content:center;border-top:1px solid rgba(184,151,58,0.1);margin:0;}}
 </style>
-</head>
-<body>
-<!-- ══ NAVBAR ══ -->
 <header class="site-nav" id="site-nav">
   <a href="https://tenniscoachriviera.com/" class="site-nav-brand">
     <span class="brand-main">Tennis Coach Riviera</span>
@@ -256,7 +73,19 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
   <nav class="site-nav-links" id="nav-links">
     <a href="https://tenniscoachriviera.com/#about" class="nav-link">Coach</a>
     <a href="https://tenniscoachriviera.com/#services" class="nav-link">Services</a>
-    <a href="https://tenniscoachriviera.com/#valbonne" class="nav-link">Valbonne</a>
+    <div class="nav-dropdown">
+      <button class="nav-link nav-dropdown-btn" aria-expanded="false">Villes <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
+      <div class="nav-dropdown-menu">
+        <a href="https://tenniscoachriviera.com/nice.html" class="nav-dropdown-item">Nice</a>
+        <a href="https://tenniscoachriviera.com/antibes.html" class="nav-dropdown-item">Antibes</a>
+        <a href="https://tenniscoachriviera.com/cannes.html" class="nav-dropdown-item">Cannes</a>
+        <a href="https://tenniscoachriviera.com/monaco.html" class="nav-dropdown-item">Monaco</a>
+        <a href="https://tenniscoachriviera.com/valbonne.html" class="nav-dropdown-item">Valbonne</a>
+        <a href="https://tenniscoachriviera.com/mougins.html" class="nav-dropdown-item">Mougins</a>
+        <a href="https://tenniscoachriviera.com/biot.html" class="nav-dropdown-item">Biot</a>
+        <a href="https://tenniscoachriviera.com/cap-ferrat.html" class="nav-dropdown-item">Cap Ferrat</a>
+      </div>
+    </div>
     <div class="nav-dropdown">
       <button class="nav-link nav-dropdown-btn" aria-expanded="false">Blog <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
       <div class="nav-dropdown-menu">
@@ -267,149 +96,21 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
     </div>
     <a href="https://tenniscoachriviera.com/#contact" class="nav-link">Contact</a>
     <a href="https://wa.me/330636047722" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    <div class="lang-switcher">
-      <button class="lang-btn" onclick="window.location.href='/blog/blog-cours-domicile-cote-azur.html'">FR</button>
-      <button class="lang-btn" onclick="alert('English version coming soon')">EN</button>
-      <button class="lang-btn active" onclick="window.location.href=window.location.href">IT</button>
-    </div>
   </nav>
   <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
-
-
-<div class="it-stripe"></div>
-
-
-
-<div class="article-hero">
-  <div class="hero-inner">
-    <p class="article-eyebrow">Guida in italiano · Costa Azzurra</p>
-    <h1>Lezioni di tennis private<br>sulla <em>Costa Azzurra :</em><br>guida completa</h1>
-    <p class="article-lead">Sei italiano, vivi o passi le vacanze sulla Costa Azzurra e cerchi un coach di tennis? Ecco tutto quello che devi sapere — scritto da un coach italiano, in italiano.</p>
-    <div class="article-meta">
-      <span><i class="fa-solid fa-user" style="color:var(--gold);"></i> Massimo Bettini</span>
-      <span><i class="fa-solid fa-calendar" style="color:var(--gold);"></i> Luglio 2025</span>
-      <span><i class="fa-solid fa-clock" style="color:var(--gold);"></i> 6 min di lettura</span>
-    </div>
-  </div>
-</div>
-
-<div class="article-body">
-
-  <div class="toc reveal">
-    <div class="toc-label">Indice</div>
-    <ol>
-      <li><a href="#italiani">Il vantaggio di un coach italiano sulla Riviera francese</a></li>
-      <li><a href="#dove">Dove si tengono le lezioni: le zone coperte</a></li>
-      <li><a href="#errori">Gli errori più comuni nella scelta del coach</a></li>
-      <li><a href="#aspettarsi">Cosa aspettarsi da una lezione privata di qualità</a></li>
-      <li><a href="#turisti">Guida rapida per i turisti italiani</a></li>
-      <li><a href="#residenti">Guida per i residenti italiani in Francia</a></li>
-    </ol>
-  </div>
-
-  <h2 id="italiani" class="reveal">Il vantaggio di un coach italiano <em>sulla Riviera francese</em></h2>
-
-  <p class="reveal">La Costa Azzurra ospita ogni anno centinaia di migliaia di turisti italiani, e una comunità stabile di residenti italiani particolarmente concentrata tra Nizza, Mentone e la zona di confine. Eppure trovare un coach di tennis che parli italiano è tutt'altro che scontato.</p>
-
-  <p class="reveal">La maggior parte dei coach della zona lavora esclusivamente in francese, a volte in inglese. Per chi vuole apprendere o affinare una tecnica complessa come quella tennistica, dover comunicare in una lingua che non si padroneggia perfettamente è un ostacolo reale: si perde sfumatura, si perdono spiegazioni, si perde la relazione con il coach.</p>
-
-  <div class="pullquote reveal">
-    <p>"Il tennis è uno sport tecnico dove le parole contano quanto i gesti. Poter spiegare e correggere nella propria lingua non è un lusso — è la condizione minima per una vera progressione."</p>
-  </div>
-
-  <p class="reveal">Sono Massimo Bettini, coach certificato FITP di secondo livello, italiano, basato a Nizza. Ho insegnato per 10 anni al Tennis Palladio 98 di Vicenza e coordino i tornei ATP Challenger di Vicenza dal 2023. Lavoro sulla Costa Azzurra per residenti e turisti, in italiano, francese e inglese.</p>
-
-  <h2 id="dove" class="reveal">Dove si tengono le lezioni: <em>le zone coperte</em></h2>
-
-  <p class="reveal">Mi sposto direttamente dal cliente — su campi privati di ville, hotel, residence o club che mettono i campi a disposizione. Non hai bisogno di organizzare nulla: arrivo io con tutto il necessario all'orario concordato.</p>
-
-  <p class="reveal">Lavoro su tutto il litorale e nell'entroterra della Costa Azzurra: <strong style="color:var(--gold-light);">Nizza, Antibes, Cannes, Monaco, Cap Ferrat, Beaulieu-sur-Mer, Èze, Mentone, Valbonne, Mougins, Biot</strong> e nelle aree circostanti. Se non sei sicuro che la tua zona sia coperta, scrivimi su WhatsApp — rispondo entro 24 ore.</p>
-
-  <h2 id="errori" class="reveal">Gli errori più comuni <em>nella scelta del coach</em></h2>
-
-  <div class="errors reveal">
-    <div class="error-item"><span class="error-icon">⚠️</span><div><div class="error-h">Scegliere in base al prezzo più basso</div><p class="error-p">Il coaching privato di qualità ha un costo proporzionale all'esperienza. Un prezzo insolitamente basso spesso riflette una formazione insufficiente. Sul lungo termine, un buon coach è sempre più economico perché la progressione è reale.</p></div></div>
-    <div class="error-item"><span class="error-icon">⚠️</span><div><div class="error-h">Non verificare le qualifiche</div><p class="error-p">In Francia chiunque può proporsi come "coach di tennis" senza una certificazione ufficiale. Un diploma federale riconosciuto (FFT o FITP) è la garanzia minima di una formazione seria in tecnica, tattica e pedagogia sportiva.</p></div></div>
-    <div class="error-item"><span class="error-icon">⚠️</span><div><div class="error-h">Aspettare la fine delle vacanze per prenotare</div><p class="error-p">I coach di qualità sulla Costa Azzurra si riempiono rapidamente in estate. Contattare con 1–2 settimane di anticipo è il minimo per garantirsi i giorni e gli orari preferiti.</p></div></div>
-    <div class="error-item"><span class="error-icon">⚠️</span><div><div class="error-h">Scegliere un corso collettivo per comodità</div><p class="error-p">Per chi ha poco tempo e vuole progressi concreti — tipicamente i turisti con 1–2 settimane di vacanza — il coaching individuale è nettamente più efficiente di un corso collettivo in club.</p></div></div>
-  </div>
-
-  <h2 id="aspettarsi" class="reveal">Cosa aspettarsi da una lezione privata <em>di qualità</em></h2>
-
-  <div class="expectations reveal">
-    <div class="expectation"><div class="exp-label">Prima lezione</div><div class="exp-text">Valutazione del livello, identificazione degli obiettivi personali, prime correzioni tecniche prioritarie. Il coach ti osserva giocare prima di correggere — non il contrario.</div></div>
-    <div class="expectation"><div class="exp-label">Durante</div><div class="exp-text">Esercizi progressivi costruiti sul tuo livello specifico. Feedback continuo, spiegazioni chiare del perché di ogni correzione — non solo "fai così" ma "perché funziona così".</div></div>
-    <div class="expectation"><div class="exp-label">Fine lezione</div><div class="exp-text">Riepilogo dei punti lavorati, indicazioni su cosa esercitare autonomamente, orientamento per la lezione successiva se prevista.</div></div>
-    <div class="expectation"><div class="exp-label">Progressione</div><div class="exp-text">Visibile già dalla prima-seconda lezione sui fondamentali. La progressione tecnica vera richiede regolarità: 1–2 lezioni a settimana per almeno 4–6 settimane producono risultati stabilmente percepibili.</div></div>
-    <div class="expectation"><div class="exp-label">Logistica</div><div class="exp-text">Il coach arriva direttamente sul tuo campo all'orario concordato. Nessuno spostamento, nessuna attesa. Prenotazione e comunicazione via WhatsApp.</div></div>
-  </div>
-
-  <h2 id="turisti" class="reveal">Guida rapida <em>per i turisti italiani</em></h2>
-
-  <div class="highlight reveal">
-    <h3>Formula ideale per vacanzieri (1–2 settimane)</h3>
-    <ul>
-      <li>Contattami via WhatsApp appena arrivi — rispondo entro 24 ore</li>
-      <li>Prima lezione possibilmente nelle prime 48 ore: più tempo hai, più progressi fai</li>
-      <li>2–3 lezioni a settimana è il ritmo ottimale per un soggiorno breve</li>
-      <li>Hai un campo in villa o in hotel? Porto tutto io — racchetta di riserva inclusa se necessario</li>
-      <li>Nessun pacchetto obbligatorio: puoi prenotare una sola lezione e aggiungerne altre in corso di vacanza</li>
-      <li>Disponibile mattina e pomeriggio, 7 giorni su 7, anche in alta stagione</li>
-    </ul>
-  </div>
-
-  <h2 id="residenti" class="reveal">Guida per i residenti italiani <em>in Francia</em></h2>
-
-  <h3 class="reveal">La regolarità fa la differenza</h3>
-  <p class="reveal">Per i residenti, il formato più efficace è il piano settimanale fisso. Una lezione a settimana in modo costante produce risultati tecnici stabili nel tempo — molto più di 3–4 lezioni intensive concentrate in un mese e poi nulla per settimane.</p>
-
-  <h3 class="reveal">Il coach di famiglia</h3>
-  <p class="reveal">Un coach privato che conosce tutta la famiglia può lavorare con bambini, genitori e nonni nell'arco della stessa mattinata, adattando il programma a ciascuno. Un'organizzazione che molte famiglie italiane residenti sulla Costa Azzurra trovano particolarmente pratica.</p>
-
-  <h3 class="reveal">Nessuna burocrazia</h3>
-  <p class="reveal">Le lezioni individuali non richiedono pratiche amministrative complesse: nessun dossier, nessun modulo da compilare. Basta un messaggio WhatsApp per organizzare il primo appuntamento e definire orari, luogo e frequenza delle lezioni.</p>
-
-  <div class="infobox reveal">
-    <div class="infobox-title"><i class="fa-solid fa-flag" style="color:var(--gold);"></i> Perché scegliere un coach italiano</div>
-    <p>Con Massimo Bettini le lezioni si tengono in italiano, senza compromessi sulla sfumatura tecnica. 10 anni di insegnamento in Italia, formazione FITP di secondo livello, esperienza in tornei ATP. La qualità di un professionista italiano, sulla Costa Azzurra.</p>
-  </div>
-
-  <div class="author-box reveal">
-    <div class="author-avatar">M</div>
-    <div>
-      <div class="author-name">Massimo Bettini — Coach FITP 2° livello, italiano a Nizza</div>
-      <div class="author-desc">10 anni al Tennis Palladio 98 di Vicenza · Coordinatore ATP Challenger Vicenza 2023–25 · Lezioni in italiano, francese e inglese su tutta la Costa Azzurra</div>
-    </div>
-  </div>
-
-  <div class="cta-block reveal">
-    <div class="cta-block-inner">
-      <p class="cta-pre">Prenotazione singola o in pack · Nessun impegno</p>
-      <h3>Prenota la tua<br><em>prima lezione</em></h3>
-      <p>Risposta garantita entro 24 ore · Disponibile 7 giorni su 7 · Nizza, Antibes, Cannes, Monaco e dintorni</p>
-      <a href="https://wa.me/330636047722" class="btn-gold"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> Scrivimi su WhatsApp</a>
-    </div>
-  </div>
-
-</div>
-
-<footer>
-  <div class="footer-brand">Massimo Bettini · Tennis Coach Privé</div>
-  <div class="footer-text">© 2025 · <a href="https://tenniscoachriviera.com/" style="color:inherit;text-decoration:none;">tenniscoachriviera.com</a></div>
-  <div class="footer-text"><a href="https://tenniscoachriviera.com/mentions-legales.html" style="color:inherit;text-decoration:none;opacity:0.7;">Mentions Légales</a></div>
-</footer>
-
 <script>
-window.addEventListener('load',function(){
-  var els=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
-    els.forEach(function(el){obs.observe(el);});
-  } else {els.forEach(function(el){el.classList.add('visible');});}
-});
+(function(){
+  var burger=document.getElementById('nav-burger'),links=document.getElementById('nav-links');
+  if(burger&&links){burger.addEventListener('click',function(){var o=links.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);});}
+  document.querySelectorAll('.nav-dropdown').forEach(function(dd){
+    var btn=dd.querySelector('.nav-dropdown-btn');
+    if(btn){btn.addEventListener('click',function(e){e.stopPropagation();dd.classList.toggle('open');document.querySelectorAll('.nav-dropdown').forEach(function(o){if(o!==dd)o.classList.remove('open');});});}
+  });
+  document.addEventListener('click',function(){document.querySelectorAll('.nav-dropdown').forEach(function(dd){dd.classList.remove('open');});});
+})();
 </script>
 <script>
 (function(){
