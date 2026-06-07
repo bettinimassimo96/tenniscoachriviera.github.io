@@ -115,16 +115,173 @@ footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;justify
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-delay-1{transition-delay:0.1s;}.reveal-delay-2{transition-delay:0.2s;}
 @media(max-width:900px){nav,.article-hero,.article-body,footer{padding-left:24px;padding-right:24px;}.article-hero{padding-top:72px;padding-bottom:56px;}.article-body{padding-top:56px;padding-bottom:56px;}.cta-block{padding:40px 24px;}.zone-grid{grid-template-columns:repeat(3,1fr);}.expectation{flex-direction:column;gap:8px;}.exp-label{min-width:unset;}}
+/* ══ SITE NAVBAR ══ */
+.site-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(12,26,46,0.97);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(184,151,58,0.15);
+  padding: 0 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.site-nav-brand {
+  text-decoration: none;
+  display: flex; flex-direction: column; gap: 1px;
+  flex-shrink: 0;
+}
+.brand-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px; font-weight: 400; color: var(--gold);
+  letter-spacing: 0.5px; line-height: 1;
+}
+.brand-sub {
+  font-size: 9px; font-weight: 400; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--text-muted);
+}
+.site-nav-links {
+  display: flex; align-items: center; gap: 4px;
+}
+.nav-link {
+  font-size: 10px; font-weight: 500; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted);
+  text-decoration: none; padding: 8px 14px;
+  border: none; background: none; cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover, .nav-link.active { color: var(--gold); }
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 10px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--navy);
+  background: var(--gold); text-decoration: none;
+  padding: 9px 20px; margin-left: 8px;
+  transition: opacity 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* DROPDOWN */
+.nav-dropdown { position: relative; }
+.nav-dropdown-btn { display: flex; align-items: center; gap: 5px; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 8px); left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-mid);
+  border: 1px solid rgba(184,151,58,0.2);
+  min-width: 220px;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateX(-50%) translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 300;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 16px;
+  font-size: 12px; font-weight: 300;
+  color: var(--text-muted); text-decoration: none;
+  border-bottom: 1px solid rgba(184,151,58,0.08);
+  transition: background 0.15s, color 0.15s;
+}
+.nav-dropdown-item:last-child { border-bottom: none; }
+.nav-dropdown-item:hover { background: rgba(184,151,58,0.06); color: var(--gold-light); }
+.nav-dropdown-lang {
+  font-size: 8px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(184,151,58,0.12);
+  padding: 2px 6px; flex-shrink: 0;
+}
+
+/* BURGER */
+.nav-burger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 8px;
+}
+.nav-burger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--gold); transition: all 0.3s;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .site-nav { padding: 0 24px; }
+  .nav-burger { display: flex; }
+  .site-nav-links {
+    display: none; position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(12,26,46,0.99);
+    border-bottom: 1px solid rgba(184,151,58,0.15);
+    flex-direction: column; align-items: stretch; gap: 0; padding: 12px 0;
+  }
+  .site-nav-links.open { display: flex; }
+  .nav-link, .nav-cta { padding: 14px 24px; margin: 0; font-size: 11px; }
+  .nav-cta { background: none; color: var(--gold); border-top: 1px solid rgba(184,151,58,0.1); margin-top: 4px; }
+  .nav-dropdown-menu {
+    position: static; transform: none !important;
+    opacity: 1; visibility: visible; pointer-events: auto;
+    border: none; border-top: 1px solid rgba(184,151,58,0.08);
+    background: rgba(0,0,0,0.2);
+    display: none;
+  }
+  .nav-dropdown.open .nav-dropdown-menu { display: block; }
+  .nav-dropdown-btn { width: 100%; justify-content: space-between; padding: 14px 24px; }
+  .nav-dropdown-item { padding: 12px 32px; }
+}
+
+
+/* ── LANG SWITCHER ── */
+.lang-switcher{display:flex;align-items:center;gap:2px;margin-left:12px;border-left:1px solid var(--border);padding-left:12px;}
+.lang-btn{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:5px 7px;font-family:'DM Sans',sans-serif;transition:color 0.2s;border-radius:2px;}
+.lang-btn:hover{color:var(--gold);}
+.lang-btn.active{color:var(--gold);background:rgba(184,151,58,0.12);}
+@media(max-width:900px){.lang-switcher{border-left:none;padding:14px 24px;justify-content:center;border-top:1px solid rgba(184,151,58,0.1);margin:0;}}
 </style>
 </head>
 <body>
+<!-- ══ NAVBAR ══ -->
+<header class="site-nav" id="site-nav">
+  <a href="https://tenniscoachriviera.com/" class="site-nav-brand">
+    <span class="brand-main">Tennis Coach Riviera</span>
+    <span class="brand-sub">Massimo Bettini</span>
+  </a>
+  <nav class="site-nav-links" id="nav-links">
+    <a href="https://tenniscoachriviera.com/#about" class="nav-link">Coach</a>
+    <a href="https://tenniscoachriviera.com/#services" class="nav-link">Services</a>
+    <a href="https://tenniscoachriviera.com/#valbonne" class="nav-link">Valbonne</a>
+    <div class="nav-dropdown">
+      <button class="nav-link nav-dropdown-btn" aria-expanded="false">Blog <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
+      <div class="nav-dropdown-menu">
+        <a href="https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html" class="nav-dropdown-item"><span class="nav-dropdown-lang">FR</span>Coach privé vs club</a>
+        <a href="https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html" class="nav-dropdown-item"><span class="nav-dropdown-lang">FR</span>Tennis à Valbonne</a>
+        <a href="https://tenniscoachriviera.com/blog/blog-lezioni-tennis-nizza.html" class="nav-dropdown-item"><span class="nav-dropdown-lang">IT</span>Lezioni Costa Azzurra</a>
+      </div>
+    </div>
+    <a href="https://tenniscoachriviera.com/#contact" class="nav-link">Contact</a>
+    <a href="https://wa.me/330636047722" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <div class="lang-switcher">
+      <button class="lang-btn" onclick="window.location.href='/blog/blog-cours-domicile-cote-azur.html'">FR</button>
+      <button class="lang-btn" onclick="alert('English version coming soon')">EN</button>
+      <button class="lang-btn active" onclick="window.location.href=window.location.href">IT</button>
+    </div>
+  </nav>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
 
 <div class="it-stripe"></div>
 
-<nav>
-  <a href="https://tenniscoachriviera.com/" class="nav-brand">Massimo Bettini · Tennis Coach Privé</a>
-  <a href="https://tenniscoachriviera.com/" class="nav-back"><i class="fa-solid fa-arrow-left" style="font-size:10px;"></i> Torna alla home</a>
-</nav>
+
 
 <div class="article-hero">
   <div class="hero-inner">
@@ -254,5 +411,36 @@ window.addEventListener('load',function(){
   } else {els.forEach(function(el){el.classList.add('visible');});}
 });
 </script>
+<script>
+(function(){
+  var burger = document.getElementById('nav-burger');
+  var links = document.getElementById('nav-links');
+  var dropdownBtn = document.querySelector('.nav-dropdown-btn');
+  var dropdown = document.querySelector('.nav-dropdown');
+  if(burger && links){
+    burger.addEventListener('click', function(){
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+    });
+  }
+  if(dropdownBtn && dropdown){
+    dropdownBtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var open = dropdown.classList.toggle('open');
+      dropdownBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function(){ dropdown.classList.remove('open'); });
+  }
+  // Highlight active page
+  var path = window.location.pathname;
+  document.querySelectorAll('.nav-link, .nav-dropdown-item').forEach(function(el){
+    if(el.getAttribute('href') && el.getAttribute('href').indexOf(path) > -1 && path !== '/'){
+      el.classList.add('active');
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
