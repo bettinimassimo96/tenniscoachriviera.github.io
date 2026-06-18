@@ -53,6 +53,10 @@
     {"@type":"City","name":"Cannes"},{"@type":"City","name":"Valbonne"},{"@type":"City","name":"Biot"},
     {"@type":"City","name":"Mougins"},{"@type":"City","name":"Menton"},{"@type":"City","name":"Saint-Jean-Cap-Ferrat"}
   ],
+  "sameAs": [
+    "https://www.google.com/maps/place/Tennis+Coach+Riviera/@43.4744976,6.3623455,123447m/data=!3m1!1e3!4m7!3m6!1s0x4bbdd907d8243af3:0x3099cc9f6eaa6193!8m2!3d43.6301672!4d7.1936512!15sCgx0ZW5uaXMgY29hY2iSARF0ZW5uaXNfaW5zdHJ1Y3RvcuABAA!16s%2Fg%2F11njy4fz6m",
+    "https://www.instagram.com/tenniscoachriviera/"
+  ],
   "aggregateRating": {"@type":"AggregateRating","ratingValue":"5","reviewCount":"4","bestRating":"5"}
 }
 </script>
@@ -210,6 +214,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 .footer-brand{font-family:'Playfair Display',serif;font-size:14px;color:rgba(184,151,58,0.6);}
 .footer-text{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(122,143,168,0.4);}
+.nav-instagram{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;color:var(--text-muted);transition:color 0.2s;}
+.nav-instagram:hover{color:var(--gold);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes scrollPulse{0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.15);}}
@@ -226,6 +232,8 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   .site-nav-links.open{display:flex;}
   .nav-link,.nav-cta{padding:14px 24px;margin:0;font-size:11px;}
   .nav-cta{background:none;color:var(--gold);border-top:1px solid rgba(184,151,58,0.1);margin-top:4px;}
+  .nav-instagram{width:auto;height:auto;justify-content:flex-start;gap:8px;padding:14px 24px;}
+  .nav-instagram::after{content:'Instagram';font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;}
   .lang-switcher{border-left:none;padding:14px 24px;justify-content:center;border-top:1px solid rgba(184,151,58,0.1);margin:0;}
   .nav-dropdown-menu{position:static;transform:none!important;opacity:1;visibility:visible;pointer-events:auto;border:none;border-top:1px solid rgba(184,151,58,0.08);background:rgba(0,0,0,0.2);display:none;}
   .nav-dropdown.open .nav-dropdown-menu{display:block;}
@@ -276,6 +284,9 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       </div>
     </div>
     <a href="#contact" class="nav-link" data-fr="Contact" data-en="Contact" data-it="Contatto">Contact</a>
+    <a href="https://www.instagram.com/tenniscoachriviera/" target="_blank" rel="noopener noreferrer" class="nav-instagram" aria-label="Instagram">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
+    </a>
     <a href="https://wa.me/330636047722" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="fr">FR</button>
@@ -311,7 +322,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     <div class="cred-divider"></div>
     <div class="cred-pill"><span class="cred-pill-num">FITP</span><span data-fr="Certifié 2ème niveau" data-en="Certified 2nd level" data-it="Certificato 2° livello">Certifié 2ème niveau</span></div>
     <div class="cred-divider"></div>
-    <div class="cred-pill"><span class="cred-pill-num">ATP</span><span data-fr="Challenger · Organisation 2023-25" data-en="Challenger · Coordination 2023-25" data-it="Challenger · Coordinamento 2023-25">Challenger · Organisation 2023-25</span></div>
+    <div class="cred-pill"><span class="cred-pill-num">ATP</span><span data-fr="Challenger · Organisation 2023-2026" data-en="Challenger · Coordination 2023-2026" data-it="Challenger · Coordinamento 2023-2026">Challenger · Organisation 2023-2026</span></div>
     <div class="cred-divider"></div>
     <div class="cred-pill"><span class="cred-pill-num">3</span><span data-fr="Langues parlées" data-en="Languages spoken" data-it="Lingue parlate">Langues parlées</span></div>
   </div>
@@ -331,7 +342,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       <p class="section-eyebrow reveal" data-fr="À propos" data-en="About" data-it="Chi sono">À propos</p>
       <h2 class="section-title reveal reveal-delay-1"><span data-fr="Coach certifié,<br>" data-en="Certified coach,<br>" data-it="Coach certificato,<br>">Coach certifié,<br></span><em data-fr="10 ans d'expérience" data-en="10 years of experience" data-it="10 anni d'esperienza">10 ans d'expérience</em></h2>
       <p class="about-text reveal reveal-delay-2" data-fr="Je suis Massimo Bettini, coach de tennis privé certifié FITP (2ème niveau, reconnaissance française en cours), basé à Nice. Pendant 10 ans, j'ai enseigné au Tennis Palladio 98 de Vicence — l'un des clubs de référence en Italie — auprès d'enfants, adolescents, adultes et seniors." data-en="I am Massimo Bettini, a certified FITP tennis coach (2nd level, French recognition in progress), based in Nice. For 10 years, I taught at Tennis Palladio 98 in Vicenza — one of Italy's leading clubs — working with children, teenagers, adults and seniors." data-it="Sono Massimo Bettini, coach di tennis certificato FITP (2° livello, riconoscimento francese in corso), basato a Nizza. Per 10 anni ho insegnato al Tennis Palladio 98 di Vicenza — uno dei club di riferimento in Italia — con bambini, adolescenti, adulti e senior.">Je suis Massimo Bettini, coach de tennis privé certifié FITP (2ème niveau, reconnaissance française en cours), basé à Nice. Pendant 10 ans, j'ai enseigné au Tennis Palladio 98 de Vicence — l'un des clubs de référence en Italie — auprès d'enfants, adolescents, adultes et seniors.</p>
-      <p class="about-text reveal reveal-delay-2" data-fr="Coordinateur opérationnel de tournois ATP professionnels (éditions 2023, 2024 et 2025), je combine exigence professionnelle et pédagogie bienveillante. Je me déplace directement sur votre court privé, disponible matin et après-midi, 7 jours sur 7." data-en="Operational coordinator of professional ATP tournaments (2023, 2024 and 2025 editions), I combine professional standards with supportive coaching. I come directly to your private court, available mornings and afternoons, 7 days a week." data-it="Coordinatore operativo di tornei ATP professionistici (edizioni 2023, 2024 e 2025), combino rigore professionale e pedagogia attenta. Mi sposto direttamente sul tuo campo privato, disponibile mattina e pomeriggio, 7 giorni su 7.">Coordinateur opérationnel de tournois ATP professionnels (éditions 2023, 2024 et 2025), je combine exigence professionnelle et pédagogie bienveillante. Je me déplace directement sur votre court privé, disponible matin et après-midi, 7 jours sur 7.</p>
+      <p class="about-text reveal reveal-delay-2" data-fr="Coordinateur opérationnel de tournois ATP professionnels (éditions 2023 à 2026), je combine exigence professionnelle et pédagogie bienveillante. Je me déplace directement sur votre court privé, disponible matin et après-midi, 7 jours sur 7." data-en="Operational coordinator of professional ATP tournaments (2023 to 2026 editions), I combine professional standards with supportive coaching. I come directly to your private court, available mornings and afternoons, 7 days a week." data-it="Coordinatore operativo di tornei ATP professionistici (edizioni 2023-2026), combino rigore professionale e pedagogia attenta. Mi sposto direttamente sul tuo campo privato, disponibile mattina e pomeriggio, 7 giorni su 7.">Coordinateur opérationnel de tournois ATP professionnels (éditions 2023 à 2026), je combine exigence professionnelle et pédagogie bienveillante. Je me déplace directement sur votre court privé, disponible matin et après-midi, 7 jours sur 7.</p>
       <div class="about-langs reveal reveal-delay-3">
         <div class="lang-tag"><i class="fa-solid fa-globe" style="color:var(--gold);font-size:16px;"></i> Français · B2</div>
         <div class="lang-tag"><i class="fa-solid fa-globe" style="color:var(--gold);font-size:16px;"></i> English · C1</div>
@@ -403,7 +414,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   <div class="quals-grid">
     <div class="quals-list reveal">
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-medal"></i></span><div><div class="qual-title">FITP 2ème niveau</div><p class="qual-text" data-fr="Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive." data-en="Diploma from the Italian Tennis and Padel Federation, French recognition in progress. Full training in technique, tactics and sports pedagogy." data-it="Diploma della Federazione Italiana Tennis e Padel. Formazione completa in tecnica, tattica e pedagogia sportiva.">Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive.</p></div></div>
-      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-trophy"></i></span><div><div class="qual-title" data-fr="Expérience ATP Challenger" data-en="ATP Challenger experience" data-it="Esperienza ATP Challenger">Expérience ATP Challenger</div><p class="qual-text" data-fr="Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023, 2024 et 2025." data-en="Operational coordinator of the Internazionali di Tennis Città di Vicenza — ATP Challenger tournament — 2023, 2024 and 2025 editions." data-it="Coordinatore operativo degli Internazionali di Tennis Città di Vicenza — torneo ATP Challenger — edizioni 2023, 2024 e 2025.">Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023, 2024 et 2025.</p></div></div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-trophy"></i></span><div><div class="qual-title" data-fr="Expérience ATP Challenger" data-en="ATP Challenger experience" data-it="Esperienza ATP Challenger">Expérience ATP Challenger</div><p class="qual-text" data-fr="Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023 à 2026." data-en="Operational coordinator of the Internazionali di Tennis Città di Vicenza — ATP Challenger tournament — 2023 to 2026 editions." data-it="Coordinatore operativo degli Internazionali di Tennis Città di Vicenza — torneo ATP Challenger — edizioni 2023-2026.">Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023 à 2026.</p></div></div>
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-court-sport"></i></span><div><div class="qual-title">Tennis Palladio 98, Vicence</div><p class="qual-text" data-fr="10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux." data-en="10 years of teaching at one of Italy's most recognised clubs, working with children, teenagers, adults and seniors of all levels." data-it="10 anni di insegnamento in uno dei club più riconosciuti d'Italia, con bambini, adolescenti, adulti e senior di tutti i livelli.">10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux.</p></div></div>
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-location-dot"></i></span><div><div class="qual-title" data-fr="Basé à Nice · Côte d'Azur" data-en="Based in Nice · Côte d'Azur" data-it="Basato a Nizza · Costa Azzurra">Basé à Nice · Côte d'Azur</div><p class="qual-text" data-fr="Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs." data-en="Operating across the entire Côte d'Azur: Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins and surroundings." data-it="Attivo su tutta la Costa Azzurra: Nizza, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Mentone, Valbonne, Mougins e dintorni.">Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs.</p></div></div>
     </div>
