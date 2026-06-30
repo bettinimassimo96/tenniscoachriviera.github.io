@@ -126,6 +126,19 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Vous déplacez-vous directement chez moi ?","acceptedAnswer":{"@type":"Answer","text":"Oui — je me déplace sur votre court privé, villa, résidence ou hôtel sur toute la Côte d'Azur. Aucun déplacement de votre part."}},
+    {"@type":"Question","name":"Je n'ai pas de court privé — puis-je quand même prendre des leçons ?","acceptedAnswer":{"@type":"Answer","text":"Oui — contactez-moi directement et je vous proposerai des solutions adaptées à votre secteur et à votre situation."}},
+    {"@type":"Question","name":"Intervenez-vous à Monaco, Antibes et Valbonne ?","acceptedAnswer":{"@type":"Answer","text":"Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs."}},
+    {"@type":"Question","name":"Peut-on réserver une seule séance ?","acceptedAnswer":{"@type":"Answer","text":"Oui — la réservation à la séance est possible. Je propose aussi des packs de 10 leçons à tarif réduit pour les résidents."}},
+    {"@type":"Question","name":"Do you offer lessons in English or Italian?","acceptedAnswer":{"@type":"Answer","text":"Yes — lessons are available in French, English and Italian. Ideal for international residents and tourists visiting the Riviera."}}
+  ]
+}
+</script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,14 +174,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .nav-dropdown-item:last-child{border-bottom:none;}
 .nav-dropdown-item:hover{background:rgba(184,151,58,0.06);color:var(--gold-light);}
 .nav-dropdown-lang{font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);background:rgba(184,151,58,0.12);padding:2px 6px;flex-shrink:0;}
-
-/* ── LANG SWITCHER ── */
 .lang-switcher{display:flex;align-items:center;gap:2px;margin-left:12px;border-left:1px solid var(--border);padding-left:12px;}
 .lang-btn{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);background:none;border:none;cursor:pointer;padding:5px 7px;font-family:'DM Sans',sans-serif;transition:color 0.2s;border-radius:2px;}
 .lang-btn:hover{color:var(--gold);}
 .lang-btn.active{color:var(--gold);background:rgba(184,151,58,0.12);}
-
-/* ── BURGER ── */
 .nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
 .nav-burger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:all 0.3s;}
 .nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
@@ -228,6 +237,20 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .villa-feature-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
 .villa-feature-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:400;color:var(--white);margin-bottom:6px;}
 .villa-feature-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);}
+
+/* ── HOTELS SECTION ── */
+.hotels-section{padding:120px 60px;background:var(--navy);border-top:1px solid rgba(184,151,58,0.1);position:relative;overflow:hidden;}
+.hotels-section::before{content:'';position:absolute;bottom:-200px;left:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(184,151,58,0.05) 0%,transparent 70%);pointer-events:none;}
+.hotels-inner{max-width:1200px;margin:0 auto;}
+.hotels-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:60px;}
+.hotels-features{display:flex;flex-direction:column;gap:0;}
+.hotels-feature{padding:24px 0;border-bottom:1px solid rgba(184,151,58,0.1);display:flex;gap:20px;align-items:flex-start;transition:all 0.3s ease;}
+.hotels-feature:hover{padding-left:8px;}
+.hotels-feature:first-child{padding-top:0;}
+.hotels-photo{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.hotels-seo-text{margin-top:48px;padding-top:40px;border-top:1px solid rgba(184,151,58,0.1);}
+.hotels-seo-text p{font-size:14px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.55);margin-bottom:12px;}
+
 .tourist-section{padding:120px 60px;max-width:1200px;margin:0 auto;}
 .tourist-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
 .tourist-card{background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:44px 36px;position:relative;overflow:hidden;transition:all 0.4s ease;}
@@ -306,8 +329,8 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   .nav-dropdown-btn{width:100%;justify-content:space-between;padding:14px 24px;}
   .nav-dropdown-item{padding:12px 32px;}
   .hero-content,.cred-bar{padding-left:32px;padding-right:32px;}
-  .about-section,.villa-section,.tourist-section,.services-section,.quals-section,.cta-section,.blog-section{padding:80px 32px;}
-  .about-grid,.villa-grid,.quals-grid{grid-template-columns:1fr;gap:48px;}
+  .about-section,.villa-section,.hotels-section,.tourist-section,.services-section,.quals-section,.cta-section,.blog-section{padding:80px 32px;}
+  .about-grid,.villa-grid,.hotels-grid,.quals-grid{grid-template-columns:1fr;gap:48px;}
   .services-grid,.tourist-grid,.blog-grid{grid-template-columns:1fr;}
   .cred-bar-inner{justify-content:center;gap:20px;}
   .cred-divider{display:none;}
@@ -316,19 +339,6 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   .about-photo-badge{left:0;bottom:0;}
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type":"Question","name":"Vous déplacez-vous directement chez moi ?","acceptedAnswer":{"@type":"Answer","text":"Oui — je me déplace sur votre court privé, villa, résidence ou hôtel sur toute la Côte d'Azur. Aucun déplacement de votre part."}},
-    {"@type":"Question","name":"Je n'ai pas de court privé — puis-je quand même prendre des leçons ?","acceptedAnswer":{"@type":"Answer","text":"Oui — contactez-moi directement et je vous proposerai des solutions adaptées à votre secteur et à votre situation."}},
-    {"@type":"Question","name":"Intervenez-vous à Monaco, Antibes et Valbonne ?","acceptedAnswer":{"@type":"Answer","text":"Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs."}},
-    {"@type":"Question","name":"Peut-on réserver une seule séance ?","acceptedAnswer":{"@type":"Answer","text":"Oui — la réservation à la séance est possible. Je propose aussi des packs de 10 leçons à tarif réduit pour les résidents."}},
-    {"@type":"Question","name":"Do you offer lessons in English or Italian?","acceptedAnswer":{"@type":"Answer","text":"Yes — lessons are available in French, English and Italian. Ideal for international residents and tourists visiting the Riviera."}}
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -384,7 +394,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow" data-fr="Tennis Coach Riviera · Côte d'Azur" data-en="Tennis Coach Riviera · French Riviera" data-it="Tennis Coach Riviera · Costa Azzurra">Tennis Coach Riviera · Côte d'Azur</p>
-    <h1 class="hero-name" data-fr="Coach de tennis privé <br><span style='font-style:italic;color:var(--gold-light);'>sur la Côte d'Azur</span>" data-en="Private tennis coach<br><span style='font-style:italic;color:var(--gold-light);'>on the French Riviera</span>" data-it="Coach di tennis privato<br><span style='font-style:italic;color:var(--gold-light);'>sulla Costa Azzurra</span>">Coach de tennis privé <br><span style="font-style:italic;color:var(--gold-light);">sur la Côte d'Azur</span></h1>
+    <h1 class="hero-name" data-fr="Coach de tennis privé <br><span style='font-style:italic;color:var(--gold-light);'>sur la Côte d'Azur</span>" data-en="Private tennis coach<br><span style='font-style:italic;color:var(--gold-light);'>on the French Riviera</span>" data-it="Coach di tennis privato<br><span style='font-style:italic;color:var(--gold-light);'>sulla Costa Azzurra</span>">Coach de tennis privé <br><span style="font-style:italic;color:var(--gold-light);">sur la Côte d'Azur</span></h1>
     <p style="font-family:'Playfair Display',serif;font-size:clamp(13px,1.5vw,18px);font-style:normal;color:rgba(232,224,212,0.45);margin-top:12px;margin-bottom:4px;letter-spacing:3px;text-transform:uppercase;font-weight:300;opacity:0;animation:fadeUp 0.9s ease 0.7s forwards;">Massimo Bettini &middot; Tennis Coach Riviera</p>
     <p class="hero-tagline" data-fr="L'art du tennis privé, à domicile sur la Riviera" data-en="Private tennis coaching, at home on the Riviera" data-it="Il tennis privato a domicilio sulla Riviera">L'art du tennis privé, à domicile sur la Riviera</p>
     <div class="hero-ctas">
@@ -443,7 +453,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       <div class="reveal"><img src="villa.jpg" alt="Court de tennis privé villa Côte d'Azur" class="villa-photo"></div>
       <div class="villa-features reveal reveal-delay-1">
         <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;" data-fr="Vous possédez ou louez une villa avec court de tennis sur la Côte d'Azur ? Je me déplace directement chez vous pour des leçons privées sur mesure — pour vous, votre famille ou vos invités." data-en="Do you own or rent a villa with a tennis court on the Côte d'Azur? I come directly to you for tailored private lessons — for you, your family or your guests." data-it="Hai una villa con campo da tennis sulla Costa Azzurra? Mi sposto direttamente da te per lezioni private su misura — per te, la tua famiglia o i tuoi ospiti.">Vous possédez ou louez une villa avec court de tennis sur la Côte d'Azur ? Je me déplace directement chez vous pour des leçons privées sur mesure — pour vous, votre famille ou vos invités.</p>
-        <div class="villa-feature"><span class="villa-feature-icon"><i class="fa-solid fa-house"></i></span><div><div class="villa-feature-title" data-fr="À domicile, sur votre court" data-en="At home, on your court" data-it="A domicilio, sul tuo campo">À domicile, sur votre court</div><p class="villa-feature-text" data-fr="Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous." data-en="I come directly to your property — private villa, luxury residence or hotel. No travel required from you." data-it="Vengo direttamente sulla tua proprietà — villa privata, residenza di lusso o hotel. Nessuno spostamento per te.">Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous.</p></div></div>
+        <div class="villa-feature"><span class="villa-feature-icon"><i class="fa-solid fa-house"></i></span><div><div class="villa-feature-title" data-fr="À domicile, sur votre court" data-en="At home, on your court" data-it="A domicilio, sul tuo campo">À domicile, sur votre court</div><p class="villa-feature-text" data-fr="Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous." data-en="I come directly to your property — private villa, luxury residence or private mansion. No travel required from you." data-it="Vengo direttamente sulla tua proprietà — villa privata, residenza di lusso o hotel. Nessuno spostamento per te.">Je viens directement sur votre propriété — villa privée, résidence de luxe ou hôtel particulier. Aucun déplacement pour vous.</p></div></div>
         <div class="villa-feature"><span class="villa-feature-icon"><i class="fa-solid fa-people-group"></i></span><div><div class="villa-feature-title" data-fr="Sessions famille complète" data-en="Full family sessions" data-it="Sessioni per tutta la famiglia">Sessions famille complète</div><p class="villa-feature-text" data-fr="Un seul coach de confiance pour enfants, parents et grands-parents. Programme adapté à chaque membre de la famille." data-en="One trusted coach for children, parents and grandparents. Programme adapted to each family member." data-it="Un solo coach di fiducia per bambini, genitori e nonni. Programma adattato a ogni membro della famiglia.">Un seul coach de confiance pour enfants, parents et grands-parents. Programme adapté à chaque membre de la famille.</p></div></div>
         <div class="villa-feature"><span class="villa-feature-icon"><i class="fa-solid fa-calendar-check"></i></span><div><div class="villa-feature-title" data-fr="Flexibilité totale d'horaires" data-en="Total schedule flexibility" data-it="Massima flessibilità oraria">Flexibilité totale d'horaires</div><p class="villa-feature-text" data-fr="Disponible matin, après-midi et week-end selon votre emploi du temps. Planning personnalisé à la semaine ou au mois." data-en="Available mornings, afternoons and weekends to suit your schedule. Weekly or monthly planning." data-it="Disponibile mattina, pomeriggio e weekend in base ai tuoi impegni. Pianificazione settimanale o mensile.">Disponible matin, après-midi et week-end selon votre emploi du temps. Planning personnalisé à la semaine ou au mois.</p></div></div>
         <div class="villa-feature"><span class="villa-feature-icon"><i class="fa-solid fa-earth-europe"></i></span><div><div class="villa-feature-title" data-fr="Service multilingue" data-en="Multilingual service" data-it="Servizio multilingue">Service multilingue</div><p class="villa-feature-text" data-fr="Cours dispensés en français, anglais ou italien selon votre préférence. Idéal pour les résidents internationaux." data-en="Lessons in French, English or Italian according to your preference. Ideal for international residents." data-it="Lezioni in italiano, francese o inglese secondo la tua preferenza. Ideale per residenti internazionali.">Cours dispensés en français, anglais ou italien selon votre préférence. Idéal pour les résidents internationaux.</p></div></div>
@@ -452,6 +462,150 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     </div>
   </div>
 </section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- HOTELS & RESORTS                              -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="hotels-section" id="hotels">
+  <div class="hotels-inner">
+
+    <!-- H2 trilingue hardcoded nel DOM — non in attributi JS -->
+    <div class="reveal" id="hotels-heading-fr" lang="fr">
+      <p class="section-eyebrow">Hôtels &amp; Resorts · Côte d'Azur</p>
+      <h2 class="section-title" style="max-width:700px;">
+        Coaching tennis privé pour<br><em>hôtels et resorts de luxe</em>
+      </h2>
+    </div>
+    <div class="reveal" id="hotels-heading-en" lang="en" style="display:none;">
+      <p class="section-eyebrow">Hotels &amp; Resorts · French Riviera</p>
+      <h2 class="section-title" style="max-width:700px;">
+        Private Tennis Coaching for<br><em>Hotels &amp; Luxury Resorts</em>
+      </h2>
+    </div>
+    <div class="reveal" id="hotels-heading-it" lang="it" style="display:none;">
+      <p class="section-eyebrow">Hotel &amp; Resort · Costa Azzurra</p>
+      <h2 class="section-title" style="max-width:700px;">
+        Tennis coaching privato per<br><em>hotel e resort di lusso</em>
+      </h2>
+    </div>
+
+    <div class="hotels-grid">
+      <!-- COLONNA SINISTRA: testo orientato al concierge/direttore -->
+      <div class="hotels-features reveal reveal-delay-1">
+
+        <!-- Paragrafo FR -->
+        <div id="hotels-intro-fr" lang="fr">
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
+            Nous collaborons avec les hôtels, résidences de prestige et équipes de conciergerie pour offrir un service de coaching tennis privé directement à vos clients durant leur séjour sur la Côte d'Azur. Planification flexible, coaching multilingue et leçons sur votre court garantissent une expérience fluide pour vos voyageurs internationaux.
+          </p>
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
+            Une solution idéale pour enrichir votre offre de loisirs sans recruter un coach à temps plein — disponible sur simple demande du concierge, 7 jours sur 7, matin et après-midi.
+          </p>
+        </div>
+        <!-- Paragrafo EN -->
+        <div id="hotels-intro-en" lang="en" style="display:none;">
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
+            We collaborate with luxury hotels, private resorts and concierge teams to provide premium tennis coaching directly to guests during their stay on the French Riviera. Flexible scheduling, multilingual coaching and private on-site lessons ensure a seamless experience for international travellers.
+          </p>
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
+            The ideal solution for properties wishing to enhance their leisure offering without hiring a full-time coach — available on concierge request, 7 days a week, morning and afternoon.
+          </p>
+        </div>
+        <!-- Paragrafo IT -->
+        <div id="hotels-intro-it" lang="it" style="display:none;">
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
+            Collaboriamo con hotel di lusso, resort privati e team di concierge per offrire un servizio di coaching tennistico direttamente agli ospiti durante il loro soggiorno sulla Costa Azzurra. Pianificazione flessibile, coaching multilingue e lezioni in loco garantiscono un'esperienza impeccabile per i viaggiatori internazionali.
+          </p>
+          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
+            La soluzione ideale per arricchire la vostra offerta leisure senza assumere un coach a tempo pieno — disponibile su richiesta del concierge, 7 giorni su 7.
+          </p>
+        </div>
+
+        <!-- Feature cards -->
+        <div class="hotels-feature">
+          <span class="villa-feature-icon"><i class="fa-solid fa-concierge-bell"></i></span>
+          <div>
+            <div class="villa-feature-title" data-fr="Réservation via le concierge" data-en="Concierge booking" data-it="Prenotazione via concierge">Réservation via le concierge</div>
+            <p class="villa-feature-text" data-fr="Contact direct avec la réception ou le concierge. Intervention sur votre court le jour même, sans friction pour vos clients." data-en="Direct contact with reception or concierge. Same-day on-court availability, zero friction for your guests." data-it="Contatto diretto con la reception o il concierge. Disponibilità in campo in giornata, senza attese per gli ospiti.">Contact direct avec la réception ou le concierge. Intervention sur votre court le jour même, sans friction pour vos clients.</p>
+          </div>
+        </div>
+        <div class="hotels-feature">
+          <span class="villa-feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
+          <div>
+            <div class="villa-feature-title" data-fr="Discrétion &amp; professionnalisme" data-en="Discretion &amp; professionalism" data-it="Discrezione &amp; professionalità">Discrétion &amp; professionnalisme</div>
+            <p class="villa-feature-text" data-fr="Trilingue (FR / EN / IT), certifié FITP, expérience ATP Challenger. Présentation soignée adaptée à un établissement 4 ou 5 étoiles." data-en="Trilingual (FR / EN / IT), FITP certified, ATP Challenger experience. Presentation and conduct suited to four and five-star standards." data-it="Trilingue (FR / EN / IT), certificato FITP, esperienza ATP Challenger. Presentazione e comportamento adatti agli standard 4 e 5 stelle.">Trilingue (FR / EN / IT), certifié FITP, expérience ATP Challenger. Présentation soignée adaptée à un établissement 4 ou 5 étoiles.</p>
+          </div>
+        </div>
+        <div class="hotels-feature">
+          <span class="villa-feature-icon"><i class="fa-solid fa-children"></i></span>
+          <div>
+            <div class="villa-feature-title" data-fr="Adultes, enfants, familles" data-en="Adults, juniors &amp; families" data-it="Adulti, junior e famiglie">Adultes, enfants, familles</div>
+            <p class="villa-feature-text" data-fr="Séances individuelles, cours famille, initiation junior — un seul interlocuteur pour tous vos clients, quel que soit leur niveau." data-en="Individual lessons, family sessions, junior introduction — one contact for all your guests, regardless of level." data-it="Lezioni individuali, sessioni in famiglia, iniziazione junior — un unico riferimento per tutti i vostri ospiti.">Séances individuelles, cours famille, initiation junior — un seul interlocuteur pour tous vos clients, quel que soit leur niveau.</p>
+          </div>
+        </div>
+        <div class="hotels-feature" style="border-bottom:none;">
+          <span class="villa-feature-icon"><i class="fa-solid fa-location-dot"></i></span>
+          <div>
+            <div class="villa-feature-title" data-fr="Toute la Côte d'Azur" data-en="Across the French Riviera" data-it="Tutta la Costa Azzurra">Toute la Côte d'Azur</div>
+            <p class="villa-feature-text" data-fr="Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins et environs." data-en="Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins and surrounding areas." data-it="Nizza, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Mentone, Valbonne, Mougins e dintorni.">Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins et environs.</p>
+          </div>
+        </div>
+        <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="https://wa.me/330636047722" class="btn-gold" data-fr="Discuter d'un partenariat" data-en="Discuss a partnership" data-it="Discuti una partnership">Discuter d'un partenariat</a>
+          <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" data-fr="Envoyer un email" data-en="Send an email" data-it="Invia un'email">Envoyer un email</a>
+        </div>
+      </div>
+
+      <!-- COLONNA DESTRA: foto + blocco "Why choose" -->
+      <div class="reveal">
+        <img src="hero.jpg" alt="Tennis coach privé hôtel luxury resort Côte d'Azur French Riviera" class="hotels-photo">
+
+        <!-- Blocco "Why choose" — testo puro, visibile utenti e crawler -->
+        <div style="margin-top:36px;padding:32px;background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.12);">
+          <p style="font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;" data-fr="Pourquoi Tennis Coach Riviera ?" data-en="Why Tennis Coach Riviera?" data-it="Perché Tennis Coach Riviera?">Pourquoi Tennis Coach Riviera ?</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;" id="whychoose-fr" lang="fr">
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coach certifié FITP, 10 ans d'expérience</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Cours en français, anglais et italien</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Intervention sur votre court privé, villa ou hôtel</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adultes, enfants et familles — tous niveaux</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Disponible 7j/7, matin et après-midi</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Expérience ATP Challenger · Réponse sous 24h</li>
+          </ul>
+          <ul style="list-style:none;display:none;flex-direction:column;gap:12px;" id="whychoose-en" lang="en">
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> FITP certified tennis coach, 10+ years of experience</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Lessons in English, French and Italian</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coaching at your villa, hotel or private court</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adults, juniors and families — all levels welcome</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Available 7 days a week, morning and afternoon</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> ATP Challenger experience · Reply within 24 hours</li>
+          </ul>
+          <ul style="list-style:none;display:none;flex-direction:column;gap:12px;" id="whychoose-it" lang="it">
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coach certificato FITP, 10+ anni di esperienza</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Lezioni in italiano, francese e inglese</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coaching nella tua villa, hotel o campo privato</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adulti, junior e famiglie — tutti i livelli</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Disponibile 7 giorni su 7, mattina e pomeriggio</li>
+            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Esperienza ATP Challenger · Risposta entro 24h</li>
+          </ul>
+        </div>
+
+        <!-- Trusted by — testo puro nel DOM, trilingue hardcoded -->
+        <div style="margin-top:20px;padding:20px 32px;border-left:2px solid rgba(184,151,58,0.3);">
+          <p id="trustedby-fr" lang="fr" style="font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
+            Visiteurs internationaux, familles en villégiature, propriétaires de résidences secondaires et expats choisissent Tennis Coach Riviera pour un coaching privé multilingue, dispensé directement à leur villa, hôtel ou résidence sur la Côte d'Azur.
+          </p>
+          <p id="trustedby-en" lang="en" style="display:none;font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
+            International visitors, families on holiday, second-home owners and residents across the French Riviera choose Tennis Coach Riviera for flexible, multilingual private coaching delivered directly at villas, residences and hotels.
+          </p>
+          <p id="trustedby-it" lang="it" style="display:none;font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
+            Visitatori internazionali, famiglie in vacanza, proprietari di residenze secondarie e expat scelgono Tennis Coach Riviera per un coaching privato multilingue, direttamente nella loro villa, hotel o residenza sulla Costa Azzurra.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════ -->
 
 <!-- TOURISTS -->
 <section class="tourist-section" id="touristes">
@@ -514,7 +668,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       <div class="reveal" style="background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:40px 36px;"><div style="color:#FBBC04;font-size:18px;margin-bottom:16px;">★★★★★</div><p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.8);margin-bottom:24px;font-style:italic;"><span data-fr="&laquo;&nbsp;Massimo possède la capacité unique d'écouter tout en gardant l'objectif à long terme. Il m'a aidé à devenir plus régulier dans mon tennis. Parmi des centaines de coachs rencontrés en voyageant, Massimo est l'un des rares à poser les bonnes questions et à donner une direction adaptée à votre profil. Humanité, ponctualité et disponibilité en font un vrai professionnel.&nbsp;&raquo;" data-en="&laquo;&nbsp;Massimo has the unique ability to listen while keeping the long-term goal in mind. He helped me become more consistent in my tennis. Among hundreds of coaches I've met travelling, Massimo is one of the few who asks the right questions and gives you a direction tailored to your profile. His humanity, punctuality and availability make him a true professional.&nbsp;&raquo;" data-it="&laquo;&nbsp;Massimo ha la capacità unica di ascoltare pur mantenendo la visione dell'obiettivo a lungo termine. È riuscito a motivarmi ad essere più consistente nel mio tennis. Centinaia di coach incontrati viaggiando — Massimo è uno dei pochi che fa le domande giuste e ti dà una direzione compatibile con le tue caratteristiche. Umanità, puntualità e disponibilità lo rendono un vero professionista.&nbsp;&raquo;">Massimo ha la capacità unica di ascoltare pur mantenendo la visione dell'obiettivo a lungo termine.</span></p><div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(184,151,58,0.1);"><div style="width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:var(--navy);">A</div><div><div style="font-size:13px;font-weight:500;color:#fff;">Andrea Toniolo</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">Google · Juin 2025</div></div></div></div>
       <div class="reveal reveal-delay-1" style="background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:40px 36px;"><div style="color:#FBBC04;font-size:18px;margin-bottom:16px;">★★★★★</div><p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.8);margin-bottom:24px;font-style:italic;"><span data-fr="&laquo;&nbsp;Super coach, je recommande vraiment ! Massimo s'adapte bien au niveau de chaque élève, il est patient et on progresse vite. Cours dynamiques et agréables, que ce soit pour les débutants ou les joueurs plus avancés. Disponible et ponctuel.&nbsp;&raquo;" data-en="&laquo;&nbsp;Great coach, I highly recommend! Massimo adapts well to each student's level, he is patient and you improve quickly. Dynamic and enjoyable lessons, whether you're a beginner or a more advanced player. Available and punctual.&nbsp;&raquo;" data-it="&laquo;&nbsp;Ottimo coach, lo consiglio davvero! Massimo si adatta bene al livello di ogni allievo, è paziente e si progredisce in fretta. Lezioni dinamiche e piacevoli, sia per i principianti che per i giocatori più avanzati. Disponibile e puntuale.&nbsp;&raquo;">Super coach, je recommande vraiment !</span></p><div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(184,151,58,0.1);"><div style="width:36px;height:36px;border-radius:50%;background:#5F6368;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;">M</div><div><div style="font-size:13px;font-weight:500;color:#fff;">Marco Semprevivo</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">Google · Juin 2025</div></div></div></div>
       <div class="reveal" style="background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:40px 36px;"><div style="color:#FBBC04;font-size:18px;margin-bottom:16px;">★★★★★</div><p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.8);margin-bottom:24px;font-style:italic;"><span data-fr="&laquo;&nbsp;Coach sérieux et efficace. Dès la première séance, quelques conseils précis sur mon revers et j'ai senti une vraie différence — meilleure frappe et plus de vitesse de balle. Forza !&nbsp;&raquo;" data-en="&laquo;&nbsp;Serious and effective coach. From the very first session, a few precise tips on my backhand and I immediately felt the difference — better strike and more ball speed. Forza!&nbsp;&raquo;" data-it="&laquo;&nbsp;Coach serio ed efficace. Già dalla prima sessione, qualche consiglio preciso sul mio rovescio e ho sentito subito la differenza — colpo migliore e più velocità sulla palla. Forza!&nbsp;&raquo;">Coach sérieux et efficace. Forza !</span></p><div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(184,151,58,0.1);"><div style="width:36px;height:36px;border-radius:50%;background:#E91E63;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;">L</div><div><div style="font-size:13px;font-weight:500;color:#fff;">Luca S.</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">Google · Juin 2025</div></div></div></div>
-      <div class="reveal reveal-delay-1" style="background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:40px 36px;"><div style="color:#FBBC04;font-size:18px;margin-bottom:16px;">★★★★★</div><p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.8);margin-bottom:24px;font-style:italic;"><span data-fr="&laquo;&nbsp;Massimo est un coach très engageant. Il comprend vos lacunes et organise les entraînements pour que vous progressiez vraiment.&nbsp;&raquo;" data-en="&laquo;&nbsp;Massimo is a very engaging coach. He understands your shortcomings and organizes the practice for you to really improve.&nbsp;&raquo;" data-it="&laquo;&nbsp;Massimo è un coach molto coinvolgente. Capisce i tuoi punti deboli e organizza gli allenamenti per farti migliorare davvero.&nbsp;&raquo;">Maximo is a very engaging coach. He understands your shortcomings and organizes the practice for you to really improve.</span></p><div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(184,151,58,0.1);"><div style="width:36px;height:36px;border-radius:50%;background:#E65100;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;">J</div><div><div style="font-size:13px;font-weight:500;color:#fff;">Jose Garcia</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">Google · Juin 2025</div></div></div></div>
+      <div class="reveal reveal-delay-1" style="background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.1);padding:40px 36px;"><div style="color:#FBBC04;font-size:18px;margin-bottom:16px;">★★★★★</div><p style="font-size:14px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.8);margin-bottom:24px;font-style:italic;"><span data-fr="&laquo;&nbsp;Massimo est un coach très engageant. Il comprend vos lacunes et organise les entraînements pour que vous progressiez vraiment.&nbsp;&raquo;" data-en="&laquo;&nbsp;Massimo is a very engaging coach. He understands your shortcomings and organizes the practice for you to really improve.&nbsp;&raquo;" data-it="&laquo;&nbsp;Massimo è un coach molto coinvolgente. Capisce i tuoi punti deboli e organizza gli allenamenti per farti migliorare davvero.&nbsp;&raquo;">Massimo is a very engaging coach. He understands your shortcomings and organizes the practice for you to really improve.</span></p><div style="display:flex;align-items:center;gap:12px;padding-top:20px;border-top:1px solid rgba(184,151,58,0.1);"><div style="width:36px;height:36px;border-radius:50%;background:#E65100;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;color:#fff;">J</div><div><div style="font-size:13px;font-weight:500;color:#fff;">Jose Garcia</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">Google · Juin 2025</div></div></div></div>
     </div>
     <div style="text-align:center;margin-top:40px;"><a href="https://share.google/saGmR8pQTYmfx4kDp" target="_blank" rel="noopener" style="font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,151,58,0.3);padding-bottom:4px;" data-fr="Voir tous les avis sur Google →" data-en="See all reviews on Google →" data-it="Vedi tutte le recensioni su Google →">Voir tous les avis sur Google →</a></div>
   </div>
@@ -568,11 +722,17 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       </div>
       <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);">
         <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Intervenez-vous à Monaco, Antibes et Valbonne ?" data-en="Do you cover Monaco, Antibes and Valbonne?" data-it="Intervenite a Monaco, Antibes e Valbonne?">Intervenez-vous à Monaco, Antibes et Valbonne ?</div>
-        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs." data-en="Yes — I cover the entire French Riviera: Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat and surroundings." data-it="Sì — intervengo su tutta la Costa Azzurra: Nizza, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat e dintorni.">Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs.</div>
+        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs." data-en="Yes — I cover the entire French Riviera: Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat and surroundings." data-it="Sì — intervengo su tutta la Costa Azzurra: Nizza, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat e dintorni.">Oui — j'interviens sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat et environs.</div>
       </div>
       <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);">
         <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Peut-on réserver une seule séance ?" data-en="Can I book just one session?" data-it="Si può prenotare una sola lezione?">Peut-on réserver une seule séance ?</div>
         <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui — la réservation à la séance est possible. Je propose aussi des packs de 10 leçons à tarif réduit pour les résidents." data-en="Yes — single session booking is available. I also offer 10-lesson packs at a reduced rate for residents." data-it="Sì — la prenotazione alla singola lezione è possibile. Propongo anche pack da 10 lezioni a tariffa ridotta per i residenti.">Oui — la réservation à la séance est possible. Je propose aussi des packs de 10 leçons à tarif réduit pour les résidents.</div>
+      </div>
+      <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);">
+        <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Proposez-vous des cours pour les hôtels et les villas ?" data-en="Do you offer coaching services for hotels and villas?" data-it="Offrite servizi di coaching per hotel e ville?">
+          <span data-fr="Proposez-vous des cours pour les hôtels et les villas ?" data-en="Do you offer coaching services for hotels and villas?" data-it="Offrite servizi di coaching per hotel e ville?">Proposez-vous des cours pour les hôtels et les villas ?</span>
+        </div>
+        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui — je travaille directement avec les concierges et les gestionnaires de résidences pour offrir un service de tennis privé à leurs clients. Discret, professionnel, disponible sur demande." data-en="Yes — I work directly with concierges and property managers to provide a private tennis service for their guests. Discreet, professional, available on request." data-it="Sì — lavoro direttamente con i concierge e i gestori di residenze per offrire un servizio di tennis privato ai loro ospiti. Discreto, professionale, disponibile su richiesta.">Oui — je travaille directement avec les concierges et les gestionnaires de résidences pour offrir un service de tennis privé à leurs clients. Discret, professionnel, disponible sur demande.</div>
       </div>
       <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);border-bottom:1px solid rgba(184,151,58,0.1);">
         <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Proposez-vous des cours en anglais ou en italien ?" data-en="Do you offer lessons in English or Italian?" data-it="Offrite lezioni in inglese o in italiano?">Proposez-vous des cours en anglais ou en italien ?</div>
@@ -600,8 +760,12 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
 <div style="background:var(--navy-mid);border-top:1px solid rgba(184,151,58,0.08);padding:40px 60px;">
   <div style="max-width:1200px;margin:0 auto;">
     <p style="font-size:9px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:rgba(184,151,58,0.4);margin-bottom:16px;" data-fr="Zones d'intervention" data-en="Service areas" data-it="Zone di intervento">Zones d'intervention</p>
-    <p style="font-size:14px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.55);margin-bottom:24px;max-width:760px;" data-fr="Coach de tennis privé intervenant à <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> et <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Cours particuliers à domicile, dans les résidences privées, villas et hôtels de la Côte d'Azur." data-en="Private tennis coach operating in <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> and <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Private lessons at home, in private residences, villas and hotels across the French Riviera." data-it="Coach di tennis privato attivo a <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nizza</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> e <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Lezioni private a domicilio, in residenze private, ville e hotel della Costa Azzurra.">Coach de tennis privé intervenant à <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> et <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Cours particuliers à domicile, dans les résidences privées, villas et hôtels de la Côte d'Azur.</p>
-
+    <p style="font-size:14px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.55);margin-bottom:24px;max-width:760px;"
+       data-fr="Coach de tennis privé intervenant à <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> et <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Cours particuliers à domicile, dans les résidences privées, villas et hôtels de la Côte d'Azur."
+       data-en="Private tennis coach operating in <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> and <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Private lessons at home, in private residences, villas and hotels across the French Riviera."
+       data-it="Coach di tennis privato attivo a <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nizza</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> e <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Lezioni private a domicilio, in residenze private, ville e hotel della Costa Azzurra.">
+      Coach de tennis privé intervenant à <a href='/nice.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Nice</a>, <a href='/monaco.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Monaco</a>, <a href='/antibes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Antibes</a>, <a href='/cannes.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cannes</a>, <a href='/valbonne.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Valbonne</a>, Sophia Antipolis, <a href='/mougins.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Mougins</a>, <a href='/biot.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Biot</a> et <a href='/cap-ferrat.html' style='color:rgba(184,151,58,0.7);text-decoration:none;'>Cap Ferrat</a>. Cours particuliers à domicile, dans les résidences privées, villas et hôtels de la Côte d'Azur.
+    </p>
   </div>
 </div>
 
@@ -616,8 +780,11 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
 </footer>
 
 <script>
-// ── LANG SWITCHER ──
 var LANG_KEY = 'tcr_lang';
+var HARDCODED_BLOCKS = ['hotels-heading-fr','hotels-heading-en','hotels-heading-it',
+  'hotels-intro-fr','hotels-intro-en','hotels-intro-it',
+  'whychoose-fr','whychoose-en','whychoose-it',
+  'trustedby-fr','trustedby-en','trustedby-it'];
 function applyLang(lang) {
   document.getElementById('html-root').setAttribute('lang', lang);
   document.querySelectorAll('[data-'+lang+']').forEach(function(el) {
@@ -625,6 +792,13 @@ function applyLang(lang) {
   });
   document.querySelectorAll('.lang-btn').forEach(function(btn) {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+  HARDCODED_BLOCKS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var elLang = el.getAttribute('lang');
+    var isUl = el.tagName === 'UL';
+    el.style.display = (elLang === lang) ? (isUl ? 'flex' : 'block') : 'none';
   });
   try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
 }
@@ -643,7 +817,6 @@ document.querySelectorAll('.lang-btn').forEach(function(btn) {
   applyLang(saved);
 })();
 
-// ── NAVBAR BURGER ──
 var burger = document.getElementById('nav-burger');
 var navLinks = document.getElementById('nav-links');
 if (burger && navLinks) {
@@ -654,20 +827,17 @@ if (burger && navLinks) {
   });
 }
 
-// ── NAVBAR DROPDOWNS — tutti i dropdown, non solo il primo ──
 document.querySelectorAll('.nav-dropdown').forEach(function(dd) {
   var btn = dd.querySelector('.nav-dropdown-btn');
   if (btn) {
     btn.addEventListener('click', function(e) {
       e.stopPropagation();
       var isOpen = dd.classList.contains('open');
-      // Chiudi tutti gli altri dropdown
       document.querySelectorAll('.nav-dropdown').forEach(function(other) {
         other.classList.remove('open');
         var otherBtn = other.querySelector('.nav-dropdown-btn');
         if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
       });
-      // Apri/chiudi quello cliccato
       if (!isOpen) {
         dd.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
@@ -683,7 +853,6 @@ document.addEventListener('click', function() {
   });
 });
 
-// ── REVEAL ──
 window.addEventListener('load', function() {
   var els = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
