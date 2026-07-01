@@ -1,9 +1,8 @@
 # robots.txt — tenniscoachriviera.com
-# Last updated: 2026-06-29
+# Last updated: 2026-07-01
 
 User-agent: *
 Allow: /
-Disallow: /mentions-legales.html
 
 # Sitemap
 Sitemap: https://tenniscoachriviera.com/sitemap.xml
