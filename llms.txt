@@ -33,6 +33,7 @@ Nice, Antibes, Cannes, Monaco, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Fe
 ## Key Pages
 
 - Homepage: https://tenniscoachriviera.com/
+- About: https://tenniscoachriviera.com/about.html
 - Nice: https://tenniscoachriviera.com/nice.html
 - Antibes: https://tenniscoachriviera.com/antibes.html
 - Cannes: https://tenniscoachriviera.com/cannes.html
