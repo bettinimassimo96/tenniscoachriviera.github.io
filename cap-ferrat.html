@@ -121,35 +121,73 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Massimo Bettini — Tennis Coach Privé Cap Ferrat",
-  "description": "Coach de tennis privé à Cap Ferrat. Leçons à domicile sur court privé ou au club partenaire à Valbonne. Certifié FITP 2ème niveau, 10 ans d'expérience.",
-  "url": "https://tenniscoachriviera.com/cap-ferrat.html",
-  "telephone": "+33636047722",
-  "email": "massimo@tenniscoachriviera.com",
-  "priceRange": "€€€",
-  "openingHours": "Mo-Su 08:00-20:00",
-  "areaServed": [
-    "Cap Ferrat",
-    "Villefranche-sur-Mer",
-    "Beaulieu-sur-Mer",
-    "Nice",
-    "Èze"
-  ],
-  "knowsLanguage": [
-    "French",
-    "English",
-    "Italian"
-  ],
-  "sameAs": [
-    "https://www.google.com/maps/place/Tennis+Coach+Riviera/@43.4744976,6.3623455,123447m/data=!3m1!1e3!4m7!3m6!1s0x4bbdd907d8243af3:0x3099cc9f6eaa6193!8m2!3d43.6301672!4d7.1936512!15sCgx0ZW5uaXMgY29hY2iSARF0ZW5uaXNfaW5zdHJ1Y3RvcuABAA!16s%2Fg%2F11njy4fz6m",
-    "https://www.instagram.com/tenniscoachriviera/"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "10"
-  }
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://tenniscoachriviera.com/#business",
+      "name": "Tennis Coach Riviera — Massimo Bettini",
+      "description": "Coach de tennis privé à Cap Ferrat. Leçons à domicile sur court privé ou au club partenaire à Valbonne. Certifié FITP 2ème niveau, 10 ans d'expérience.",
+      "url": "https://tenniscoachriviera.com/cap-ferrat.html",
+      "telephone": "+33636047722",
+      "email": "massimo@tenniscoachriviera.com",
+      "priceRange": "€€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nice",
+        "addressRegion": "Provence-Alpes-Côte d'Azur",
+        "addressCountry": "FR"
+      },
+      "openingHours": "Mo-Su 08:00-20:00",
+      "areaServed": [
+        {"@type": "City", "name": "Cap Ferrat"},
+        {"@type": "City", "name": "Villefranche-sur-Mer"},
+        {"@type": "City", "name": "Beaulieu-sur-Mer"},
+        {"@type": "City", "name": "Nice"},
+        {"@type": "City", "name": "Èze"}
+      ],
+      "employee": {"@id": "https://tenniscoachriviera.com/#massimo"},
+      "sameAs": [
+        "https://www.google.com/maps/place/Tennis+Coach+Riviera/@43.4744976,6.3623455,123447m/data=!3m1!1e3!4m7!3m6!1s0x4bbdd907d8243af3:0x3099cc9f6eaa6193!8m2!3d43.6301672!4d7.1936512!15sCgx0ZW5uaXMgY29hY2iSARF0ZW5uaXNfaW5zdHJ1Y3RvcuABAA!16s%2Fg%2F11njy4fz6m",
+        "https://www.instagram.com/tenniscoachriviera/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "18"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://tenniscoachriviera.com/#massimo",
+      "name": "Massimo Bettini",
+      "jobTitle": "Coach de Tennis Privé",
+      "description": "Coach de tennis certifié FITP IS1 et IS2, 10 ans d'expérience. Coordinateur ATP Challenger Vicenza 2023–2026. Basé à Nice, Côte d'Azur.",
+      "url": "https://tenniscoachriviera.com/",
+      "knowsLanguage": ["fr", "en", "it"],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "FITP IS2 — Instructeur de Tennis 2ème degré"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "FITP IS1 — Instructeur de Tennis 1er degré"
+        }
+      ],
+      "worksFor": {"@id": "https://tenniscoachriviera.com/#business"},
+      "sameAs": [
+        "https://www.instagram.com/tenniscoachriviera/"
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "Cours de tennis privés à Cap Ferrat",
+      "provider": {"@id": "https://tenniscoachriviera.com/#massimo"},
+      "areaServed": {"@type": "City", "name": "Cap Ferrat"},
+      "description": "Cours particuliers de tennis à domicile à Cap Ferrat — villa, résidence ou hôtel, ou au club partenaire à Valbonne. Adultes, enfants et seniors. Disponible 7j/7 en français, anglais et italien.",
+      "serviceType": "Private Tennis Coaching"
+    }
+  ]
 }
 </script>
 <script type="application/ld+json">
