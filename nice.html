@@ -337,7 +337,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
       </div>
     </div>
     <div class="nav-dropdown">
-      <button class="nav-link nav-dropdown-btn" aria-expanded="false">Blog</button>
+      <button class="nav-link nav-dropdown-btn" aria-expanded="false">Blog <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
       <div class="nav-dropdown-menu">
         <a href="https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html" class="nav-dropdown-item" data-fr="Coach privé vs club" data-en="Private coach vs club" data-it="Coach privato vs club">Coach privé vs club</a>
         <a href="https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html" class="nav-dropdown-item" data-fr="Tennis à Valbonne" data-en="Tennis in Valbonne" data-it="Tennis a Valbonne">Tennis à Valbonne</a>
@@ -350,7 +350,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     <a href="https://www.instagram.com/tenniscoachriviera/" target="_blank" rel="noopener noreferrer" class="nav-instagram" aria-label="Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
     </a>
-    <a href="https://wa.me/330636047722" class="nav-cta"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/330636047722" class="nav-cta" onclick="gtag('event', 'contact_whatsapp');"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="fr">FR</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -536,8 +536,8 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     <h2 class="cta-title" data-fr="Réserver à <em>Nice</em>" data-en="Book in <em>Nice</em>" data-it="Prenota a <em>Nizza</em>">Réserver à <em>Nice</em></h2>
     <p class="cta-sub" data-fr="Disponible 7j/7, matin et après-midi — à domicile sur votre court ou au club partenaire à Valbonne.<br>Réponse garantie sous 24 heures · Devis personnalisé" data-en="Available 7 days a week, morning and afternoon — at home on your court or at the partner club in Valbonne.<br>Reply guaranteed within 24 hours · Personalised quote" data-it="Disponibile 7 giorni su 7, mattina e pomeriggio — a domicilio sul tuo campo o al club partner a Valbonne.<br>Risposta garantita entro 24 ore · Preventivo personalizzato">Disponible 7j/7, matin et après-midi — à domicile sur votre court ou au club partenaire à Valbonne.<br>Réponse garantie sous 24 heures · Devis personnalisé</p>
     <div class="cta-contacts">
-      <a href="https://wa.me/330636047722" class="btn-gold" data-fr="📱 WhatsApp" data-en="📱 WhatsApp" data-it="📱 WhatsApp">📱 WhatsApp</a>
-      <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" data-fr="✉️ Email" data-en="✉️ Email" data-it="✉️ Email">✉️ Email</a>
+      <a href="https://wa.me/330636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click');" data-fr="📱 WhatsApp" data-en="📱 WhatsApp" data-it="📱 WhatsApp">📱 WhatsApp</a>
+      <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" onclick="gtag('event', 'contact_email');" data-fr="✉️ Email" data-en="✉️ Email" data-it="✉️ Email">✉️ Email</a>
     </div>
     <p class="tarif-note" data-fr="Tarifs sur demande · Devis personnalisé" data-en="Rates on request · Personalised quote" data-it="Tariffe su richiesta · Preventivo personalizzato">Tarifs sur demande · Devis personnalisé</p>
   </div>
