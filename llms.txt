@@ -1,10 +1,10 @@
 # Tennis Coach Riviera — llms.txt
 # https://tenniscoachriviera.com/
-# Last updated: 2026-06-29
+# Last updated: 2026-07-17
 
 ## About
 
-Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), operated by Massimo Bettini. The coach travels directly to the client's location — private villas, luxury hotels, resorts and residences. Available 7 days a week, morning and afternoon.
+Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), operated by Massimo Bettini. The coach travels directly to the client's location — private villas, luxury hotels, resorts and residences. Available 7 days a week, morning and afternoon. One of the few coaches on the Riviera offering lessons in three languages (French, English, Italian) with a single coach, rather than requiring different staff per language.
 
 ## Coach
 
@@ -25,6 +25,7 @@ Tennis Coach Riviera is a private tennis coaching service on the French Riviera 
 - Group lessons (2–3 players)
 - 10-lesson packs for residents
 - Hotel and resort concierge coaching service
+- Court arrangement: in Valbonne and Mougins, a partner club court can be arranged for clients without private court access
 
 ## Service Areas
 
@@ -42,10 +43,31 @@ Nice, Antibes, Cannes, Monaco, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Fe
 - Mougins: https://tenniscoachriviera.com/mougins.html
 - Biot: https://tenniscoachriviera.com/biot.html
 - Cap Ferrat: https://tenniscoachriviera.com/cap-ferrat.html
-- Blog (FR): https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html
-- Blog (FR): https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html
-- Blog (IT): https://tenniscoachriviera.com/blog/blog-lezioni-tennis-nizza.html
 - Legal: https://tenniscoachriviera.com/mentions-legales.html
+
+## Blog (French)
+
+- Coach à domicile vs club: https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html
+- Tennis à Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html
+- Tennis à Nice: https://tenniscoachriviera.com/blog/blog-cours-tennis-nice.html
+- Tennis à Antibes: https://tenniscoachriviera.com/blog/blog-cours-tennis-antibes.html
+- Tennis en vacances sur la Côte d'Azur: https://tenniscoachriviera.com/blog/blog-tennis-vacances-cote-azur.html
+
+## Blog (English)
+
+- Private Tennis Coach on the French Riviera: At-Home Lessons vs Club: https://tenniscoachriviera.com/blog/en/private-tennis-coach-french-riviera.html
+- Private Tennis Lessons in Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/blog/en/tennis-coaching-valbonne-sophia-antipolis.html
+- Private Tennis Lessons in Nice: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-nice.html
+- Private Tennis Lessons in Antibes: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-antibes.html
+- Tennis During Your Holidays on the French Riviera: https://tenniscoachriviera.com/blog/en/tennis-holidays-french-riviera.html
+
+## Blog (Italian)
+
+- Coach di tennis privato Costa Azzurra: lezioni a domicilio vs club: https://tenniscoachriviera.com/blog/it/coach-tennis-privato-costa-azzurra.html
+- Lezioni di tennis private a Valbonne e Sophia Antipolis: https://tenniscoachriviera.com/blog/it/lezioni-tennis-valbonne.html
+- Lezioni di tennis a Nizza: https://tenniscoachriviera.com/blog/blog-lezioni-tennis-nizza.html
+- Lezioni di tennis ad Antibes: https://tenniscoachriviera.com/blog/it/lezioni-tennis-antibes.html
+- Tennis durante le vacanze in Costa Azzurra: https://tenniscoachriviera.com/blog/it/tennis-vacanze-costa-azzurra.html
 
 ## Contact
 
@@ -56,8 +78,8 @@ Nice, Antibes, Cannes, Monaco, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Fe
 
 ## Reviews
 
-18 verified Google reviews, 5.0/5 rating (as of June 2026).
+18 verified Google reviews, 5.0/5 rating (as of June 2026). Check Google Business listing for current count.
 
 ## Languages
 
-The website is available in French (primary), English and Italian. Coaching is delivered in the client's preferred language.
+The website is available in French (primary), English and Italian, with a JavaScript language switcher on the homepage, city pages and about page, and separate translated articles for each blog post. Coaching is delivered in the client's preferred language — French, English or Italian, by the same coach.
