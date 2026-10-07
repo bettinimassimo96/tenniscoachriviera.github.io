@@ -309,7 +309,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     <a href="https://tenniscoachriviera.com/about.html" class="nav-link" data-fr="À Propos" data-en="About" data-it="Chi sono">À Propos</a>
     <a href="https://tenniscoachriviera.com/#services" class="nav-link" data-fr="Services" data-en="Services" data-it="Servizi">Services</a>
     <div class="nav-dropdown">
-      <button class="nav-link nav-dropdown-btn" aria-expanded="false" data-fr="Villes" data-en="Cities" data-it="Città">Villes <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
+      <button class="nav-link nav-dropdown-btn" aria-expanded="false" data-fr="Villes <i class='fa-solid fa-chevron-down' style='font-size:8px;'></i>" data-en="Cities <i class='fa-solid fa-chevron-down' style='font-size:8px;'></i>" data-it="Città <i class='fa-solid fa-chevron-down' style='font-size:8px;'></i>">Villes <i class="fa-solid fa-chevron-down" style="font-size:8px;"></i></button>
       <div class="nav-dropdown-menu">
         <a href="https://tenniscoachriviera.com/nice.html" class="nav-dropdown-item">Nice</a>
         <a href="https://tenniscoachriviera.com/antibes.html" class="nav-dropdown-item">Antibes</a>
@@ -521,6 +521,25 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     }
     applyLang(saved);
   })();
+})();
+</script>
+<script>
+/* Link del blog nella lingua scelta */
+(function(){
+  var M={"/blog/blog-cours-domicile-cote-azur.html": {"en": "/blog/en/private-tennis-coach-french-riviera.html", "it": "/blog/it/coach-tennis-privato-costa-azzurra.html"}, "/blog/blog-cours-tennis-valbonne.html": {"en": "/blog/en/tennis-coaching-valbonne-sophia-antipolis.html", "it": "/blog/it/lezioni-tennis-valbonne.html"}, "/blog/blog-cours-tennis-nice.html": {"en": "/blog/en/private-tennis-lessons-nice.html", "it": "/blog/blog-lezioni-tennis-nizza.html"}, "/blog/blog-tennis-vacances-cote-azur.html": {"en": "/blog/en/tennis-holidays-french-riviera.html", "it": "/blog/it/tennis-vacanze-costa-azzurra.html"}, "/blog/blog-cours-tennis-antibes.html": {"en": "/blog/en/private-tennis-lessons-antibes.html", "it": "/blog/it/lezioni-tennis-antibes.html"}};
+  function fix(){
+    var l; try{l=localStorage.getItem('tcr_lang');}catch(e){}
+    l=l||'fr';
+    document.querySelectorAll('a[href*="/blog/"]').forEach(function(a){
+      var b=a.getAttribute('data-href-fr');
+      if(!b){b=a.getAttribute('href');a.setAttribute('data-href-fr',b);}
+      var abs=/^https?:/.test(b), k=b.replace(/^https?:\/\/[^\/]+/,''), m=M[k];
+      if(!m)return;
+      a.setAttribute('href', l==='fr'?b:((abs?'https://tenniscoachriviera.com':'')+m[l]));
+    });
+  }
+  fix();
+  document.querySelectorAll('.lang-btn').forEach(function(x){x.addEventListener('click',function(){setTimeout(fix,0);});});
 })();
 </script>
 </body>
