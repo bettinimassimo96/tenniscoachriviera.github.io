@@ -188,7 +188,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 
 /* ── HERO ── */
 .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 80px;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:url('coach-tennis-prive-cote-azur.jpg') center 48%/cover no-repeat;transform:scale(1.05);animation:heroZoom 12s ease-out forwards;}
+.hero-bg{position:absolute;inset:0;background:url('coach-tennis-prive-cote-azur.jpg') center 40%/cover no-repeat;transform:scale(1.05);animation:heroZoom 12s ease-out forwards;}
 @keyframes heroZoom{from{transform:scale(1.05);}to{transform:scale(1.0);}}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,26,46,0.98) 0%,rgba(12,26,46,0.7) 40%,rgba(12,26,46,0.3) 70%,rgba(12,26,46,0.15) 100%),linear-gradient(to right,rgba(12,26,46,0.4) 0%,transparent 60%);}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 60px;width:100%;}
@@ -353,6 +353,20 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   .hero-scroll{display:none;}
 }
 </style>
+<style>
+.cred-bar-inner{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:20px 32px;}
+.cred-divider{display:none;}
+@media(max-width:1100px){.cred-bar-inner{grid-template-columns:repeat(2,auto);justify-content:space-around;}}
+@media(max-width:560px){.cred-bar-inner{grid-template-columns:1fr;justify-items:start;}}
+</style>
+<style>
+/* Hero desktop: foto a destra, testo su fondo blu a sinistra */
+@media(min-width:769px){
+  .hero-bg{left:46%;background-position:center 32%;}
+  .hero-overlay{background:linear-gradient(to right,rgba(12,26,46,1) 0%,rgba(12,26,46,1) 46%,rgba(12,26,46,0.5) 54%,rgba(12,26,46,0) 70%),linear-gradient(to top,rgba(12,26,46,0.9) 0%,rgba(12,26,46,0) 30%);}
+  .hero-name,.hero-tagline{max-width:44vw;}
+}
+</style>
 </head>
 <body>
 
@@ -415,7 +429,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     <p class="hero-tagline" data-fr="Cours particuliers sur la Côte d'Azur, en français, anglais ou italien" data-en="Private lessons on the French Riviera, in English, French or Italian" data-it="Lezioni private in Costa Azzurra, in italiano, francese o inglese">Cours particuliers sur la Côte d'Azur, en français, anglais ou italien</p>
     <div class="hero-ctas">
       <a href="https://wa.me/330636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click', {cta_position: 'hero'});"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> <span data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp" data-it="Scrivimi su WhatsApp">Écrire sur WhatsApp</span></a>
-      <a href="#services" class="btn-outline" data-fr="Découvrir les cours" data-en="Discover the lessons" data-it="Scopri le lezioni">Découvrir les cours</a>
+      <a href="#services" class="btn-outline" data-fr="Découvrir les services" data-en="Discover the services" data-it="Scopri i servizi">Découvrir les services</a>
     </div>
   </div>
   <div class="hero-scroll"><div class="hero-scroll-line"></div>Scroll</div>
@@ -439,7 +453,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   <div class="about-grid">
     <div class="reveal">
       <div class="about-photo-wrap">
-        <img src="massimo-bettini-coach-tennis.jpg" alt="Massimo Bettini, coach de tennis privé sur la Côte d'Azur" class="about-photo" style="object-position:center 30%;" loading="lazy">
+        <img src="massimo-bettini-tennis-cote-azur.jpg" alt="Massimo Bettini sur un court de tennis, Côte d'Azur" class="about-photo" style="object-position:center 60%;" loading="lazy">
         <div class="about-photo-accent"></div>
         <div class="about-photo-badge">FITP IS2<br>Côte d'Azur</div>
       </div>
@@ -447,7 +461,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     <div>
       <p class="section-eyebrow reveal" data-fr="À propos" data-en="About" data-it="Chi sono">À propos</p>
       <h2 class="section-title reveal reveal-delay-1"><span data-fr="Coach certifié,<br>" data-en="Certified coach,<br>" data-it="Coach certificato,<br>">Coach certifié,<br></span><em data-fr="10 ans d'enseignement" data-en="10 years of teaching" data-it="10 anni di insegnamento">10 ans d'enseignement</em></h2>
-      <p class="about-text reveal reveal-delay-2" data-fr="Je suis Massimo Bettini, coach de tennis certifié FITP (2ème niveau, reconnaissance française en cours), basé à Nice. J'enseigne depuis dix ans à des enfants, des adultes et des seniors, d'abord au Tennis Palladio 98 de Vicence, aujourd'hui sur la Côte d'Azur." data-en="I'm Massimo Bettini, an FITP-certified tennis coach (2nd level, French recognition in progress), based in Nice. I have been teaching children, adults and seniors for ten years, first at Tennis Palladio 98 in Vicenza, now on the French Riviera." data-it="Sono Massimo Bettini, coach di tennis certificato FITP (2° livello, riconoscimento francese in corso), con base a Nizza. Insegno da dieci anni a bambini, adulti e senior, prima al Tennis Palladio 98 di Vicenza, oggi in Costa Azzurra.">Je suis Massimo Bettini, coach de tennis certifié FITP (2ème niveau, reconnaissance française en cours), basé à Nice. J'enseigne depuis dix ans à des enfants, des adultes et des seniors, d'abord au Tennis Palladio 98 de Vicence, aujourd'hui sur la Côte d'Azur.</p>
+      <p class="about-text reveal reveal-delay-2" data-fr="Je suis Massimo Bettini, coach de tennis certifié FITP (2ème niveau), basé à Nice. J'enseigne depuis dix ans à des enfants, des adultes et des seniors, d'abord au Tennis Palladio 98 de Vicence, aujourd'hui sur la Côte d'Azur." data-en="I'm Massimo Bettini, an FITP-certified tennis coach (2nd level), based in Nice. I have been teaching children, adults and seniors for ten years, first at Tennis Palladio 98 in Vicenza, now on the French Riviera." data-it="Sono Massimo Bettini, coach di tennis certificato FITP (2° livello), con base a Nizza. Insegno da dieci anni a bambini, adulti e senior, prima al Tennis Palladio 98 di Vicenza, oggi in Costa Azzurra.">Je suis Massimo Bettini, coach de tennis certifié FITP (2ème niveau), basé à Nice. J'enseigne depuis dix ans à des enfants, des adultes et des seniors, d'abord au Tennis Palladio 98 de Vicence, aujourd'hui sur la Côte d'Azur.</p>
       <p class="about-text reveal reveal-delay-2" data-fr="Je coordonne aussi l'organisation de l'ATP Challenger de Vicence. Sur le court, je cherche une chose simple : des leçons claires, adaptées à votre niveau, et l'envie de revenir jouer." data-en="I also help organise the ATP Challenger tournament in Vicenza, as operations coordinator. On court, I aim for something simple: clear lessons, suited to your level, that make you want to come back and play." data-it="Coordino anche l'organizzazione dell'ATP Challenger di Vicenza. In campo cerco una cosa semplice: lezioni chiare, adatte al tuo livello, che ti facciano venire voglia di tornare a giocare.">Je coordonne aussi l'organisation de l'ATP Challenger de Vicence. Sur le court, je cherche une chose simple : des leçons claires, adaptées à votre niveau, et l'envie de revenir jouer.</p>
       <div class="about-langs reveal reveal-delay-3">
         <div class="lang-tag"><i class="fa-solid fa-globe" style="color:var(--gold);font-size:16px;"></i> Français</div>
@@ -579,50 +593,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
       <div class="reveal">
         <img src="balles-de-tennis-lecon-privee.jpg" alt="Balles de tennis pour une leçon privée à l'hôtel, Côte d'Azur" class="hotels-photo" loading="lazy">
 
-        <!-- Blocco "Why choose" — testo puro, visibile utenti e crawler -->
-        <div style="margin-top:36px;padding:32px;background:rgba(255,255,255,0.02);border:1px solid rgba(184,151,58,0.12);">
-          <p style="font-size:9px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;" data-fr="Pourquoi Tennis Coach Riviera ?" data-en="Why Tennis Coach Riviera?" data-it="Perché Tennis Coach Riviera?">Pourquoi Tennis Coach Riviera ?</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;" id="whychoose-fr" lang="fr">
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coach certifié FITP, 10 ans d'enseignement</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Cours en français, anglais et italien</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Intervention sur votre court privé, villa ou hôtel</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adultes, enfants et familles — tous niveaux</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Leçons ponctuelles ou régulières</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Organisation d'un tournoi ATP Challenger</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Réponse sous 24 heures</li>
-          </ul>
-          <ul style="list-style:none;display:none;flex-direction:column;gap:12px;" id="whychoose-en" lang="en">
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> FITP-certified tennis coach, 10 years of teaching</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Lessons in English, French and Italian</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coaching at your villa, hotel or private court</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adults, juniors and families — all levels welcome</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Single or regular lessons</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> ATP Challenger tournament organisation</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Reply within 24 hours</li>
-          </ul>
-          <ul style="list-style:none;display:none;flex-direction:column;gap:12px;" id="whychoose-it" lang="it">
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coach certificato FITP, 10 anni di insegnamento</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Lezioni in italiano, francese e inglese</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Coaching nella tua villa, hotel o campo privato</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Adulti, junior e famiglie — tutti i livelli</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Lezioni singole o regolari</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Organizzazione di un torneo ATP Challenger</li>
-            <li style="font-size:13px;font-weight:300;color:rgba(232,224,212,0.75);display:flex;align-items:baseline;gap:10px;"><span style="color:var(--gold);font-size:10px;">—</span> Risposta entro 24 ore</li>
-          </ul>
-        </div>
-
-        <!-- Trusted by — testo puro nel DOM, trilingue hardcoded -->
-        <div style="margin-top:20px;padding:20px 32px;border-left:2px solid rgba(184,151,58,0.3);">
-          <p id="trustedby-fr" lang="fr" style="font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
-            Je travaille avec des visiteurs internationaux, des familles en vacances, des propriétaires de résidences secondaires et des résidents de la Côte d'Azur.
-          </p>
-          <p id="trustedby-en" lang="en" style="display:none;font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
-            I work with international visitors, families on holiday, second-home owners and residents of the French Riviera.
-          </p>
-          <p id="trustedby-it" lang="it" style="display:none;font-size:13px;font-weight:300;line-height:1.8;color:rgba(232,224,212,0.5);font-style:italic;">
-            Lavoro con visitatori internazionali, famiglie in vacanza, proprietari di seconde case e residenti della Costa Azzurra.
-          </p>
-        </div>
+        
       </div>
     </div>
   </div>
@@ -655,7 +626,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   </div>
   <div class="quals-grid">
     <div class="quals-list reveal">
-      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-medal"></i></span><div><div class="qual-title">FITP 2ème niveau</div><p class="qual-text" data-fr="Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive." data-en="Diploma from the Italian Tennis and Padel Federation, French recognition in progress. Full training in technique, tactics and sports pedagogy." data-it="Diploma della Federazione Italiana Tennis e Padel. Formazione completa in tecnica, tattica e pedagogia sportiva.">Diplôme de la Fédération Italienne de Tennis et Padel, reconnaissance française en cours. Formation complète en technique, tactique et pédagogie sportive.</p></div></div>
+      <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-medal"></i></span><div><div class="qual-title">FITP 2ème niveau</div><p class="qual-text" data-fr="Diplôme de la Fédération Italienne de Tennis et Padel. Formation complète en technique, tactique et pédagogie sportive." data-en="Diploma from the Italian Tennis and Padel Federation. Full training in technique, tactics and sports pedagogy." data-it="Diploma della Federazione Italiana Tennis e Padel. Formazione completa in tecnica, tattica e pedagogia sportiva.">Diplôme de la Fédération Italienne de Tennis et Padel. Formation complète en technique, tactique et pédagogie sportive.</p></div></div>
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-trophy"></i></span><div><div class="qual-title" data-fr="Organisation d'un tournoi ATP Challenger" data-en="ATP Challenger tournament organisation" data-it="Organizzazione di un torneo ATP Challenger">Organisation d'un tournoi ATP Challenger</div><p class="qual-text" data-fr="Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023 à 2026." data-en="Operational coordinator of the Internazionali di Tennis Città di Vicenza — ATP Challenger tournament — 2023 to 2026 editions." data-it="Coordinatore operativo degli Internazionali di Tennis Città di Vicenza — torneo ATP Challenger — edizioni 2023-2026.">Coordinateur opérationnel des Internazionali di Tennis Città di Vicenza — tournoi ATP Challenger — éditions 2023 à 2026.</p></div></div>
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-award"></i></span><div><div class="qual-title">Tennis Palladio 98, Vicence</div><p class="qual-text" data-fr="10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux." data-en="10 years of teaching at one of Italy's most recognised clubs, working with children, teenagers, adults and seniors of all levels." data-it="10 anni di insegnamento in uno dei club più riconosciuti d'Italia, con bambini, adolescenti, adulti e senior di tutti i livelli.">10 ans d'enseignement dans l'un des clubs les plus reconnus d'Italie, auprès d'enfants, adolescents, adultes et seniors de tous niveaux.</p></div></div>
       <div class="qual-item"><span class="qual-icon"><i class="fa-solid fa-location-dot"></i></span><div><div class="qual-title" data-fr="Basé à Nice · Côte d'Azur" data-en="Based in Nice · Côte d'Azur" data-it="Basato a Nizza · Costa Azzurra">Basé à Nice · Côte d'Azur</div><p class="qual-text" data-fr="Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs." data-en="Operating across the entire Côte d'Azur: Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins and surroundings." data-it="Attivo su tutta la Costa Azzurra: Nizza, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Mentone, Valbonne, Mougins e dintorni.">Intervenant sur toute la Côte d'Azur : Nice, Monaco, Antibes, Cannes, Cap Ferrat, Beaulieu, Èze, Menton, Valbonne, Mougins et environs.</p></div></div>
