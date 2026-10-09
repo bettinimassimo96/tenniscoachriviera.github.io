@@ -1,73 +1,71 @@
 # Tennis Coach Riviera — llms.txt
 # https://tenniscoachriviera.com/
-# Last updated: 2026-07-17
+# Last updated: 2026-10-08
 
 ## About
 
-Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), operated by Massimo Bettini. The coach travels directly to the client's location — private villas, luxury hotels, resorts and residences. Available 7 days a week, morning and afternoon. One of the few coaches on the Riviera offering lessons in three languages (French, English, Italian) with a single coach, rather than requiring different staff per language.
+Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), run by Massimo Bettini. Lessons take place on the client's own court (private villa, residence or hotel). For clients without a private court, a suitable option is arranged case by case. Lessons are available in French, English and Italian with the same coach.
 
 ## Coach
 
 - Name: Massimo Bettini
-- Certification: FITP IS1 and IS2 (Italian Tennis Federation, 2nd level; French recognition in progress)
-- Experience: 10+ years at Tennis Palladio 98, Vicenza (Italy)
-- ATP Challenger: Operational coordinator, Internazionali di Tennis Città di Vicenza 2023–2026
+- Certification: FITP IS1 and IS2 (Italian Tennis and Padel Federation, 2nd level)
+- Teaching experience: 10 years, including at Tennis Palladio 98, Vicenza (Italy)
+- ATP Challenger: operations coordinator for the organisation of the Internazionali di Tennis Città di Vicenza (2023–2026)
 - Languages: French, English, Italian
 - Based in: Nice, Alpes-Maritimes, France
-- SIRET: 100 929 876 00017
 
 ## Services
 
-- Private tennis lessons at home (villa, hotel, residence)
-- Individual lessons: adults, beginners, seniors
-- Junior and children coaching
-- Family sessions (multi-level, one coach)
-- Group lessons (2–3 players)
-- 10-lesson packs for residents
-- Hotel and resort concierge coaching service
-- Court arrangement: in Valbonne and Mougins, a partner club court can be arranged for clients without private court access
+- Private tennis lessons on the client's court (villa, residence, hotel)
+- Adults, beginners, seniors
+- Children and juniors
+- Family sessions (several levels, one coach)
+- Lessons for two or three players of a similar level
+- Single or regular lessons
+- Private lessons for hotel and concierge guests
 
 ## Service Areas
 
-Nice, Antibes, Cannes, Monaco, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Ferrat, Beaulieu-sur-Mer, Èze, Menton, Saint-Jean-Cap-Ferrat, Roquebrune-Cap-Martin
+Nice, Monaco, Cap Ferrat, Beaulieu-sur-Mer, Èze, Menton, Antibes, Juan-les-Pins, Cannes, Mougins, Biot, Valbonne, Sophia Antipolis
 
 ## Key Pages
 
 - Homepage: https://tenniscoachriviera.com/
 - About: https://tenniscoachriviera.com/about.html
 - Nice: https://tenniscoachriviera.com/nice.html
+- Monaco: https://tenniscoachriviera.com/monaco.html
+- Cap Ferrat: https://tenniscoachriviera.com/cap-ferrat.html
 - Antibes: https://tenniscoachriviera.com/antibes.html
 - Cannes: https://tenniscoachriviera.com/cannes.html
-- Monaco: https://tenniscoachriviera.com/monaco.html
-- Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/valbonne.html
 - Mougins: https://tenniscoachriviera.com/mougins.html
 - Biot: https://tenniscoachriviera.com/biot.html
-- Cap Ferrat: https://tenniscoachriviera.com/cap-ferrat.html
+- Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/valbonne.html
 - Legal: https://tenniscoachriviera.com/mentions-legales.html
 
 ## Blog (French)
 
-- Coach à domicile vs club: https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html
-- Tennis à Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html
-- Tennis à Nice: https://tenniscoachriviera.com/blog/blog-cours-tennis-nice.html
-- Tennis à Antibes: https://tenniscoachriviera.com/blog/blog-cours-tennis-antibes.html
-- Tennis en vacances sur la Côte d'Azur: https://tenniscoachriviera.com/blog/blog-tennis-vacances-cote-azur.html
+- Club ou coach privé : https://tenniscoachriviera.com/blog/blog-cours-domicile-cote-azur.html
+- Tennis à Valbonne et Sophia Antipolis : https://tenniscoachriviera.com/blog/blog-cours-tennis-valbonne.html
+- Tennis à Nice : https://tenniscoachriviera.com/blog/blog-cours-tennis-nice.html
+- Tennis à Antibes : https://tenniscoachriviera.com/blog/blog-cours-tennis-antibes.html
+- Tennis en vacances sur la Côte d'Azur : https://tenniscoachriviera.com/blog/blog-tennis-vacances-cote-azur.html
 
 ## Blog (English)
 
-- Private Tennis Coach on the French Riviera: At-Home Lessons vs Club: https://tenniscoachriviera.com/blog/en/private-tennis-coach-french-riviera.html
-- Private Tennis Lessons in Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/blog/en/tennis-coaching-valbonne-sophia-antipolis.html
-- Private Tennis Lessons in Nice: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-nice.html
-- Private Tennis Lessons in Antibes: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-antibes.html
-- Tennis During Your Holidays on the French Riviera: https://tenniscoachriviera.com/blog/en/tennis-holidays-french-riviera.html
+- Private tennis coach on the French Riviera: https://tenniscoachriviera.com/blog/en/private-tennis-coach-french-riviera.html
+- Tennis in Valbonne and Sophia Antipolis: https://tenniscoachriviera.com/blog/en/tennis-coaching-valbonne-sophia-antipolis.html
+- Private tennis lessons in Nice: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-nice.html
+- Private tennis lessons in Antibes: https://tenniscoachriviera.com/blog/en/private-tennis-lessons-antibes.html
+- Tennis during your holidays on the French Riviera: https://tenniscoachriviera.com/blog/en/tennis-holidays-french-riviera.html
 
 ## Blog (Italian)
 
-- Coach di tennis privato Costa Azzurra: lezioni a domicilio vs club: https://tenniscoachriviera.com/blog/it/coach-tennis-privato-costa-azzurra.html
-- Lezioni di tennis private a Valbonne e Sophia Antipolis: https://tenniscoachriviera.com/blog/it/lezioni-tennis-valbonne.html
+- Coach di tennis privato in Costa Azzurra: https://tenniscoachriviera.com/blog/it/coach-tennis-privato-costa-azzurra.html
+- Tennis a Valbonne e Sophia Antipolis: https://tenniscoachriviera.com/blog/it/lezioni-tennis-valbonne.html
 - Lezioni di tennis a Nizza: https://tenniscoachriviera.com/blog/blog-lezioni-tennis-nizza.html
 - Lezioni di tennis ad Antibes: https://tenniscoachriviera.com/blog/it/lezioni-tennis-antibes.html
-- Tennis durante le vacanze in Costa Azzurra: https://tenniscoachriviera.com/blog/it/tennis-vacanze-costa-azzurra.html
+- Tennis in vacanza in Costa Azzurra: https://tenniscoachriviera.com/blog/it/tennis-vacanze-costa-azzurra.html
 
 ## Contact
 
@@ -78,8 +76,8 @@ Nice, Antibes, Cannes, Monaco, Valbonne, Sophia Antipolis, Mougins, Biot, Cap Fe
 
 ## Reviews
 
-18 verified Google reviews, 5.0/5 rating (as of June 2026). Check Google Business listing for current count.
+31 Google reviews, 5.0/5 average (October 2026). See the Google Business listing for the current count.
 
 ## Languages
 
-The website is available in French (primary), English and Italian, with a JavaScript language switcher on the homepage, city pages and about page, and separate translated articles for each blog post. Coaching is delivered in the client's preferred language — French, English or Italian, by the same coach.
+The website is available in French (primary), English and Italian. Lessons are given in the client's preferred language by the same coach.
