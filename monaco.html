@@ -2,12 +2,10 @@
 <html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NF0RS1WSD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5NF0RS1WSD');
+  gtag('consent', 'default', {analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
 </script>
 
 <meta charset="UTF-8">
@@ -326,7 +324,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     <a href="https://www.instagram.com/tenniscoachriviera/" target="_blank" rel="noopener noreferrer" class="nav-instagram" aria-label="Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
     </a>
-    <a href="https://wa.me/330636047722" class="nav-cta" onclick="gtag('event', 'contact_whatsapp');"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/33636047722" class="nav-cta" onclick="gtag('event', 'contact_whatsapp');"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="fr">FR</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -461,7 +459,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
     <h2 class="cta-title" data-fr="Réserver à <em>Monaco</em>" data-en="Book in <em>Monaco</em>" data-it="Prenota a <em>Monaco</em>">Réserver à <em>Monaco</em></h2>
     <p class="cta-sub" data-fr="Écrivez-moi avec le lieu, vos disponibilités et le nombre de joueurs. Je vous réponds sous 24 heures." data-en="Message me with the place, your availability and the number of players. I reply within 24 hours." data-it="Scrivimi indicando luogo, disponibilità e numero di giocatori. Ti rispondo entro 24 ore.">Écrivez-moi avec le lieu, vos disponibilités et le nombre de joueurs. Je vous réponds sous 24 heures.</p>
     <div class="cta-contacts">
-      <a href="https://wa.me/330636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click');" data-fr="📱 WhatsApp" data-en="📱 WhatsApp" data-it="📱 WhatsApp">📱 WhatsApp</a>
+      <a href="https://wa.me/33636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click');" data-fr="📱 WhatsApp" data-en="📱 WhatsApp" data-it="📱 WhatsApp">📱 WhatsApp</a>
       <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" onclick="gtag('event', 'contact_email');" data-fr="✉️ Email" data-en="✉️ Email" data-it="✉️ Email">✉️ Email</a>
     </div>
   </div>
@@ -534,5 +532,6 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:32px 60px;display:flex;
   document.querySelectorAll('.lang-btn').forEach(function(x){x.addEventListener('click',function(){setTimeout(fix,0);});});
 })();
 </script>
+<script src="/tcr-consent.js" defer></script>
 </body>
 </html>

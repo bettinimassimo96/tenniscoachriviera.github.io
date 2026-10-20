@@ -2,12 +2,10 @@
 <html lang="fr" id="html-root">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NF0RS1WSD"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5NF0RS1WSD');
+  gtag('consent', 'default', {analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
 </script>
 
 <meta charset="UTF-8">
@@ -330,7 +328,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     <a href="https://www.instagram.com/tenniscoachriviera/" target="_blank" rel="noopener noreferrer" class="nav-instagram" aria-label="Instagram">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
     </a>
-    <a href="https://wa.me/330636047722" class="nav-cta" onclick="gtag('event', 'contact_whatsapp');"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="https://wa.me/33636047722" class="nav-cta" onclick="gtag('event', 'contact_whatsapp');"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
     <div class="lang-switcher">
       <button class="lang-btn active" data-lang="fr">FR</button>
       <button class="lang-btn" data-lang="en">EN</button>
@@ -535,7 +533,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
     <h2 class="cta-title reveal reveal-delay-1"><span data-fr="Prêt à commencer<br>" data-en="Ready to start<br>" data-it="Pronto a iniziare<br>">Prêt à commencer<br></span><em data-fr="votre première leçon ?" data-en="your first lesson?" data-it="la tua prima lezione?">votre première leçon ?</em></h2>
     <p class="cta-sub reveal reveal-delay-2" data-fr="Écrivez-moi sur WhatsApp avec vos objectifs et vos disponibilités. Je vous réponds sous 24 heures." data-en="Message me on WhatsApp with your goals and availability. I reply within 24 hours." data-it="Scrivimi su WhatsApp con i tuoi obiettivi e le tue disponibilità. Ti rispondo entro 24 ore.">Écrivez-moi sur WhatsApp avec vos objectifs et vos disponibilités. Je vous réponds sous 24 heures.</p>
     <div class="cta-buttons reveal">
-      <a href="https://wa.me/330636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click', {cta_position: 'about'});"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> <span data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp" data-it="Scrivimi su WhatsApp">Écrire sur WhatsApp</span></a>
+      <a href="https://wa.me/33636047722" class="btn-gold" onclick="gtag('event', 'cta_booking_click', {cta_position: 'about'});"><i class="fa-brands fa-whatsapp" style="font-size:14px;"></i> <span data-fr="Écrire sur WhatsApp" data-en="Message on WhatsApp" data-it="Scrivimi su WhatsApp">Écrire sur WhatsApp</span></a>
       <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" onclick="gtag('event', 'contact_email');"><i class="fa-solid fa-envelope" style="font-size:13px;"></i> <span data-fr="Envoyer un email" data-en="Send an email" data-it="Invia un'email">Envoyer un email</span></a>
     </div>
   </div>
@@ -643,5 +641,6 @@ window.addEventListener('load', function() {
   document.querySelectorAll('.lang-btn').forEach(function(x){x.addEventListener('click',function(){setTimeout(fix,0);});});
 })();
 </script>
+<script src="/tcr-consent.js" defer></script>
 </body>
 </html>
