@@ -44,6 +44,15 @@ Nice, Monaco, Cap Ferrat, Beaulieu-sur-Mer, Èze, Menton, Antibes, Juan-les-Pins
 - Valbonne & Sophia Antipolis: https://tenniscoachriviera.com/valbonne.html
 - Legal: https://tenniscoachriviera.com/mentions-legales.html
 
+## Key Pages (English)
+
+- Home: https://tenniscoachriviera.com/en/
+- About: https://tenniscoachriviera.com/en/about.html
+- Nice: https://tenniscoachriviera.com/en/nice.html
+- Monaco: https://tenniscoachriviera.com/en/monaco.html
+- Cannes: https://tenniscoachriviera.com/en/cannes.html
+- Antibes: https://tenniscoachriviera.com/en/antibes.html
+
 ## Blog (French)
 
 - Tennis à Monaco : https://tenniscoachriviera.com/blog/blog-cours-tennis-monaco.html

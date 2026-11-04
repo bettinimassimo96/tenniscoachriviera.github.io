@@ -199,6 +199,39 @@
     a.href = a.getAttribute('data-wa-base') + (t ? '?text=' + encodeURIComponent(t) : '');
   }, true);
 
+
+  /* ---------- Pagine inglesi dedicate ---------- */
+  var EN_PAGES = { '/': '/en/', '/index.html': '/en/', '/nice.html': '/en/nice.html', '/monaco.html': '/en/monaco.html',
+                   '/cannes.html': '/en/cannes.html', '/antibes.html': '/en/antibes.html', '/about.html': '/en/about.html' };
+  var FR_OF = {};
+  Object.keys(EN_PAGES).forEach(function (k) { if (k !== '/index.html') FR_OF[EN_PAGES[k]] = k; });
+  FR_OF['/en/index.html'] = '/';
+  function setLangPref(l) { try { localStorage.setItem('tcr_lang', l); } catch (e) {} }
+  function getLangPref() { try { return localStorage.getItem('tcr_lang'); } catch (e) { return null; } }
+  var path = location.pathname;
+  var onEn = path.indexOf('/en/') === 0;
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest ? e.target.closest('.lang-btn') : null;
+    if (b) {
+      var l = b.getAttribute('data-lang');
+      if (onEn && l !== 'en') {
+        e.preventDefault(); e.stopPropagation(); setLangPref(l);
+        location.href = (FR_OF[path] || '/') + location.hash; return;
+      }
+      if (!onEn && l === 'en' && EN_PAGES[path]) {
+        e.preventDefault(); e.stopPropagation(); setLangPref('en');
+        location.href = EN_PAGES[path] + location.hash; return;
+      }
+      return;
+    }
+    /* In inglese, i link interni portano alla versione inglese quando esiste */
+    var a = e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || onEn || getLangPref() !== 'en') return;
+    var h = a.getAttribute('href').replace(/^https?:\/\/tenniscoachriviera\.com/, '');
+    var parts = h.split('#'), p = parts[0] || '/';
+    if (p.charAt(0) === '/' && EN_PAGES[p]) a.setAttribute('href', EN_PAGES[p] + (parts[1] ? '#' + parts[1] : ''));
+  }, true);
+
   /* ---------- Avvio ---------- */
   function init() {
     watchLang();
