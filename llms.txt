@@ -1,10 +1,10 @@
 # Tennis Coach Riviera — llms.txt
 # https://tenniscoachriviera.com/
-# Last updated: 2026-10-08
+# Last updated: 2026-11-04
 
 ## About
 
-Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), run by Massimo Bettini. Lessons take place on the client's own court (private villa, residence or hotel). For clients without a private court, a suitable option is arranged case by case. Lessons are available in French, English and Italian with the same coach.
+Tennis Coach Riviera is a private tennis coaching service on the French Riviera (Côte d'Azur), run by Massimo Bettini. Lessons take place either on the client's own court (private villa, residence or hotel) or, for clients without a private court, on a court booked by the coach, with racquets provided. Many students do not have a private court. Lessons are available in French, English and Italian with the same coach.
 
 ## Coach
 
@@ -18,6 +18,7 @@ Tennis Coach Riviera is a private tennis coaching service on the French Riviera 
 ## Services
 
 - Private tennis lessons on the client's court (villa, residence, hotel)
+- Private tennis lessons for clients without a court: the coach books the court and provides racquets
 - Adults, beginners, seniors
 - Children and juniors
 - Family sessions (several levels, one coach)
