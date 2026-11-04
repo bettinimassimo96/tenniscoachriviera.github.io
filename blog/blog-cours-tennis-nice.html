@@ -218,6 +218,16 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:28px 60px;display:flex;
   .nav-dropdown-item{padding:11px 32px;}
   .lang-switcher{border-left:none;padding:14px 24px;justify-content:center;border-top:1px solid rgba(184,151,58,0.1);margin:0;}
 }
+
+/* Footer uniforme su tutte le pagine */
+footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:14px;color:rgba(184,151,58,0.6);}
+.footer-text{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(122,143,168,0.4);}
+.footer-link{color:inherit;text-decoration:none;opacity:0.7;}
+.footer-instagram{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:rgba(212,184,106,0.8);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(184,151,58,0.3);padding:7px 14px;border-radius:20px;transition:background 0.2s;}
+.footer-instagram:hover{background:rgba(184,151,58,0.08);}
+.footer-instagram svg{flex-shrink:0;}
+@media(max-width:900px){footer{padding:32px;flex-direction:column;text-align:center;}}
 </style>
 
 <header class="site-nav" id="site-nav">
@@ -328,7 +338,7 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:28px 60px;display:flex;
   <p>Pas d'inscription ni de dossier : un message WhatsApp suffit pour fixer la première leçon.</p>
   <div class="blog-bio"><div class="blog-bio-avatar">M</div><div>
     <div class="blog-bio-name">Massimo Bettini, Coach de tennis</div>
-    <div class="blog-bio-desc">Certifié FITP 2ème niveau · 10 ans d'enseignement · Coordinateur de l'organisation de l'ATP Challenger de Vicence · Cours en français, anglais et italien</div>
+    <div class="blog-bio-desc">Certifié FITP 2ème niveau · 10 ans d'enseignement · Organisation d'un tournoi ATP Challenger en Italie · Cours en français, anglais et italien</div>
   </div></div>
   <div class="blog-faq" id="faq"><h2 class="blog-faq-title">Questions <em>fréquentes</em></h2>
     <div class="blog-faq-item"><button class="blog-faq-btn">Faut-il avoir son propre court à Nice pour prendre des cours ? <i class="fa-solid fa-plus"></i></button><div class="blog-faq-answer"><p>Non. Si vous avez un court, je viens chez vous. Sinon, écrivez-moi en indiquant où vous êtes, vos disponibilités et le nombre de joueurs : je vous propose une solution à Nice.</p></div></div>
@@ -344,14 +354,14 @@ footer{border-top:1px solid rgba(184,151,58,0.1);padding:28px 60px;display:flex;
 </div>
 </div>
 <footer>
-  <div class="footer-brand">Tennis Coach Riviera · Massimo Bettini</div>
+  <div class="footer-brand">Massimo Bettini · Tennis Coach Riviera</div>
   <a href="https://www.instagram.com/tenniscoachriviera/" target="_blank" rel="noopener noreferrer" class="footer-instagram">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
     @tenniscoachriviera
   </a>
   <div class="footer-text">© 2026 · SIRET 100 929 876 00017 · tenniscoachriviera.com</div>
-  <div class="footer-text"><a href="/about.html" style="color:inherit;text-decoration:none;opacity:0.7;">À Propos</a></div>
-  <div class="footer-text"><a href="/mentions-legales.html" style="color:inherit;text-decoration:none;opacity:0.7;">Mentions Légales</a></div>
+  <div class="footer-text"><a href="/about.html" class="footer-link">À propos</a></div>
+  <div class="footer-text"><a href="/mentions-legales.html" class="footer-link">Mentions légales</a></div>
 </footer>
 <script>
 document.querySelectorAll('.blog-faq-item').forEach(function(item){
