@@ -177,9 +177,20 @@
              en: 'Hello Massimo, I am writing from your website (' + p + ' page).',
              it: 'Buongiorno Massimo, le scrivo dal suo sito (pagina ' + p + ').' }[l];
   }
+  /* Un solo evento per ogni clic WhatsApp, con la posizione del pulsante */
+  function waPosition(a) {
+    var oc = a.getAttribute('onclick') || '';
+    var m = oc.match(/cta_position:\s*'([^']+)'/);
+    if (m) return m[1];
+    if (oc.indexOf('cta_quote_villa') > -1) return 'villa';
+    if (oc.indexOf('cta_partnership_hotel') > -1) return 'hotel';
+    if (a.classList && a.classList.contains('nav-cta')) return 'navigation';
+    return 'other';
+  }
   document.addEventListener('click', function (e) {
     var a = e.target.closest ? e.target.closest('a[href*="wa.me/"]') : null;
     if (!a) return;
+    gtag('event', 'contact_whatsapp', { cta_position: waPosition(a) });
     if (!a.hasAttribute('data-wa-base')) {
       if (a.href.indexOf('text=') > -1) return; // il blog ha già il suo testo
       a.setAttribute('data-wa-base', a.href.split('?')[0]);
