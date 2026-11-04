@@ -165,10 +165,10 @@
     },
     {
       "@type": "Question",
-      "name": "Proposez-vous des cours pour les hôtels et les villas ?",
+      "name": "Venez-vous aussi dans les hôtels et les villas ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Je travaille avec des hôtels et des conciergeries : la demande passe par la réception ou le concierge, et je viens sur le court à l'heure prévue."
+        "text": "Oui. Si votre villa ou votre hôtel a un court, je viens sur place à l'heure prévue. Sinon, je réserve un court à proximité."
       }
     },
     {
@@ -382,6 +382,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   .hero-scroll{right:24px;}
   .about-photo-badge{left:0;bottom:0;}
 }
+.review-strip{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 16px;padding:22px 24px;background:var(--navy);border-bottom:1px solid rgba(184,151,58,0.1);text-decoration:none;text-align:center;}.review-strip-stars{color:#FBBC04;font-size:15px;letter-spacing:2px;}.review-strip-score{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text);}.review-strip-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--gold-light);}.review-strip-quote em{font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:var(--text-muted);margin-left:6px;}
 </style>
 <style>
 /* Hero mobile: foto intera sopra, testo sotto */
@@ -494,6 +495,13 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   </div>
 </div>
 
+<!-- AVIS -->
+<a href="#avis" class="review-strip">
+  <span class="review-strip-stars">★★★★★</span>
+  <span class="review-strip-score" data-fr="5,0 · 31 avis Google" data-en="5.0 · 31 Google reviews" data-it="5,0 · 31 recensioni Google">5,0 · 31 avis Google</span>
+  <span class="review-strip-quote">“He quickly understood our son’s game.” <em>Ross D.</em></span>
+</a>
+
 <!-- ABOUT -->
 <section class="about-section" id="about">
   <div class="about-grid">
@@ -560,110 +568,6 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════════ -->
-<!-- HOTELS & RESORTS                              -->
-<!-- ══════════════════════════════════════════════ -->
-<section class="hotels-section" id="hotels">
-  <div class="hotels-inner">
-
-    <!-- H2 trilingue hardcoded nel DOM, non in attributi JS -->
-    <div class="reveal" id="hotels-heading-fr" lang="fr">
-      <p class="section-eyebrow">Hôtels &amp; Resorts · Côte d'Azur</p>
-      <h2 class="section-title" style="max-width:700px;">
-        Leçons privées pour<br><em>hôtels et conciergeries</em>
-      </h2>
-    </div>
-    <div class="reveal" id="hotels-heading-en" lang="en" style="display:none;">
-      <p class="section-eyebrow">Hotels &amp; Resorts · French Riviera</p>
-      <h2 class="section-title" style="max-width:700px;">
-        Private lessons for<br><em>hotels &amp; concierges</em>
-      </h2>
-    </div>
-    <div class="reveal" id="hotels-heading-it" lang="it" style="display:none;">
-      <p class="section-eyebrow">Hotel &amp; Resort · Costa Azzurra</p>
-      <h2 class="section-title" style="max-width:700px;">
-        Lezioni private per<br><em>hotel e concierge</em>
-      </h2>
-    </div>
-
-    <div class="hotels-grid">
-      <!-- COLONNA SINISTRA: testo orientato al concierge/direttore -->
-      <div class="hotels-features reveal reveal-delay-1">
-
-        <!-- Paragrafo FR -->
-        <div id="hotels-intro-fr" lang="fr">
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
-            Je travaille avec des hôtels et des conciergeries pour proposer des leçons de tennis privées à leurs clients pendant leur séjour sur la Côte d'Azur. La demande passe par la réception ou le concierge ; je m'occupe du reste, en français, anglais ou italien.
-          </p>
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
-            Une solution simple pour offrir du tennis à vos clients, sans coach à demeure.
-          </p>
-        </div>
-        <!-- Paragrafo EN -->
-        <div id="hotels-intro-en" lang="en" style="display:none;">
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
-            I work with hotels and concierge services to offer private tennis lessons to their guests during their stay on the French Riviera. Requests go through reception or the concierge; I take care of the rest, in English, French or Italian.
-          </p>
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
-            A simple way to offer tennis to your guests, without a resident coach.
-          </p>
-        </div>
-        <!-- Paragrafo IT -->
-        <div id="hotels-intro-it" lang="it" style="display:none;">
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.75);margin-bottom:28px;">
-            Lavoro con hotel e servizi di concierge per proporre lezioni private di tennis ai loro ospiti durante il soggiorno in Costa Azzurra. La richiesta passa dalla reception o dal concierge; al resto penso io, in italiano, francese o inglese.
-          </p>
-          <p style="font-size:15px;font-weight:300;line-height:1.9;color:rgba(232,224,212,0.65);margin-bottom:32px;">
-            Un modo semplice per offrire il tennis ai vostri ospiti, senza un coach fisso.
-          </p>
-        </div>
-
-        <!-- Feature cards -->
-        <div class="hotels-feature">
-          <span class="villa-feature-icon"><i class="fa-solid fa-concierge-bell"></i></span>
-          <div>
-            <div class="villa-feature-title" data-fr="Réservation via le concierge" data-en="Concierge booking" data-it="Prenotazione via concierge">Réservation via le concierge</div>
-            <p class="villa-feature-text" data-fr="Contact direct avec la réception ou le concierge. Une organisation simple pour vos clients." data-en="Direct contact with reception or the concierge. Simple to arrange for your guests." data-it="Contatto diretto con la reception o il concierge. Un'organizzazione semplice per i vostri ospiti.">Contact direct avec la réception ou le concierge. Une organisation simple pour vos clients.</p>
-          </div>
-        </div>
-        <div class="hotels-feature">
-          <span class="villa-feature-icon"><i class="fa-solid fa-shield-halved"></i></span>
-          <div>
-            <div class="villa-feature-title" data-fr="Un coach qualifié" data-en="A qualified coach" data-it="Un coach qualificato">Un coach qualifié</div>
-            <p class="villa-feature-text" data-fr="Trilingue (FR / EN / IT), certifié FITP, coordinateur de l'organisation d'un tournoi ATP Challenger." data-en="Trilingual (FR / EN / IT), FITP-certified, operations coordinator for an ATP Challenger tournament." data-it="Trilingue (FR / EN / IT), certificato FITP, coordinatore dell'organizzazione di un torneo ATP Challenger.">Trilingue (FR / EN / IT), certifié FITP, coordinateur de l'organisation d'un tournoi ATP Challenger.</p>
-          </div>
-        </div>
-        <div class="hotels-feature">
-          <span class="villa-feature-icon"><i class="fa-solid fa-children"></i></span>
-          <div>
-            <div class="villa-feature-title" data-fr="Adultes, enfants, familles" data-en="Adults, juniors &amp; families" data-it="Adulti, junior e famiglie">Adultes, enfants, familles</div>
-            <p class="villa-feature-text" data-fr="Séances individuelles, cours en famille ou initiation pour les enfants, avec un seul interlocuteur pour tous vos clients." data-en="Individual sessions, family lessons or children's introductions, with one contact for all your guests." data-it="Lezioni individuali, in famiglia o di avviamento per bambini, con un solo referente per tutti i tuoi clienti.">Séances individuelles, cours en famille ou initiation pour les enfants, avec un seul interlocuteur pour tous vos clients.</p>
-          </div>
-        </div>
-        <div class="hotels-feature" style="border-bottom:none;">
-          <span class="villa-feature-icon"><i class="fa-solid fa-location-dot"></i></span>
-          <div>
-            <div class="villa-feature-title" data-fr="Toute la Côte d'Azur" data-en="Across the French Riviera" data-it="Tutta la Costa Azzurra">Toute la Côte d'Azur</div>
-            <p class="villa-feature-text" data-fr="Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins et environs." data-en="Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins and surrounding areas." data-it="Nizza, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Mentone, Valbonne, Mougins e dintorni.">Nice, Antibes, Cannes, Monaco, Cap Ferrat, Èze, Beaulieu, Menton, Valbonne, Mougins et environs.</p>
-          </div>
-        </div>
-        <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;">
-          <a href="https://wa.me/33636047722" class="btn-gold" onclick="gtag('event', 'cta_partnership_hotel');" data-fr="Discuter d'un partenariat" data-en="Discuss a partnership" data-it="Discuti una partnership">Discuter d'un partenariat</a>
-          <a href="mailto:massimo@tenniscoachriviera.com" class="btn-outline" onclick="gtag('event', 'contact_email');" data-fr="Envoyer un email" data-en="Send an email" data-it="Invia un'email">Envoyer un email</a>
-        </div>
-      </div>
-
-      <!-- COLONNA DESTRA: foto + blocco "Why choose" -->
-      <div class="reveal">
-        <img src="vue-mer-villa-cote-azur.jpg" alt="Vue sur la mer depuis une villa, Côte d'Azur" class="hotels-photo" style="object-position:center 55%;" loading="lazy">
-
-        
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ══════════════════════════════════════════════ -->
-
 <!-- SERVICES -->
 <section class="services-section" id="services">
   <div class="services-inner">
@@ -700,7 +604,7 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
 </section>
 
 <!-- REVIEWS -->
-<section style="padding:120px 60px;background:var(--navy-mid);border-top:1px solid rgba(184,151,58,0.1);">
+<section id="avis" style="padding:120px 60px;background:var(--navy-mid);border-top:1px solid rgba(184,151,58,0.1);">
   <div style="max-width:1200px;margin:0 auto;">
     <div class="reveal">
       <p class="section-eyebrow" data-fr="Témoignages" data-en="Reviews" data-it="Recensioni">Témoignages</p>
@@ -726,6 +630,12 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
 .footer-instagram:hover{background:rgba(184,151,58,0.08);}
 .footer-instagram svg{flex-shrink:0;}
 @media(max-width:900px){footer{padding:32px;flex-direction:column;text-align:center;}}
+
+/* Leggibilità: contrasto footer ed etichette piccole */
+.footer-brand{color:rgba(184,151,58,0.9);}
+.footer-text{color:#8FA2B8;}
+.footer-link{opacity:1;}
+.section-eyebrow,.hero-eyebrow,.eyebrow,.blog-eyebrow,.cta-pre,.cta-zone,.reviews-label,.review-source,.zones-label,.formules-label,.club-box-label,.blog-card-lang,.blog-card-cta,.blog-toc-label,.lang-tag,.about-photo-badge,.tarif-note,.footer-text,.footer-instagram,.reviews-cta a{font-size:11px;}
 </style>
 
 <!-- BLOG -->
@@ -790,10 +700,10 @@ footer{padding:40px 60px;border-top:1px solid rgba(184,151,58,0.1);display:flex;
         <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui, la réservation à la séance est possible. Si vous habitez la région, nous pouvons aussi prévoir des leçons régulières." data-en="Yes, you can book a single session. If you live locally, we can also plan regular lessons." data-it="Sì, si può prenotare una singola lezione. Se vivi in zona, possiamo anche organizzare lezioni regolari.">Oui, la réservation à la séance est possible. Si vous habitez la région, nous pouvons aussi prévoir des leçons régulières.</div>
       </div>
       <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);">
-        <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Proposez-vous des cours pour les hôtels et les villas ?" data-en="Do you offer coaching services for hotels and villas?" data-it="Offrite servizi di coaching per hotel e ville?">
-          <span data-fr="Proposez-vous des cours pour les hôtels et les villas ?" data-en="Do you offer coaching services for hotels and villas?" data-it="Offrite servizi di coaching per hotel e ville?">Proposez-vous des cours pour les hôtels et les villas ?</span>
+        <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Venez-vous aussi dans les hôtels et les villas ?" data-en="Do you also come to hotels and villas?" data-it="Vieni anche in hotel e ville?">
+          <span data-fr="Venez-vous aussi dans les hôtels et les villas ?" data-en="Do you also come to hotels and villas?" data-it="Vieni anche in hotel e ville?">Venez-vous aussi dans les hôtels et les villas ?</span>
         </div>
-        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui. Je travaille avec des hôtels et des conciergeries : la demande passe par la réception ou le concierge, et je viens sur le court à l'heure prévue." data-en="Yes. I work with hotels and concierge services: the request goes through reception or the concierge, and I come to the court at the agreed time." data-it="Sì. Lavoro con hotel e concierge: la richiesta passa dalla reception o dal concierge, e arrivo sul campo all'orario previsto.">Oui. Je travaille avec des hôtels et des conciergeries : la demande passe par la réception ou le concierge, et je viens sur le court à l'heure prévue.</div>
+        <div style="font-size:13px;font-weight:300;line-height:1.7;color:var(--text-muted);" data-fr="Oui. Si votre villa ou votre hôtel a un court, je viens sur place à l'heure prévue. Sinon, je réserve un court à proximité." data-en="Yes. If your villa or hotel has a court, I come to you at the agreed time. If not, I book a court nearby." data-it="Sì. Se la tua villa o il tuo hotel ha un campo, vengo sul posto all'orario previsto. Altrimenti prenoto io un campo vicino.">Oui. Si votre villa ou votre hôtel a un court, je viens sur place à l'heure prévue. Sinon, je réserve un court à proximité.</div>
       </div>
       <div style="padding:20px 0;border-top:1px solid rgba(184,151,58,0.1);border-bottom:1px solid rgba(184,151,58,0.1);">
         <div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:8px;" data-fr="Proposez-vous des cours en anglais ou en italien ?" data-en="Do you offer lessons in English or Italian?" data-it="Offrite lezioni in inglese o in italiano?">Proposez-vous des cours en anglais ou en italien ?</div>
